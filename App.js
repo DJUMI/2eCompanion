@@ -7,10 +7,13 @@ import useCachedResources from './hooks/useCachedResources';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import LinkingConfiguration from './navigation/LinkingConfiguration';
 
+import Fire from './Fire';
+
 const Stack = createStackNavigator();
 
 export default function App(props) {
   const isLoadingComplete = useCachedResources();
+  const firebase = new Fire();
 
   if (!isLoadingComplete) {
     return null;
