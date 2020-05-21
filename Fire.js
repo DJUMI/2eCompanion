@@ -1,5 +1,5 @@
 import * as firebase from 'firebase';
-import ApiKeys from './constants/ApiKeys';
+import ApiKeys from './src/constants/ApiKeys';
 
 class Fire {
     init() {

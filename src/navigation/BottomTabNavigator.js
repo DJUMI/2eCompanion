@@ -12,10 +12,15 @@ const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Character';
 
 export default function BottomTabNavigator({ navigation, route }) {
-  navigation.setOptions({ headerTitle: getHeaderTitle(route) });
+  navigation.setOptions({ headerShown: false });
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+    <BottomTab.Navigator 
+      initialRouteName={INITIAL_ROUTE_NAME}
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <BottomTab.Screen
         name="Character"
         component={CharacterScreen}

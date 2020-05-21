@@ -1,16 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const FeatsScreen = () => {
+const Health = () => {
     return (
         <View>
-            <Text>FeatsScreen</Text>
+            <Text>Health Container</Text>
         </View>
     );
 };
 
-export default FeatsScreen;
+export default Health;
 
-const styles = StyleSheet.create({
-    
-});
+const styles = StyleSheet.create({});
