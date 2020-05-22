@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
-import { Dimensions, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { Dimensions, Image, StatusBar, StyleSheet, Text, View } from 'react-native';
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
-import * as Animatable from 'react-native-animatable';
 
-import Content from '../components/character/Content';
+import CharacterContent from '../components/character/CharacterContent';
 import { MAX_HEADER_HEIGHT, MIN_HEADER_HEIGHT } from '../constants/Dimensions';
 
 const CharacterScreen = () => {
-
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -29,12 +27,11 @@ const CharacterScreen = () => {
       >
         <View style={{ backgroundColor: 'tan' }} >
           <TriggeringView>
-            <Content />
+            <CharacterContent />
           </TriggeringView>
         </View>
       </HeaderImageScrollView>
     </View>
-
   );
 }
 
@@ -56,7 +53,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     paddingTop: 20,
-    //backgroundColor: 'rgba(255, 0, 0, 0.2)',
   },
   titleText: {
     backgroundColor: 'transparent',

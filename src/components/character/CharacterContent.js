@@ -10,7 +10,7 @@ import Perception from './Perception';
 import Melee from './Melee';
 import Ranged from './Ranged';
 
-const Content = () => {
+const CharacterContent = () => {
 
     return (
         <View style={styles.container} >
@@ -24,7 +24,7 @@ const Content = () => {
     );
 };
 
-export default Content;
+export default CharacterContent;
 
 const styles = StyleSheet.create({
     container: {

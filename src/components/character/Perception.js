@@ -13,13 +13,6 @@ const Perception = () => {
             </View>
             <View style={styles.itemContainer}>
                 <View style={styles.row}>
-                    <TouchableOpacity
-                        style={styles.info}
-                        onPress={() => console.log(`Roll Perception`)}
-                    >
-                        <Text style={styles.value}>E11</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.text}>=</Text>
                     <View style={styles.modContainer}>
                         <ModCard
                             title='MOD'
@@ -38,6 +31,13 @@ const Perception = () => {
                             value={0}
                         />
                     </View>
+                    <Text style={styles.text}>=</Text>
+                    <TouchableOpacity
+                        style={styles.info}
+                        onPress={() => console.log(`Roll Perception`)}
+                    >
+                        <Text style={styles.value}>E11</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.row}>
                     <TouchableOpacity style={styles.btn}>
@@ -107,14 +107,14 @@ const styles = StyleSheet.create({
     text: {
         color: 'white',
         fontSize: 20,
-        paddingLeft: 5,
+        paddingRight: 5,
         alignSelf: 'center',
     },
     modContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         flex: 1,
-        paddingHorizontal: 10,
+        paddingRight: 10,
     },
     btn: {
         flex: 2,

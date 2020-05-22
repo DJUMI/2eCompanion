@@ -1,76 +1,55 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import StatCircle from './StatCircle';
-import ModCard from './ModCard';
+import ModCard from '../character/ModCard';
 import Colors from '../../constants/Colors';
+import ActionsList from './ActionsList';
 
-const Armor = () => {
+const SkillCard = ({ skill: { name, mod, prof, item, temp, total } }) => {
     return (
         <View style={styles.container}>
             <View style={styles.titleContainer}>
-                <Text style={styles.title}>Armor Class</Text>
+                <Text style={styles.title}>{name}</Text>
             </View>
             <View style={styles.itemContainer}>
                 <View style={styles.row}>
                     <View style={styles.modContainer}>
                         <ModCard
                             title='MOD'
-                            value={1}
+                            value={mod}
                         />
                         <ModCard
                             title='PROF'
-                            value='T5'
+                            value={prof}
                         />
                         <ModCard
                             title='ITEM'
-                            value={1}
+                            value={item}
                         />
                         <ModCard
                             title='TEMP'
-                            value={0}
+                            value={temp}
                         />
                     </View>
                     <Text style={styles.text}>=</Text>
-                    <StatCircle
-                        title='AC'
-                        value={17}
-                    />
+                    <TouchableOpacity
+                        style={styles.info}
+                        onPress={() => console.log(`Roll ${name}`)}
+                    >
+                        <Text style={styles.total}>{total}</Text>
+                    </TouchableOpacity>
                 </View>
-                <View style={styles.row2}>
-                    <View style={styles.modContainer}>
-                        <ModCard
-                            title='Bonus'
-                            value={2}
-                        />
-                        <ModCard
-                            title='TEMP'
-                            value={1}
-                        />
-                        <ModCard
-                            title='HARD'
-                            value={3}
-                        />
-                        <ModCard
-                            title='BT'
-                            value={3}
-                        />
-                    </View>
-                    <Text style={styles.text}>=</Text>
-                    <StatCircle
-                        title='Shield'
-                        value={15}
-                    />
-                </View>
+                <ActionsList />
             </View>
         </View>
     );
 };
 
-export default Armor;
+export default SkillCard;
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: 10,
         paddingHorizontal: 10,
         shadowColor: "#000",
         shadowOffset: {
@@ -88,7 +67,7 @@ const styles = StyleSheet.create({
     },
     title: {
         color: 'white',
-        fontSize: 18,
+        fontSize: 20,
         padding: 5,
         paddingLeft: 10,
     },
@@ -96,24 +75,26 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.lightBrown,
         borderBottomLeftRadius: 5,
         borderBottomRightRadius: 5,
-        paddingBottom: 5,
-        padding: 5,
     },
     row: {
         flexDirection: 'row',
-        marginBottom: 5,
-    },
-    row2: {
-        flexDirection: 'row',
-        borderTopWidth: 1,
-        borderColor: Colors.darkBrown,
-        paddingTop: 5,
-    },
-    modContainer: {
-        flexDirection: 'row',
         justifyContent: 'space-between',
-        flex: 1,
-        paddingRight: 10,
+        paddingHorizontal: 5,
+    },
+    info: {
+        backgroundColor: Colors.mediumBrown,
+        borderColor: Colors.darkBrown,
+        borderWidth: 3,
+        height: 80,
+        width: 80,
+        borderRadius: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 10,
+    },
+    total: {
+        color: 'white',
+        fontSize: 28,
     },
     text: {
         color: 'white',
@@ -121,4 +102,23 @@ const styles = StyleSheet.create({
         paddingRight: 5,
         alignSelf: 'center',
     },
+    modContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        flex: 1,
+        paddingRight: 10,
+    },
+    btn: {
+        flex: 2,
+        backgroundColor: Colors.blue,
+        marginRight: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: 'white',
+    },
+    btnText: {
+        color: 'white',
+        fontSize: 18,
+    }
 });
