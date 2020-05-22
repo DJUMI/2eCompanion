@@ -8,6 +8,7 @@ import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 import LinkingConfiguration from './src/navigation/LinkingConfiguration';
 
 import Fire from './Fire';
+import Colors from './src/constants/Colors';
 
 const Stack = createStackNavigator();
 
@@ -34,6 +35,5 @@ export default function App(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
   },
 });

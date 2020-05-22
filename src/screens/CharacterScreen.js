@@ -27,7 +27,7 @@ const CharacterScreen = () => {
           </View>
         )}
       >
-        <View style={{ height: 1000 }} >
+        <View style={{ backgroundColor: 'tan' }} >
           <TriggeringView>
             <Content />
           </TriggeringView>
@@ -43,6 +43,7 @@ export default CharacterScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'tan'
   },
   image: {
     height: MAX_HEADER_HEIGHT,
