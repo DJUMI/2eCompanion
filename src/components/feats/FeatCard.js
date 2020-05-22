@@ -14,8 +14,6 @@ const FeatCard = ({ name, feats }) => {
             </View>
             <View style={styles.itemContainer}>
                 <Accordion data={feats}/>
-                <View style={styles.footer}>
-                </View>
             </View>
         </View>
     );
@@ -49,9 +47,10 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
     },
     itemContainer: {
-        backgroundColor: Colors.lightBrown,
+        backgroundColor: Colors.mediumBrown,
         borderBottomLeftRadius: 5,
         borderBottomRightRadius: 5,
+        overflow: 'hidden',
     },
     footer: {
         backgroundColor: Colors.darkBrown,
