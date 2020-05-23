@@ -6,6 +6,8 @@ export default {
   darkBrown: '#5b1110',
   lightBrown: '#98503e',
   mediumBrown: '#7d3a2a',
+  crimson: '#5e0600',
+  gold: '#d9c484',
 
   tintColor,
   tabIconDefault: '#ccc',

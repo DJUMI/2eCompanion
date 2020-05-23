@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
-//import { Accordion } from 'native-base';
+import { StyleSheet, Text, View } from 'react-native';
 
 import Colors from '../../constants/Colors';
 import Accordion from '../Accordion';
@@ -51,17 +49,5 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 5,
         borderBottomRightRadius: 5,
         overflow: 'hidden',
-    },
-    footer: {
-        backgroundColor: Colors.darkBrown,
-        borderBottomLeftRadius: 5,
-        borderBottomRightRadius: 5,
-        padding: 10,
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-    },
-    text: {
-        color: 'white',
-        fontSize: 16,
     },
 });
