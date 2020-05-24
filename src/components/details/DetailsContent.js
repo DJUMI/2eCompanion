@@ -1,13 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
+import Colors from '../../constants/Colors';
 import Data from '../../constants/DetailsData';
 import DetailCard from './DetailCard';
-import Colors from '../../constants/Colors';
+import LevelBtn from './LevelBtn';
+
 
 const DetailsContent = () => {
     return (
         <View style={styles.container}>
+            <View style={styles.row}>
+                <View style={styles.imageContainer}>
+                    <Image
+                        source={require('../../../assets/images/Besh.png')}
+                        style={styles.image}
+                    /> 
+                </View>
+                <View style={styles.levelContainer}>
+                    <LevelBtn />
+                </View>
+            </View>
             <DetailCard title='Name' value={Data.name} />
 
             <DetailCard title='Ancestry and Heritage' value={Data.ancestry} />
@@ -64,12 +78,27 @@ const DetailsContent = () => {
 
 export default DetailsContent;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         padding: 5,
     },
     row: {
         flexDirection: 'row',
+    },
+    imageContainer: {
+        borderWidth: 1,
+        borderColor: Colors.darkBrown,
+        marginBottom: 5,
+        marginRight: 5,
+    },
+    image: {
+        height: '350rem',
+        width: '250rem'
+    },
+    levelContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        padding: 10,
     },
     header: {
         backgroundColor: Colors.darkBrown,
