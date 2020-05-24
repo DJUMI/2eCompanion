@@ -10,7 +10,7 @@ import InventoryScreen from '../screens/InventoryScreen';
 import FeatsScreen from '../screens/FeatsScreen';
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Feats';
+const INITIAL_ROUTE_NAME = 'Spells';
 
 export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerShown: false });

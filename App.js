@@ -1,14 +1,17 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Dimensions, Platform, StatusBar, StyleSheet, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import useCachedResources from './src/hooks/useCachedResources';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 import LinkingConfiguration from './src/navigation/LinkingConfiguration';
 
 import Fire from './Fire';
-import Colors from './src/constants/Colors';
+
+const windowDimensions = Dimensions.get('window')
+EStyleSheet.build({ $rem: windowDimensions.width / 380 });
 
 const Stack = createStackNavigator();
 

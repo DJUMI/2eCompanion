@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import ModCard from '../character/ModCard';
+import ModCard from '../ModCard';
 import Colors from '../../constants/Colors';
 import ActionsList from './ActionsList';
 

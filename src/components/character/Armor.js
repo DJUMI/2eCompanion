@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import StatCircle from './StatCircle';
-import ModCard from './ModCard';
+import StatCircle from '../StatCircle';
+import ModCard from '../ModCard';
 import Colors from '../../constants/Colors';
 
 const Armor = () => {

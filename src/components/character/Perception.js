@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import Colors from '../../constants/Colors';
-import ModCard from './ModCard';
+import ModCard from '../ModCard';
 import SensesList from './SensesList';
 
 const Perception = () => {

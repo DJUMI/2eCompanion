@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Colors from '../../constants/Colors';
+import Colors from '../constants/Colors';
 
-const StatCircle = ({title, value}) => {
+const ModCard = ({ title, value }) => {
     return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -15,32 +15,36 @@ const StatCircle = ({title, value}) => {
     );
 };
 
-export default StatCircle;
+export default ModCard;
 
 const styles = StyleSheet.create({
     container: {
-        height: 80,
-        width: 80,
-        backgroundColor: Colors.darkBrown,
-        borderRadius: 40,
-        borderWidth: 3,
-        borderColor: Colors.darkBrown,
-        alignItems: 'center',
-        overflow: 'hidden',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+        elevation: 3,
     },
     top: {
-        flex: 1,
-        justifyContent: 'center',
+        backgroundColor: Colors.darkBrown,
+        padding: 5,
+        borderTopLeftRadius: 5,
+        borderTopRightRadius: 5,
     },
     bottom: {
         backgroundColor: Colors.mediumBrown,
-        width: 80,
-        height: 37,
-        justifyContent: 'center',
+        padding: 5,
+        borderBottomLeftRadius: 5,
+        borderBottomRightRadius: 5,
         alignItems: 'center',
     },
     text: {
         color: 'white',
-        fontSize: 20,
-    }
+        fontSize: 16,
+    },
 });
