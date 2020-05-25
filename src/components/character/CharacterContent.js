@@ -1,14 +1,13 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { LinearGradient } from "expo-linear-gradient";
+import { View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
-import { MAX_HEADER_HEIGHT } from '../../constants/Dimensions';
-import Health from './Health';
-import Armor from './Armor';
-import Saves from './Saves';
-import Perception from './Perception';
-import Melee from './Melee';
-import Ranged from './Ranged';
+import Health from './health/Health';
+import Armor from './armor/Armor';
+import Saves from './saves/Saves';
+import Perception from './perception/Perception';
+import Melee from './attack/Melee';
+import Ranged from './attack/Ranged';
 
 const CharacterContent = () => {
 
@@ -26,7 +25,7 @@ const CharacterContent = () => {
 
 export default CharacterContent;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         marginBottom: 20,
     },

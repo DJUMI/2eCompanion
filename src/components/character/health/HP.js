@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 const HP = () => {
     return (
@@ -11,7 +12,7 @@ const HP = () => {
 
 export default HP;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         backgroundColor: '#8D0000',
         height: 150,

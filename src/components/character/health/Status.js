@@ -1,18 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
+import Card from '../../Card';
 import ConditionsList from './ConditionsList';
-import Colors from '../../constants/Colors';
+import Colors from '../../../constants/Colors';
+
+const renderConditions = () => {
+    return (
+        <ConditionsList />
+    );
+};
+
+const renderDying = () => {
+    return (
+        <Text style={styles.dyingText}>0</Text>
+    );
+};
 
 const Status = () => {
     return (
         <View style={styles.container}>
-            <View style={styles.conditions}>
-                <View style={styles.titleContainer}>
-                    <Text style={styles.title}>Conditions</Text>
-                </View>
-                <ConditionsList />
-            </View>
+            <Card title='Conditions' renderContent={renderConditions}/>
             <View style={styles.dyingWoundedContainer}>
                 <View style={styles.dying}>
                     <View style={styles.topContainer}>
@@ -22,6 +31,8 @@ const Status = () => {
                         <Text style={styles.dyingText}>0</Text>
                     </View>
                 </View>
+                {/* <Card title='Dying' renderContent={renderDying}/>
+                <Card title='Wounded' renderContent={renderDying} /> */}
                 <View style={styles.wounded}>
                     <View style={styles.topContainer}>
                         <Text style={styles.dyingText}>Wounded</Text>
@@ -37,7 +48,7 @@ const Status = () => {
 
 export default Status;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         flex: 1,
         padding: 10,

@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+
 
 import HP from './HP';
 import Status from './Status';
@@ -19,7 +21,7 @@ const Health = () => {
 
 export default Health;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         flexDirection: 'row',
     },

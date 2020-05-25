@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
 import FeatCard from './FeatCard';
 import Data from '../../constants/FeatsData';
@@ -16,5 +16,3 @@ const FeatsContent = () => {
 };
 
 export default FeatsContent;
-
-const styles = StyleSheet.create({});

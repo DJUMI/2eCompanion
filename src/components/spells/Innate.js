@@ -139,7 +139,6 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     accordionContainer: {
-        backgroundColor: Colors.lightBrown,
         padding: 5,
     },
     headerContainer: {

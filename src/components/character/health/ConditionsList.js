@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
-import Colors from '../../constants/Colors';
+import Colors from '../../../constants/Colors';
 
 const ConditionsList = () => {
     const CONDITIONS = ['Poisoned', 'Enfeebled', 'Frightened', 'Slowed'];
