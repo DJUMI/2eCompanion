@@ -81,7 +81,7 @@ const renderAccordionContent = (
                     {item.info}
                 </Text>
             ))}
-            
+
             {heightened.length ?
                 <View>
                     <Padder />
@@ -96,7 +96,7 @@ const renderAccordionContent = (
                 null
             }
 
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.castBtn}
                 onPress={() => console.log(`Cast ${name}`)}
             >
@@ -132,7 +132,9 @@ const renderContent = () => {
 const Spells = () => {
     return (
         <View style={styles.container}>
-            <Card title='Spells' renderContent={renderContent} />
+            <Card title='Spells'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

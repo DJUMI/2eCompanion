@@ -17,7 +17,9 @@ const renderContent = () => {
 const Tradition = () => {
     return (
         <View style={styles.container}>
-            <Card title='Tradition' renderContent={renderContent} />
+            <Card title='Tradition'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

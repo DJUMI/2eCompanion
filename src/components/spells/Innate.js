@@ -96,7 +96,7 @@ const renderAccordionContent = (
                 null
             }
 
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.castBtn}
                 onPress={() => console.log(`Cast ${name}`)}
             >
@@ -127,7 +127,9 @@ const renderContent = () => {
 const Innate = () => {
     return (
         <View style={styles.container}>
-            <Card title='Innate Spells' renderContent={renderContent} />
+            <Card title='Innate Spells'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

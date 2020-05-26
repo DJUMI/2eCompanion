@@ -71,7 +71,9 @@ const renderContent = () => {
 const SpellSlots = () => {
     return (
         <View style={styles.container}>
-            <Card title='Spell Slots' renderContent={renderContent} />
+            <Card title='Spell Slots'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

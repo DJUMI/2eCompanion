@@ -39,7 +39,9 @@ const renderContent = () => {
 const Melee = () => {
     return (
         <View style={styles.container}>
-            <Card title='Melee Strikes' renderContent={renderContent} />
+            <Card title='Melee Strikes'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

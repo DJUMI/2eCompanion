@@ -29,7 +29,7 @@ const renderExpanded = (title) => {
     );
 };
 
-const Card = ({ data, title, renderContent }) => {
+const Card = ({ data, title, renderContent, children }) => {
     const [isExpanded, setIsExpanded] = useState(true);
 
     return (
@@ -42,7 +42,7 @@ const Card = ({ data, title, renderContent }) => {
             </TouchableOpacity>
             <View style={styles.itemContainer}>
                 {isExpanded ?
-                    renderContent(data) :
+                    children :
                     null
                 }
             </View>

@@ -15,7 +15,9 @@ const renderContent = () => {
 const Bulk = () => {
     return (
         <View style={styles.container}>
-            <Card title='Bulk' renderContent={renderContent} />
+            <Card title='Bulk'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

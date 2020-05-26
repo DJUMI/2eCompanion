@@ -32,9 +32,13 @@ const SpellMod = () => {
     return (
         <View style={styles.container}>
             <View style={styles.attackContainer}>
-                <Card title='Spell Attck Roll' renderContent={renderAttack} />
+                <Card title='Spell Attck Roll'>
+                    {renderAttack()}
+                </Card>
             </View>
-            <Card title='Spell DC' renderContent={renderDC} />
+            <Card title='Spell DC'>
+                {renderDC()}
+            </Card>
         </View>
     );
 };

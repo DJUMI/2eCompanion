@@ -149,7 +149,9 @@ const renderContentHeader = () => {
 const Focus = () => {
     return (
         <View style={styles.container}>
-            <Card title='Focus Spells' renderContent={renderContent} />
+            <Card title='Focus Spells'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

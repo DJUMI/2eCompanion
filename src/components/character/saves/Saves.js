@@ -28,7 +28,9 @@ const renderContent = () => {
 const Saves = () => {
     return (
         <View style={styles.container}>
-            <Card title='Saving Throws' renderContent={renderContent}/>
+            <Card title='Saving Throws'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

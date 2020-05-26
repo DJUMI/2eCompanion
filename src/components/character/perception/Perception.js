@@ -31,7 +31,9 @@ const renderContent = () => {
 const Perception = () => {
     return (
         <View style={styles.container}>
-            <Card title='Perception' renderContent={renderContent} />
+            <Card title='Perception'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

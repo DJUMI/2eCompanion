@@ -143,7 +143,9 @@ const renderContentHeader = () => {
 const Cantrip = () => {
     return (
         <View style={styles.container}>
-            <Card title='Cantrips' renderContent={renderContent} />
+            <Card title='Cantrips'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

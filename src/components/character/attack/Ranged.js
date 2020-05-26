@@ -27,7 +27,9 @@ const renderContent = () => {
 const Ranged = () => {
     return (
         <View style={styles.container}>
-            <Card title='Ranged Strikes' renderContent={renderContent} />
+            <Card title='Ranged Strikes'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

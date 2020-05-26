@@ -21,7 +21,9 @@ const renderDying = () => {
 const Status = () => {
     return (
         <View style={styles.container}>
-            <Card title='Conditions' renderContent={renderConditions}/>
+            <Card title='Conditions'>
+                {renderConditions()}
+            </Card>
             <View style={styles.dyingWoundedContainer}>
                 <View style={styles.dying}>
                     <View style={styles.topContainer}>

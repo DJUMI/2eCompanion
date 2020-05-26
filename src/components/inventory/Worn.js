@@ -14,28 +14,28 @@ const renderAccordionContent = ({ name, description }) => {
         <View style={styles.accordionContentContainer}>
             <Text style={styles.descriptionText}>{description}</Text>
             <View style={styles.btnContainer}>
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.btn}
                     onPress={() => console.log(`Sell 1 ${name}`)}
                 >
                     <Text style={styles.btnText}>Sell 1</Text>
                 </TouchableOpacity>
                 <Padder />
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.btn}
                     onPress={() => console.log(`Discard 1 ${name}`)}
                 >
                     <Text style={styles.btnText}>Discard 1</Text>
                 </TouchableOpacity>
                 <Padder />
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.btn}
                     onPress={() => console.log(`Add 1 ${name}`)}
                 >
                     <Text style={styles.btnText}>Add 1</Text>
                 </TouchableOpacity>
                 <Padder />
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.btn}
                     onPress={() => console.log(`Buy 1 ${name}`)}
                 >
@@ -78,7 +78,9 @@ const renderContent = () => {
 const Worn = () => {
     return (
         <View style={styles.container}>
-            <Card title='Worn Items' renderContent={renderContent} />
+            <Card title='Worn Items'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

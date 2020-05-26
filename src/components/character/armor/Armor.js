@@ -33,7 +33,9 @@ const renderContent = () => {
 const Armor = () => {
     return (
         <View style={styles.container}>
-            <Card title='Armor Class' renderContent={renderContent} />
+            <Card title='Armor Class'>
+                {renderContent()}
+            </Card>
         </View>
     );
 };

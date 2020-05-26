@@ -8,9 +8,10 @@ import SkillsScreen from '../screens/SkillsScreen';
 import SpellsScreen from '../screens/SpellsScreen';
 import InventoryScreen from '../screens/InventoryScreen';
 import FeatsScreen from '../screens/FeatsScreen';
+import TestScreen from '../screens/TestScreen';
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Skills';
+const INITIAL_ROUTE_NAME = 'Test';
 
 export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerShown: false });
@@ -22,6 +23,14 @@ export default function BottomTabNavigator({ navigation, route }) {
         headerShown: false,
       }}
     >
+      <BottomTab.Screen
+        name="Test"
+        component={TestScreen}
+        options={{
+          title: 'Test',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="user" />,
+        }}
+      />
       <BottomTab.Screen
         name="Character"
         component={CharacterScreen}

@@ -42,17 +42,19 @@ const renderAccordionHeader = ({ name, action }) => {
     );
 };
 
-const renderContent = (data) => {
+const renderContent = (feats) => {
     return (
         <View>
-            <Accordion data={data} renderContent={renderAccordionContent} renderHeader={renderAccordionHeader} />
+            <Accordion data={feats} renderContent={renderAccordionContent} renderHeader={renderAccordionHeader} />
         </View>
     );
 }
 const FeatCard = ({ name, feats }) => {
     return (
         <View style={styles.container}>
-            <Card data={feats} title={name} renderContent={renderContent}/>
+            <Card title={name}>
+                {renderContent(feats)}
+            </Card>
         </View>
     );
 };

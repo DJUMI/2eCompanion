@@ -27,7 +27,9 @@ const renderContent = ({ mod, prof, item, temp, name, total }) => {
 const SkillCard = ({ skill }) => {
     return (
         <View style={styles.container}>
-            <Card data={skill} title={skill.name} renderContent={renderContent} />
+            <Card title={skill.name}>
+                {renderContent(skill)}
+            </Card>
         </View>
     );
 };
