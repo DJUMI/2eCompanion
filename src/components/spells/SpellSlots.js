@@ -4,7 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 
-import Card from '../Card';
+import { Card } from '../common';
 import Colors from '../../constants/Colors';
 
 const renderItem = (slot, i) => {

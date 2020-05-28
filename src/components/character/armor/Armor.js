@@ -3,8 +3,7 @@ import { View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import ArmorRow from './ArmorRow';
-import Card from '../../Card';
-import Separator from '../../Separator';
+import { Card, Separator } from '../../common';
 
 const ARMOR = [
     { title: 'MOD', value: 1 },

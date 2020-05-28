@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import Card from '../Card';
-import StatCircle from '../StatCircle';
+import { Card, StatCircle } from '../common';
 
 const renderContent = () => {
     return (

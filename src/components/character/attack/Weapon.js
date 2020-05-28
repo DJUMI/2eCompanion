@@ -1,9 +1,8 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import Colors from '../../../constants/Colors';
-import ModRow from '../../ModRow';
+import { ModRow } from '../../common';
 import WeaponInfo from './WeaponInfo';
 
 const Weapon = ({ item: { mod, prof, itemBonus, temp, name, dmg, traits } }) => {

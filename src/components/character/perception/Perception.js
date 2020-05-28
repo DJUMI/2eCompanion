@@ -2,10 +2,9 @@ import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import Card from '../../Card';
+import { Card, ModRow } from '../../common';
 import Colors from '../../../constants/Colors';
 import SensesList from './SensesList';
-import ModRow from '../../ModRow';
 
 const PERC = [
     { title: 'MOD', value: 4 },

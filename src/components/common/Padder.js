@@ -7,4 +7,4 @@ const Padder = () => {
     );
 };
 
-export default Padder;
+export { Padder };

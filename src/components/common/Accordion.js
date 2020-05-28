@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import Colors from '../constants/Colors';
-import Separator from './Separator';
+import Colors from '../../constants/Colors';
+import { Separator } from './Separator';
 
 const Accordion = ({ title, data, renderContent, renderHeader }) => {
     const [selected, setSelected] = useState(undefined);
@@ -54,7 +54,7 @@ const Accordion = ({ title, data, renderContent, renderHeader }) => {
     );
 };
 
-export default Accordion;
+export { Accordion };
 
 const styles = StyleSheet.create({
     titleContainer: {

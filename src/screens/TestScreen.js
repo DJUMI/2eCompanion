@@ -3,16 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import AnimatedTest from '../components/AnimatedTest';
 import MyTest from '../components/MyTest';
-import Card from '../components/Card';
 
 const TestScreen = () => {
     return (
         <View style={styles.container}>
-            {/* <Card title='Test Card'>
-                <View style={styles.contentContainer}>
-                    <Text style={styles.text}>Test Card Content</Text>
-                </View>
-            </Card> */}
             <AnimatedTest title='Test Card'>
                 <Text style={styles.text}>Test Card Content</Text>
             </AnimatedTest>

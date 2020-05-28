@@ -2,8 +2,8 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import ModCard from './ModCard';
-import CircleBtn from './CircleBtn';
+import { ModCard } from './ModCard';
+import { CircleBtn } from './CircleBtn';
 
 const ModRow = ({mods, stat}) => {
     return (
@@ -22,7 +22,7 @@ const ModRow = ({mods, stat}) => {
     );
 };
 
-export default ModRow;
+export { ModRow };
 
 const styles = EStyleSheet.create({
     row: {

@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import Colors from '../constants/Colors';
+import Colors from '../../constants/Colors';
 
 const renderClosed = (title) => {
     return (
@@ -50,7 +50,7 @@ const Card = ({ data, title, renderContent, children }) => {
     );
 };
 
-export default Card;
+export { Card };
 
 const styles = EStyleSheet.create({
     container: {

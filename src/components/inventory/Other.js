@@ -2,12 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import Accordion from '../Accordion';
-import Card from '../Card';
+import { Accordion, Card, Padder, Separator } from '../common';
 import Colors from '../../constants/Colors';
 import Data from '../../constants/InventoryData';
-import Padder from '../Padder';
-import Separator from '../Separator';
+
 
 const renderAccordionContent = ({ name, description }) => {
     return (

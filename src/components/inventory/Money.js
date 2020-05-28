@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import Card from '../Card';
-import ModCard from '../ModCard';
+import { Card, ModCard } from '../common';
 
 const renderContent = () => {
     return (

@@ -1,10 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import Card from '../Card';
-import ModCard from '../ModCard';
-import CircleBtn from '../CircleBtn';
-import StatCircle from '../StatCircle';
+import { Card, CircleBtn, ModCard, StatCircle } from '../common';
 
 const renderAttack = () => {
     return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import Colors from '../constants/Colors';
+import Colors from '../../constants/Colors';
 
 const CircleBtn = ({ title, value }) => {
     return (
@@ -15,7 +15,7 @@ const CircleBtn = ({ title, value }) => {
     );
 };
 
-export default CircleBtn;
+export { CircleBtn };
 
 const styles = EStyleSheet.create({
     btn: {

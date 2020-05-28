@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import Card from '../Card';
+import { Card, ModRow } from '../common';
 import ActionsList from './ActionsList';
-import ModRow from '../ModRow';
 
 const renderContent = ({ mod, prof, item, temp, name, total }) => {
     return (

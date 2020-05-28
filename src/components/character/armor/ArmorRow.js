@@ -2,8 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import ModCard from '../../ModCard';
-import StatCircle from '../../StatCircle';
+import { ModCard, StatCircle } from '../../common';
 
 const ArmorRow = ({mods, stat}) => {
     return (

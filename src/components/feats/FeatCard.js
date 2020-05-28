@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import Accordion from '../Accordion';
-import Card from '../Card';
+import { Accordion, Card } from '../common';
 import Colors from '../../constants/Colors';
 
 const renderAccordionContent = (feat) => {

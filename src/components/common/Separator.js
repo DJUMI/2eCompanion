@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import Colors from '../constants/Colors';
+
+import Colors from '../../constants/Colors';
 
 const Separator = () => {
     return (
@@ -14,4 +15,4 @@ const Separator = () => {
     );
 };
 
-export default Separator;
+export { Separator };

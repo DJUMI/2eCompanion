@@ -3,8 +3,7 @@ import { Text, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 
-import Card from '../../Card';
-import CircleBtn from '../../CircleBtn';
+import { Card, CircleBtn } from '../../common';
 
 const renderContent = () => {
     return (
