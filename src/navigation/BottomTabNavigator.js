@@ -11,7 +11,7 @@ import FeatsScreen from '../screens/FeatsScreen';
 import TestScreen from '../screens/TestScreen';
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Test';
+const INITIAL_ROUTE_NAME = 'Character';
 
 export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerShown: false });
