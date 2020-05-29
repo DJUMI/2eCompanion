@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Image, Text, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -6,9 +6,12 @@ import Colors from '../../constants/Colors';
 import Data from '../../constants/DetailsData';
 import DetailCard from './DetailCard';
 import LevelBtn from './LevelBtn';
+//import { Context } from '../../context/CharacterContext';
 
 
 const DetailsContent = () => {
+    //const { state } = useContext(Context);
+    
     return (
         <View style={styles.container}>
             <View style={styles.row}>

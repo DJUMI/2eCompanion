@@ -4,7 +4,7 @@ import ApiKeys from './src/constants/ApiKeys';
 class Fire {
     init() {
         if (!firebase.apps.length) {
-            firebase.initializeApp(ApiKeys);
+            firebase.initializeApp(ApiKeys.FirebaseConfig);
         }
 
         firebase.auth().onAuthStateChanged(user => {

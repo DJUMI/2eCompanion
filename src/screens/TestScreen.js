@@ -1,18 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useContext, useState } from 'react';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
-import AnimatedTest from '../components/AnimatedTest';
-import MyTest from '../components/MyTest';
+import { Context } from '../context/CharacterContext';
+import { Btn, Input } from '../components/common';
 
 const TestScreen = () => {
+    const { state, addCharacter, deleteCharacter } = useContext(Context);
+    const [character, setCharacter] = useState('');
+
     return (
         <View style={styles.container}>
-            <AnimatedTest title='Test Card'>
-                <Text style={styles.text}>Test Card Content</Text>
-            </AnimatedTest>
-            <MyTest title='My Test Card'>
-                <Text style={styles.text}>Test Card Content</Text>
-            </MyTest>
+            <FlatList
+                data={state}
+                renderItem={({ item }) => {
+                    return <Text>{item.name}</Text>
+                }} 
+            />
+            <Input
+                placeholder=''
+                label=''
+                value={character}
+                onChangeText={character => setCharacter(character)}
+            />
+            <Btn title='Add Character' onPress={() => addCharacter(character)}/>
+            <Btn title='Delete Character' onPress={() => deleteCharacter(character)}/>
         </View>
     );
 };
