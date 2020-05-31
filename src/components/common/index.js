@@ -2,6 +2,8 @@ export * from './Accordion';
 export * from './Btn';
 export * from './Card';
 export * from './CircleBtn';
+export * from './EditHeader';
+export * from './Header';
 export * from './Input';
 export * from './Loading';
 export * from './ModCard';

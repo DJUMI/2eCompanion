@@ -2,8 +2,8 @@ import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import SignInForm from '../components/auth/SignInForm';
-import Colors from '../constants/Colors';
+import SignInForm from '../../components/auth/SignInForm';
+import Colors from '../../constants/Colors';
 
 const SignInScreen = ({ navigation }) => {
     return (

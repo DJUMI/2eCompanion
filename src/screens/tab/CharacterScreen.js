@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import { Dimensions, Image, StatusBar, StyleSheet, Text, View } from 'react-native';
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 
-import CharacterContent from '../components/character/CharacterContent';
-import { Context } from '../context/CharacterContext';
-import { MAX_HEADER_HEIGHT, MIN_HEADER_HEIGHT } from '../constants/Dimensions';
-import { Loading } from '../components/common';
+import CharacterContent from '../../components/character/CharacterContent';
+import { Context } from '../../context/CharacterContext';
+import { MAX_HEADER_HEIGHT, MIN_HEADER_HEIGHT } from '../../constants/Dimensions';
+import { Header, Loading } from '../../components/common';
 
 const renderContent = () => {
   return (
@@ -16,12 +16,12 @@ const renderContent = () => {
       foregroundExtrapolate={null}
       renderHeader={() => (
         <View style={{ flex: 1 }}>
-          <Image source={require('../../assets/images/Besh.png')} style={styles.image} />
+          <Image source={require('../../../assets/images/Besh.png')} style={styles.image} />
         </View>
       )}
       renderFixedForeground={() => (
         <View style={styles.title}>
-          <Text style={styles.titleText}>Besh Wellspring Gnome Leaf Druid</Text>
+          <Text style={styles.titleText}>Besh</Text>
         </View>
       )}
     >
@@ -34,7 +34,7 @@ const renderContent = () => {
   );
 };
 
-const CharacterScreen = () => {
+const CharacterScreen = ({ navigation }) => {
   const { state, fetchCharacters } = useContext(Context);
 
   const renderLoading = () => {
@@ -45,6 +45,7 @@ const CharacterScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
+      <Header navigation={navigation}/>
       {state.characters.length ?
         renderContent() :
         renderLoading()

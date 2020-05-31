@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import firebase from 'firebase';
 
-import { Context as CharacterContext } from '../context/CharacterContext';
-import { Context as UserContext } from '../context/UserContext';
-import { Btn, Input } from '../components/common';
+import { Context as CharacterContext } from '../../context/CharacterContext';
+import { Context as UserContext } from '../../context/UserContext';
+import { Btn, Header, Input } from '../../components/common';
 
-const TestScreen = () => {
+const TestScreen = ({ navigation }) => {
     const { state: { user } } = useContext(UserContext);
     const { state, createCharacter, deleteCharacter, switchCharacter, fetchCharacters } = useContext(CharacterContext);
     const [character, setCharacter] = useState('');
@@ -25,6 +25,7 @@ const TestScreen = () => {
 
     return (
         <View style={styles.container}>
+            <Header navigation={navigation} />
             <Text>Available Characters:</Text>
             <FlatList
                 data={state.characters}

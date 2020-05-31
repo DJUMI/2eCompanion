@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { useEffect } from 'react';
-import { Dimensions, Platform, StatusBar, StyleSheet, TouchableOpacity, YellowBox, View } from 'react-native';
+import { Dimensions, Platform, StatusBar, StyleSheet, YellowBox, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import firebase from 'firebase';
 
@@ -11,7 +11,7 @@ import { Provider as CharacterProvider } from './src/context/CharacterContext';
 import { Provider as UserProvider } from './src/context/UserContext';
 import useCachedResources from './src/hooks/useCachedResources';
 import AuthNavigator from './src/navigation/AuthNavigator';
-import BottomTabNavigator from './src/navigation/BottomTabNavigator';
+import DrawerNavigator from './src/navigation/DrawerNavigator';
 import LinkingConfiguration from './src/navigation/LinkingConfiguration';
 import { Spinner } from './src/components/common';
 
@@ -47,7 +47,7 @@ export default function App(props) {
             <UserProvider>
               <NavigationContainer linking={LinkingConfiguration}>
                 <Stack.Navigator>
-                  <Stack.Screen name="Root" component={BottomTabNavigator} />
+                  <Stack.Screen name="Root" component={DrawerNavigator} />
                 </Stack.Navigator>
               </NavigationContainer>
             </UserProvider>
@@ -68,9 +68,7 @@ export default function App(props) {
       default:
         return (
           <View style={styles.contentContainer}>
-            <TouchableOpacity>
-              <Spinner />
-            </TouchableOpacity>
+            <Spinner />
           </View>
         );
     }
@@ -92,6 +90,7 @@ export default function App(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'tan',
   },
   contentContainer: {
     flex: 1,

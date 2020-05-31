@@ -46,3 +46,5 @@ common components
     replace touchable opacities
     animate card opening/closing
     animate accordion opening/closing
+edit
+    navigate to and from same tab as tabs screen

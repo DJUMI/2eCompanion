@@ -2,8 +2,8 @@ import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import SignUpForm from '../components/auth/SignUpForm';
-import Colors from '../constants/Colors';
+import SignUpForm from '../../components/auth/SignUpForm';
+import Colors from '../../constants/Colors';
 
 const SignUpScreen = ({ navigation }) => {
     return (

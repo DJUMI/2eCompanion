@@ -2,26 +2,21 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 
 import TabBarIcon from '../components/TabBarIcon';
-import CharacterScreen from '../screens/CharacterScreen';
-import DetailsScreen from '../screens/DetailsScreen';
-import SkillsScreen from '../screens/SkillsScreen';
-import SpellsScreen from '../screens/SpellsScreen';
-import InventoryScreen from '../screens/InventoryScreen';
-import FeatsScreen from '../screens/FeatsScreen';
-import TestScreen from '../screens/TestScreen';
+import CharacterScreen from '../screens/tab/CharacterScreen';
+import DetailsScreen from '../screens/tab/DetailsScreen';
+import SkillsScreen from '../screens/tab/SkillsScreen';
+import SpellsScreen from '../screens/tab/SpellsScreen';
+import InventoryScreen from '../screens/tab/InventoryScreen';
+import FeatsScreen from '../screens/tab/FeatsScreen';
+import TestScreen from '../screens/tab/TestScreen';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Character';
 
 export default function BottomTabNavigator({ navigation, route }) {
-  navigation.setOptions({ headerShown: false });
-
   return (
     <BottomTab.Navigator 
       initialRouteName={INITIAL_ROUTE_NAME}
-      screenOptions={{
-        headerShown: false,
-      }}
     >
       <BottomTab.Screen
         name="Character"
