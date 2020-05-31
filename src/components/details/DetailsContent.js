@@ -3,15 +3,15 @@ import { Image, Text, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
-import Data from '../../constants/DetailsData';
 import DetailCard from './DetailCard';
 import LevelBtn from './LevelBtn';
-//import { Context } from '../../context/CharacterContext';
+import { Context } from '../../context/CharacterContext';
 
 
 const DetailsContent = () => {
-    //const { state } = useContext(Context);
-    
+    const { state } = useContext(Context);
+    const data = state.characters[state.current].details;
+        
     return (
         <View style={styles.container}>
             <View style={styles.row}>
@@ -22,58 +22,58 @@ const DetailsContent = () => {
                     /> 
                 </View>
                 <View style={styles.levelContainer}>
-                    <LevelBtn />
+                    <LevelBtn level={data.level}/>
                 </View>
             </View>
-            <DetailCard title='Name' value={Data.name} />
+            <DetailCard title='Name' value={data.name} />
 
-            <DetailCard title='Ancestry and Heritage' value={Data.ancestry} />
+            <DetailCard title='Ancestry and Heritage' value={data.ancestry} />
 
             <View style={styles.row}>
-                <DetailCard title='Class' value={Data.class} />
-                <DetailCard title='Background' value={Data.background} />
+                <DetailCard title='Class' value={data.class} />
+                <DetailCard title='Background' value={data.background} />
             </View>
 
             <View style={styles.row}>
-                <DetailCard title='Size' value={Data.size} />
-                <DetailCard title='Alignment' value={Data.alignment} />
-                <DetailCard title='Deity' value={Data.deity} />
+                <DetailCard title='Size' value={data.size} />
+                <DetailCard title='Alignment' value={data.alignment} />
+                <DetailCard title='Deity' value={data.deity} />
             </View>
 
             <View style={styles.row}>
-                <DetailCard title='Ethnicity' value={Data.ethnicity} />
-                <DetailCard title='Nationality' value={Data.nationality} />
+                <DetailCard title='Ethnicity' value={data.ethnicity} />
+                <DetailCard title='Nationality' value={data.nationality} />
             </View>
 
             <View style={styles.row}>
-                <DetailCard title='Birthplace' value={Data.birthplace} />
-                <DetailCard title='Age' value={Data.age} />
+                <DetailCard title='Birthplace' value={data.birthplace} />
+                <DetailCard title='Age' value={data.age} />
             </View>
 
             <View style={styles.row}>
-                <DetailCard title='Gender' value={Data.gender} />
-                <DetailCard title='Height' value={Data.height} />
-                <DetailCard title='Weight' value={Data.weight} />
+                <DetailCard title='Gender' value={data.gender} />
+                <DetailCard title='Height' value={data.height} />
+                <DetailCard title='Weight' value={data.weight} />
             </View>
 
-            <DetailCard title='Appearance' value={Data.appearance} />
+            <DetailCard title='Appearance' value={data.appearance} />
 
             <View style={styles.header}>
                 <Text style={styles.headerText}>Personality</Text>
             </View>
 
-            <DetailCard title='Attitude' value={Data.attitude} />
-            <DetailCard title='Beliefs' value={Data.beliefs} />
-            <DetailCard title='Likes' value={Data.likes} />
-            <DetailCard title='Dislikes' value={Data.dislikes} />
-            <DetailCard title='Catchphrases' value={Data.catchphrases} />
+            <DetailCard title='Attitude' value={data.attitude} />
+            <DetailCard title='Beliefs' value={data.beliefs} />
+            <DetailCard title='Likes' value={data.likes} />
+            <DetailCard title='Dislikes' value={data.dislikes} />
+            <DetailCard title='Catchphrases' value={data.catchphrases} />
 
             <View style={styles.header}>
                 <Text style={styles.headerText}>Campaign Notes</Text>
             </View>
 
             <View style={styles.notesContainer}>
-                <Text style={styles.noteText}>{Data.notes}</Text>
+                <Text style={styles.noteText}>{data.notes}</Text>
             </View>
         </View>
     );

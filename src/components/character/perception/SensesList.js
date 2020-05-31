@@ -1,20 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 import Colors from '../../../constants/Colors';
 
-const SensesList = () => {
-    const SENSES = ['Low-light Vision'];
+const SensesList = ({ data }) => {
     return (
         <View style={styles.container}>
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>Senses</Text>
             </View>
-            {SENSES.map(sense => (
-                <View style={styles.itemContainer}>
-                    <Text style={styles.text}>{sense}</Text>
-                </View>
-            ))}
+            <FlatList
+                data={data}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({ item }) => {
+                    return (
+                        <View style={styles.itemContainer}>
+                            <Text style={styles.text}>{item}</Text>
+                        </View>
+                    );
+                }}
+            />
         </View>
     );
 };
@@ -30,7 +35,7 @@ const styles = StyleSheet.create({
     },
     title: {
         color: 'white',
-        fontSize: 18,  
+        fontSize: 18,
     },
     itemContainer: {
         marginHorizontal: 5,

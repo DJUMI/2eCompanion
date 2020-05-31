@@ -2,10 +2,10 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-const HP = () => {
+const HP = ({ hp: { current, max } }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>35/55</Text>
+            <Text style={styles.text}>{current}/{max}</Text>
         </View>
     );
 };

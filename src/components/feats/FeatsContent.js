@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View } from 'react-native';
 
 import FeatCard from './FeatCard';
-import Data from '../../constants/FeatsData';
+import { Context } from '../../context/CharacterContext';
 
 const FeatsContent = () => {
+    const { state } = useContext(Context);
+    const { ancestry, general, skill } = state.characters[state.current].feats;
+
     return (
         <View>
-            <FeatCard name='Ancestry Feats and Abilities' feats={Data.A_FEATS} />
-            <FeatCard name='Class Feats and Abilities' feats={Data.C_FEATS} />
-            <FeatCard name='General Feats' feats={Data.G_FEATS} />
-            <FeatCard name='Skill Feats' feats={Data.S_FEATS} />
+            <FeatCard name='Ancestry Feats and Abilities' feats={ancestry} />
+            <FeatCard name='Class Feats and Abilities' feats={state.characters[state.current].feats.class} />
+            <FeatCard name='General Feats' feats={general} />
+            <FeatCard name='Skill Feats' feats={skill} />
         </View>
     );
 };

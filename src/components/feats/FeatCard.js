@@ -1,33 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 import { Accordion, Card } from '../common';
 import Colors from '../../constants/Colors';
 
-const renderAccordionContent = (feat) => {
+const renderAccordionContent = ({ type, level, traits, trigger, description }) => {
     return (
         <View style={styles.contentContainer}>
             <View style={styles.topContainer}>
                 <View style={styles.row}>
-                    <Text style={styles.type}>{feat.type}</Text>
-                    <Text style={styles.level}>{feat.level}</Text>
+                    <Text style={styles.type}>{type}</Text>
+                    <Text style={styles.level}>{level}</Text>
                 </View>
                 <View style={styles.traitsContainer}>
-                    {feat.traits.map(trait => (
-                        <View style={styles.trait}>
-                            <Text style={styles.traitText}>{trait}</Text>
-                        </View>
-                    ))}
+                    <FlatList
+                        horizontal
+                        data={traits}
+                        keyExtractor={(item, index) => index.toString()}
+                        renderItem={({ item }) => {
+                            return (
+                                <View style={styles.trait}>
+                                    <Text style={styles.traitText}>{item}</Text>
+                                </View>
+                            );
+                        }}
+                    />
                 </View>
-                {feat.trigger ?
+                {trigger ?
                     <Text style={styles.triggerText}>
                         <Text style={styles.triggerTitle}>Trigger </Text>
-                        {feat.trigger}
+                        {trigger}
                     </Text> :
                     null
                 }
             </View>
-            <Text style={styles.descriptionText}>{feat.description}</Text>
+            <Text style={styles.descriptionText}>{description}</Text>
         </View>
     );
 };
@@ -41,18 +48,15 @@ const renderAccordionHeader = ({ name, action }) => {
     );
 };
 
-const renderContent = (feats) => {
-    return (
-        <View>
-            <Accordion data={feats} renderContent={renderAccordionContent} renderHeader={renderAccordionHeader} />
-        </View>
-    );
-}
 const FeatCard = ({ name, feats }) => {
     return (
         <View style={styles.container}>
             <Card title={name}>
-                {renderContent(feats)}
+                <Accordion
+                    data={feats}
+                    renderContent={renderAccordionContent}
+                    renderHeader={renderAccordionHeader}
+                />
             </Card>
         </View>
     );
@@ -79,7 +83,7 @@ const styles = StyleSheet.create({
         color: 'white',
         paddingBottom: 3,
         paddingRight: 5,
-    },level: {
+    }, level: {
         color: 'white',
         paddingBottom: 3,
     },

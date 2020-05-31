@@ -1,0 +1,143 @@
+{
+    details: {
+        name: String,
+        image: String,
+        level: Number,
+        ancestry: String,
+        heritage: String,
+        class: String,
+        background: String,
+        size: String,
+        alignment: String,
+        deity: String,
+        ethnicity: String,
+        nationality: String,
+        birthplace: String,
+        age: Number,
+        gender: String,
+        height: String,
+        weight: String,
+        appearance: String,
+        attitude: String,
+        beliefs: String,
+        likes: String,
+        dislikes: String,
+        catchphrases: String,
+        notes: String[]
+    },
+    inventory: {
+        bulk: { current: Number, max: Number },
+        money: {
+            cp: Number,
+            sp: Number,
+            GP: Number,
+            PP: Number,
+        },
+        other: [{ title: String, bulk: Number, qty: Number }],
+        readied: [{ title: String, bulk: Number, qty: Number }],
+        worn: [{ title: String, bulk: Number, qty: Number }]
+    },
+    spells: {
+        tradition: String,
+        casterType: String,
+        key: { 
+            title: String,
+            value: Number,
+        },
+        proficency: {
+            title: String,
+            value: Number,
+        },
+        slots: [
+            {current: Number, max: Number}
+        ],
+        innate: Spell[],
+        focus: {
+            points: {current: Number, max: Number},
+            spells: Spell[]
+        },
+        cantrips: Spell[],
+        spells: Spell[][],
+        item: Spell[]
+    },
+    feats: {
+        ancestry: [
+            {
+                name: String,
+                type: String
+                level: String,
+                traits: String[],
+                trigger: String,
+                action: String,
+                description: String
+            }
+        ],
+        class: Feat[],
+        general: Feat[],
+        skill: Feat[]
+    }
+    skills: [
+        { 
+            title: String, 
+            mod: { title: String, value: Number }, 
+            prof: { title: String, value: Number }, 
+            item: Number, 
+            temp: Number, 
+            total: Number 
+        }
+    ],
+    character: {
+        hp: {current: Number, max: Number},
+        conditions: Condition[],
+        dying: Number,
+        wounded: Number,
+        abilityScores: [{title: String, value: Number}],
+        armor: {
+            mod: Number,
+            proficency: {
+                title: String,
+                value: Number,
+            },
+            item: Number,
+            temp: Number
+        },
+        shield: {
+            bonus: Number,
+            temp: Number,
+            hardness: Number,
+            bt: Number,
+            hp: {current: Number, max: Number}
+        },
+        saves: [
+            {
+                title: String,
+                proficency: String,
+                value: Number
+            }
+        ],
+        perception: {
+            mod: { title: String, value: Number },
+            proficency: {
+                title: String,
+                value: Number
+            },
+            item: Number,
+            temp: Number,
+            initiativeBonus: Number,
+            senses: [{ title: String, description: String}]
+        },
+        melee: [
+            {
+                name: String,
+                mod: { title: String, value: Number },
+                prof: { title: String, value: Number },
+                item: Number,
+                temp: Number,
+                dmg: String,
+                dmgType: String[],
+                traits: String[]
+            }
+        ],
+        ranged: Weapon[],
+    }
+}

@@ -3,19 +3,13 @@ import { StyleSheet, View } from 'react-native';
 
 import { Card, StatCircle } from '../common';
 
-const renderContent = () => {
-    return (
-        <View style={styles.contentContainer}>
-            <StatCircle title={5} value={10} />
-        </View>
-    );
-};
-
-const Bulk = () => {
+const Bulk = ({ data }) => {
     return (
         <View style={styles.container}>
             <Card title='Bulk'>
-                {renderContent()}
+                <View style={styles.contentContainer}>
+                    <StatCircle title={data.current} value={data.max} />
+                </View>
             </Card>
         </View>
     );

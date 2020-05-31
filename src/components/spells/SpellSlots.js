@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, FlatList } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
-
 
 import { Card } from '../common';
 import Colors from '../../constants/Colors';
@@ -20,7 +19,7 @@ const renderItem = (slot, i) => {
                     />
                 </TouchableOpacity>
                 <View style={styles.valueContainer}>
-                    <Text style={styles.valueText}>{slot.curr}/{slot.max}</Text>
+                    <Text style={styles.valueText}>{slot.current}/{slot.max}</Text>
                 </View>
                 <TouchableOpacity style={styles.bottomBtn}>
                     <FontAwesome5
@@ -35,44 +34,33 @@ const renderItem = (slot, i) => {
     );
 };
 
-const renderContent = () => {
-    const SLOTS = [
-        { max: 3, curr: 3 },
-        { max: 2, curr: 2 },
-        { max: 0, curr: 0 },
-        { max: 0, curr: 0 },
-        { max: 0, curr: 0 },
-        { max: 0, curr: 0 },
-        { max: 0, curr: 0 },
-        { max: 0, curr: 0 },
-        { max: 0, curr: 0 },
-        { max: 0, curr: 0 },
-    ];
-    return (
-        <View style={styles.contentContainer}>
-            <View style={styles.row}>
-                {SLOTS.slice(0, 5).map((slot, i) => (
-                    slot.max ?
-                        renderItem(slot, i) :
-                        null
-                ))}
-            </View>
-            <View style={styles.row}>
-                {SLOTS.slice(5).map((slot, i) => (
-                    slot.max ?
-                        renderItem(slot, i + 5) :
-                        null
-                ))}
-            </View>
-        </View>
-    );
-};
-
-const SpellSlots = () => {
+const SpellSlots = ({ data }) => {
     return (
         <View style={styles.container}>
             <Card title='Spell Slots'>
-                {renderContent()}
+                {data.length ?
+                    <View style={styles.contentContainer}>
+                        <View style={styles.row}>
+                            <FlatList
+                                data={data.slice(0, 5)}
+                                keyExtractor={(item, index) => index.toString()}
+                                renderItem={({ item, index }) => renderItem(item, index)}
+                                horizontal
+                                contentContainerStyle={styles.list}
+                            />
+                        </View>
+                        <View style={styles.row}>
+                            <FlatList
+                                data={data.slice(5)}
+                                keyExtractor={(item, index) => index.toString()}
+                                renderItem={({ item, index }) => renderItem(item, index)}
+                                horizontal
+                                contentContainerStyle={styles.list}
+                            />
+                        </View>
+                    </View> :
+                    null
+                }
             </Card>
         </View>
     );
@@ -133,4 +121,8 @@ const styles = EStyleSheet.create({
         flex: 1,
         justifyContent: 'center',
     },
+    list: {
+        flex: 1,
+        justifyContent: 'center'
+    }
 });

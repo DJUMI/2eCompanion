@@ -5,21 +5,24 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import { ModRow } from '../../common';
 import WeaponInfo from './WeaponInfo';
 
-const Weapon = ({ item: { mod, prof, itemBonus, temp, name, dmg, traits } }) => {
-    const MODS = [
-        { title: 'MOD', value: mod },
-        { title: 'PROF', value: prof },
-        { title: 'ITEM', value: itemBonus },
-        { title: 'TEMP', value: temp },
-    ];
+const Weapon = ({ item: { dmg, dmgType, item, mod, name, notes, prof, temp, traits } }) => {
+    const total = mod.value + prof.value + item + temp;
 
     return (
         <View style={styles.container}>
-            <ModRow mods={MODS} stat={{ title: `${name} Attack`, value: 6 }}/>
+            <ModRow
+                mods={[
+                    { title: mod.title, value: mod.value },
+                    { title: 'PROF', value: `${prof.title}${prof.value}` },
+                    { title: 'ITEM', value: item },
+                    { title: 'TEMP', value: temp },
+                ]}
+                stat={{ title: `${name} Attack`, value: total }}
+            />
             <View style={styles.row}>
-                <WeaponInfo title='Weapon' value={name}/>
-                <WeaponInfo title='DMG' value={dmg}/>
-                <WeaponInfo title='Traits' value={traits}/>
+                <WeaponInfo title='Weapon' value={name} />
+                <WeaponInfo title='DMG' value={`${dmg} ${dmgType.join(', ')}`} />
+                <WeaponInfo title='Traits' value={traits.join(', ')} />
             </View>
         </View>
     );

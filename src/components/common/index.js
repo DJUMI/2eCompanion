@@ -9,3 +9,4 @@ export * from './Padder';
 export * from './Separator';
 export * from './Spinner';
 export * from './StatCircle';
+export * from './TinyCard';

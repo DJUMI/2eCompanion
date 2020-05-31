@@ -6,32 +6,28 @@ import { Card, ModRow } from '../../common';
 import Colors from '../../../constants/Colors';
 import SensesList from './SensesList';
 
-const PERC = [
-    { title: 'MOD', value: 4 },
-    { title: 'PROF', value: 'E7' },
-    { title: 'ITEM', value: 0 },
-    { title: 'TEMP', value: 0 },
-];
-
-const renderContent = () => {
-    return (
-        <View style={styles.itemContainer}>
-            <ModRow mods={PERC} stat={{ title: 'Perception', value: 'E11' }} />
-            <View style={styles.row}>
-                <TouchableOpacity style={styles.btn}>
-                    <Text style={styles.btnText}>Initiative</Text>
-                </TouchableOpacity>
-                <SensesList />
-            </View>
-        </View>
-    );
-}
-
-const Perception = () => {
+const Perception = ({ data }) => {
+    const total = data.mod.value + data.prof.value + data.item + data.temp;
     return (
         <View style={styles.container}>
             <Card title='Perception'>
-                {renderContent()}
+                <View style={styles.itemContainer}>
+                    <ModRow 
+                        mods={[
+                            { title: data.mod.title, value: data.mod.value },
+                            { title: 'PROF', value: `${data.prof.title}${data.prof.value}` },
+                            { title: 'ITEM', value: data.item },
+                            { title: 'TEMP', value: data.temp },
+                        ]}
+                         stat={{ title: 'Perception', value: `${data.prof.title}${total}` }} 
+                    />
+                    <View style={styles.row}>
+                        <TouchableOpacity style={styles.btn}>
+                            <Text style={styles.btnText}>Initiative</Text>
+                        </TouchableOpacity>
+                        <SensesList data={data.senses}/>
+                    </View>
+                </View>
             </Card>
         </View>
     );

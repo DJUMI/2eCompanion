@@ -1,45 +1,23 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, FlatList } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { Card, Separator } from '../../common';
 import Weapon from './Weapon';
 
-const renderContent = () => {
-    return (
-        <View style={styles.contentContainer}>
-            <Weapon
-                item={{
-                    mod: '1',
-                    prof: 'T5',
-                    itemBonus: '0',
-                    temp: '0',
-                    name: 'Staff',
-                    dmg: '1d6+1',
-                    traits: ''
-                }}
-            />
-            <Separator />
-            <Weapon
-                item={{
-                    mod: '1',
-                    prof: 'T5',
-                    itemBonus: '0',
-                    temp: '0',
-                    name: 'Unarmed',
-                    dmg: '1d4+1',
-                    traits: 'agile'
-                }}
-            />
-        </View>
-    );
-};
-
-const Melee = () => {
+const Melee = ({ data }) => {
     return (
         <View style={styles.container}>
             <Card title='Melee Strikes'>
-                {renderContent()}
+                <FlatList
+                    data={data}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => {
+                        return <Weapon item={item} />
+                    }}
+                    ItemSeparatorComponent={Separator}
+                    contentContainerStyle={styles.contentContainer}
+                />
             </Card>
         </View>
     );

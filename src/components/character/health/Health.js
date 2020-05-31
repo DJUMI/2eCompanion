@@ -6,14 +6,14 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import HP from './HP';
 import Status from './Status';
 
-const Health = () => {
+const Health = ({ data: { hp, dying, wounded, conditions }}) => {
     return (
         <View style={styles.container}>
             <View style={styles.HPContainer}>
-                <HP />
+                <HP hp={hp}/>
             </View>
             <View style={styles.statusContainer}>
-                <Status />
+                <Status data={{ dying, wounded, conditions }} />
             </View>
         </View>
     );

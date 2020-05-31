@@ -4,30 +4,24 @@ import { StyleSheet, View } from 'react-native';
 import { Card, ModRow } from '../common';
 import ActionsList from './ActionsList';
 
-const renderContent = ({ mod, prof, item, temp, name, total }) => {
-    return (
-        <View>
-            <View style={styles.contentContainer}>
-                <ModRow
-                    mods={[
-                        { title: 'MOD', value: mod },
-                        { title: 'PROF', value: prof },
-                        { title: 'ITEM', value: item },
-                        { title: 'TEMP', value: temp }
-                    ]}
-                    stat={{ title: name, value: total }}
-                />
-            </View>
-            <ActionsList />
-        </View>
-    );
-};
-
-const SkillCard = ({ skill }) => {
+const SkillCard = ({ skill: { title, mod, prof, item, temp, total } }) => {
     return (
         <View style={styles.container}>
-            <Card title={skill.name}>
-                {renderContent(skill)}
+            <Card title={title}>
+                <View>
+                    <View style={styles.contentContainer}>
+                        <ModRow
+                            mods={[
+                                { title: mod.title, value: mod.value },
+                                { title: 'PROF', value: `${prof.title}${prof.value}` },
+                                { title: 'ITEM', value: item },
+                                { title: 'TEMP', value: temp }
+                            ]}
+                            stat={{ title: title, value: total }}
+                        />
+                    </View>
+                    <ActionsList />
+                </View>
             </Card>
         </View>
     );

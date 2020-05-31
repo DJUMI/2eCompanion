@@ -5,20 +5,14 @@ import { Card } from '../common';
 import Schools from './Schools';
 import Colors from '../../constants/Colors';
 
-const renderContent = () => {
-    return (
-        <View style={styles.contentContainer}>
-            <Schools />
-            <Text style={styles.text}>Prepared</Text>
-        </View>
-    );
-}
-
-const Tradition = () => {
+const Tradition = ({ data: { tradition, casterType }}) => {
     return (
         <View style={styles.container}>
             <Card title='Tradition'>
-                {renderContent()}
+                <View style={styles.contentContainer}>
+                    <Schools school={tradition}/>
+                    <Text style={styles.text}>{casterType}</Text>
+                </View>
             </Card>
         </View>
     );

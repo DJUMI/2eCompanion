@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, FlatList } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { ModCard, StatCircle } from '../../common';
@@ -7,11 +7,15 @@ import { ModCard, StatCircle } from '../../common';
 const ArmorRow = ({mods, stat}) => {
     return (
         <View style={styles.row}>
-            <View style={styles.modContainer}>
-                {mods.map((mod) => (
-                    <ModCard title={mod.title} value={mod.value}/>
-                ))}
-            </View>
+            <FlatList
+                horizontal
+                data={mods}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({ item }) => {
+                    return <ModCard title={item.title} value={item.value} />
+                }}
+                contentContainerStyle={styles.modContainer}
+            />
             <Text style={styles.text}>=</Text>
             <StatCircle
                 title={stat.title}

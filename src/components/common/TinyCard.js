@@ -8,15 +8,7 @@ import Colors from '../../constants/Colors';
 const renderClosed = (title) => {
     return (
         <View style={styles.closedContainer}>
-            <View style={styles.iconContainer}></View>
             <Text style={styles.titleText}>{title}</Text>
-            <View style={styles.iconContainer}>
-                <FontAwesome5
-                    name='caret-down'
-                    color='white'
-                    size={20}
-                />
-            </View>
         </View>
     );
 };
@@ -29,7 +21,7 @@ const renderExpanded = (title) => {
     );
 };
 
-const Card = ({ title, children }) => {
+const TinyCard = ({ title, children }) => {
     const [isExpanded, setIsExpanded] = useState(true);
 
     return (
@@ -50,10 +42,11 @@ const Card = ({ title, children }) => {
     );
 };
 
-export { Card };
+export { TinyCard };
 
 const styles = EStyleSheet.create({
     container: {
+        flex: 1,
         elevation: 5,
         shadowColor: "#000",
         shadowOffset: {
@@ -78,11 +71,11 @@ const styles = EStyleSheet.create({
     },
     titleText: {
         color: 'white',
-        fontSize: 20,
+        fontSize: 16,
         padding: 5,
     },
     itemContainer: {
-        backgroundColor: Colors.lightBrown,
+        backgroundColor: Colors.mediumBrown,
         borderBottomLeftRadius: 5,
         borderBottomRightRadius: 5,
         overflow: 'hidden',

@@ -2,47 +2,25 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import { Card } from '../../common';
-import ConditionsList from './ConditionsList';
-import Colors from '../../../constants/Colors';
+import { Padder, TinyCard } from '../../common';
+import Conditions from './Conditions';
 
-const renderConditions = () => {
-    return (
-        <ConditionsList />
-    );
-};
-
-const renderDying = () => {
-    return (
-        <Text style={styles.dyingText}>0</Text>
-    );
-};
-
-const Status = () => {
+const Status = ({ data: { dying, wounded, conditions }}) => {
     return (
         <View style={styles.container}>
-            <Card title='Conditions'>
-                {renderConditions()}
-            </Card>
+            <Conditions conditions={conditions}/>
             <View style={styles.dyingWoundedContainer}>
-                <View style={styles.dying}>
-                    <View style={styles.topContainer}>
-                        <Text style={styles.dyingText}>Dying</Text>
-                    </View>
+                <TinyCard title='Dying'>
                     <View style={styles.bottomContainer}>
-                        <Text style={styles.dyingText}>0</Text>
+                        <Text style={styles.text}>{dying}</Text>
                     </View>
-                </View>
-                {/* <Card title='Dying' renderContent={renderDying}/>
-                <Card title='Wounded' renderContent={renderDying} /> */}
-                <View style={styles.wounded}>
-                    <View style={styles.topContainer}>
-                        <Text style={styles.dyingText}>Wounded</Text>
-                    </View>
+                </TinyCard>
+                <Padder />
+                <TinyCard title='Wounded'>
                     <View style={styles.bottomContainer}>
-                        <Text style={styles.dyingText}>0</Text>
+                        <Text style={styles.text}>{wounded}</Text>
                     </View>
-                </View>
+                </TinyCard>
             </View>
         </View>
     );
@@ -52,31 +30,7 @@ export default Status;
 
 const styles = EStyleSheet.create({
     container: {
-        flex: 1,
         padding: 10,
-    },
-    conditions: {
-        flex: 2,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-    },
-    titleContainer: {
-        backgroundColor: Colors.blue,
-        alignItems: 'center',
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5,
-        paddingVertical: 5,
-    },
-    title: {
-        fontWeight: 'bold',
-        fontSize: 20,
-        color: 'white',
     },
     dyingWoundedContainer: {
         flex: 1,
@@ -84,56 +38,14 @@ const styles = EStyleSheet.create({
         justifyContent: 'space-between',
         paddingTop: 10,
     },
-    dying: {
-        flex: 1,
-        marginRight: 10,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-    },
-    wounded: {
-        flex: 1,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-    },
-    topContainer: {
-        flex: 1,
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5,
-        backgroundColor: Colors.blue,
-        alignItems: 'center',
-        justifyContent: 'center',
-
-    },
     bottomContainer: {
         flex: 1,
-        flexDirection: 'row',
-        backgroundColor: Colors.mediumBrown,
         alignItems: 'center',
         justifyContent: 'center',
-        borderBottomLeftRadius: 5,
-        borderBottomRightRadius: 5,
     },
-    dyingText: {
-        fontWeight: 'bold',
+    text: {
         color: 'white',
         fontSize: 16,
+        padding: 5,
     },
-    btn: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingHorizontal: 10,
-    }
 });

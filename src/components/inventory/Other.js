@@ -2,40 +2,38 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import { Accordion, Card, Padder, Separator } from '../common';
+import { Accordion, Card, Padder } from '../common';
 import Colors from '../../constants/Colors';
-import Data from '../../constants/InventoryData';
 
-
-const renderAccordionContent = ({ name, description }) => {
+const renderAccordionContent = ({ title, description }) => {
     return (
         <View style={styles.accordionContentContainer}>
             <Text style={styles.descriptionText}>{description}</Text>
             <View style={styles.btnContainer}>
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={() => console.log(`Sell 1 ${name}`)}
+                    onPress={() => console.log(`Sell 1 ${title}`)}
                 >
                     <Text style={styles.btnText}>Sell 1</Text>
                 </TouchableOpacity>
                 <Padder />
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={() => console.log(`Discard 1 ${name}`)}
+                    onPress={() => console.log(`Discard 1 ${title}`)}
                 >
                     <Text style={styles.btnText}>Discard 1</Text>
                 </TouchableOpacity>
                 <Padder />
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={() => console.log(`Add 1 ${name}`)}
+                    onPress={() => console.log(`Add 1 ${title}`)}
                 >
                     <Text style={styles.btnText}>Add 1</Text>
                 </TouchableOpacity>
                 <Padder />
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={() => console.log(`Buy 1 ${name}`)}
+                    onPress={() => console.log(`Buy 1 ${title}`)}
                 >
                     <Text style={styles.btnText}>Buy 1</Text>
                 </TouchableOpacity>
@@ -44,41 +42,35 @@ const renderAccordionContent = ({ name, description }) => {
     );
 };
 
-const renderAccordionHeader = ({ name, bulk, quantity }) => {
+const renderAccordionHeader = ({ title, bulk, qty }) => {
     return (
         <View style={styles.headerContainer}>
-            <Text style={styles.headerText}>{name}</Text>
+            <Text style={styles.headerText}>{title}</Text>
             <Text style={styles.headerText}>{bulk}</Text>
-            <Text style={styles.headerText}>{quantity}</Text>
+            <Text style={styles.headerText}>{qty}</Text>
         </View>
     );
 };
 
-const renderContent = () => {
-    return (
-        <View style={styles.contentContainer}>
-            <Accordion
-                data={Data.OTHER}
-                renderContent={renderAccordionContent}
-                renderHeader={renderAccordionHeader}
-            />
-            <View style={styles.addBtnContainer}>
-                <TouchableOpacity style={styles.addBtn}>
-                    <FontAwesome5
-                        name='plus'
-                        color='white'
-                    />
-                </TouchableOpacity>
-            </View>
-        </View>
-    );
-};
-
-const Other = () => {
+const Other = ({ data }) => {
     return (
         <View style={styles.container}>
             <Card title='Other Items'>
-                {renderContent()}
+                <View style={styles.contentContainer}>
+                    <Accordion
+                        data={data}
+                        renderContent={renderAccordionContent}
+                        renderHeader={renderAccordionHeader}
+                    />
+                    <View style={styles.addBtnContainer}>
+                        <TouchableOpacity style={styles.addBtn}>
+                            <FontAwesome5
+                                name='plus'
+                                color='white'
+                            />
+                        </TouchableOpacity>
+                    </View>
+                </View>
             </Card>
         </View>
     );

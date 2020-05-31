@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
 
 import Colors from '../../constants/Colors';
 import { Separator } from './Separator';
@@ -13,6 +13,31 @@ const Accordion = ({ title, data, renderContent, renderHeader }) => {
             setSelected(i)
     };
 
+    const renderItem = ({ item, index }) => {
+        return (
+            <View>
+                <View style={styles.headerContainer}>
+                    <TouchableOpacity onPress={() => onPress(index + 1)}>
+                        {renderHeader(item)}
+                    </TouchableOpacity>
+
+                </View>
+                {selected === index + 1 ?
+                    renderContent(item) :
+                    null
+                }
+            </View>
+        );
+    };
+
+    const renderSeparator = () => {
+        return (
+            <View style={styles.separatorContainer}>
+                <Separator />
+            </View>
+        );
+    };
+
     return (
         <View>
             {title ?
@@ -22,34 +47,13 @@ const Accordion = ({ title, data, renderContent, renderHeader }) => {
                 null
             }
 
-            <View>
-                <View style={styles.headerContainer}>
-                    <TouchableOpacity onPress={() => onPress(0)}>
-                        {renderHeader(data[0])}
-                    </TouchableOpacity>
-
-                </View>
-                {selected === 0 ?
-                    renderContent(data[0]) :
-                    null
-                }
-            </View>
-
-            {data.slice(1).map((item, i) => (
-                <View>
-                    <View style={styles.headerContainer}>
-                        <Separator />
-                        <TouchableOpacity onPress={() => onPress(i+1)}>
-                            {renderHeader(item)}
-                        </TouchableOpacity>
-
-                    </View>
-                    {selected === i+1 ?
-                        renderContent(item) :
-                        null
-                    }
-                </View>
-            ))}
+            <FlatList
+                data={data}
+                keyExtractor={(item, index) => index.toString()}
+                listKey={Math.random()}
+                renderItem={(item, index) => renderItem(item, index)}
+                ItemSeparatorComponent={renderSeparator}
+            />
         </View>
     );
 };
@@ -68,6 +72,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     headerContainer: {
+        backgroundColor: Colors.mediumBrown,
+    },
+    separatorContainer: {
         backgroundColor: Colors.mediumBrown,
     },
 });

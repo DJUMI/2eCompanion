@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { useEffect } from 'react';
-import { Dimensions, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Platform, StatusBar, StyleSheet, TouchableOpacity, YellowBox, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import firebase from 'firebase';
 
@@ -23,6 +23,10 @@ const Stack = createStackNavigator();
 export default function App(props) {
   const isLoadingComplete = useCachedResources();
   const [loggedIn, setLoggedIn] = React.useState(null);
+
+  YellowBox.ignoreWarnings([
+    'VirtualizedLists should never be nested', // TODO: Remove when fixed
+  ]);
 
   useEffect(() => {
     if (!firebase.apps.length) {

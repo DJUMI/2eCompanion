@@ -1,0 +1,46 @@
+add rem units
+
+sidebar
+    edit page
+    switch characters
+    add/delete characters
+    sign out
+dice roll modal
+    pop up a modal whenver someone rolls
+    animate dice
+    add sound effects
+log in form
+    style better
+character
+    add correct image
+    animate hp circle
+    condition card render empty
+    replace shield button with shield shape
+    replace initiative button
+    ranged/melee render empty
+    replace weapon button with weapon shapes
+    change weapon info?
+    add class dc?
+skills
+    add actions
+spells
+    render empty spell lists
+    default spell dc?
+    replace refocus button and implement
+    implement spell slot buttons
+inventory
+    add descriptions for gyro
+    replace bulk circle to backpack icon
+    add header to accordion lists
+    organize accordion better
+    implement add item button
+    implement sell, discard, add, buy
+    animate money slots when buy/sell buttons pressed
+details
+    add correct image
+    fix text overflow
+    fix campaign notes
+common components
+    replace touchable opacities
+    animate card opening/closing
+    animate accordion opening/closing

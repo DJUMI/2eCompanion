@@ -5,35 +5,33 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import ArmorRow from './ArmorRow';
 import { Card, Separator } from '../../common';
 
-const ARMOR = [
-    { title: 'MOD', value: 1 },
-    { title: 'PROF', value: 'T5' },
-    { title: 'ITEM', value: 1 },
-    { title: 'TEMP', value: 0 },
-];
+const Armor = ({ data: { armor, shield } }) => {
+    const total = armor.mod.value + armor.prof.value + armor.item + armor.temp + 10;
 
-const SHIELD = [
-    { title: 'Bonus', value: 2 },
-    { title: 'TEMP', value: 1 },
-    { title: 'HARD', value: 3 },
-    { title: 'BT', value: 3 },
-];
-
-const renderContent = () => {
-    return (
-        <View style={styles.contentContainer}>
-            <ArmorRow mods={ARMOR} stat={{ title: 'AC', value: 17 }} />
-            <Separator />
-            <ArmorRow mods={SHIELD} stat={{ title: 'Shield', value: 19 }} />
-        </View>
-    );
-};
-
-const Armor = () => {
     return (
         <View style={styles.container}>
             <Card title='Armor Class'>
-                {renderContent()}
+                <View style={styles.contentContainer}>
+                    <ArmorRow
+                        mods={[
+                            { title: armor.mod.title, value: armor.mod.value },
+                            { title: 'PROF', value: `${armor.prof.title}${armor.prof.value}` },
+                            { title: 'ITEM', value: armor.item },
+                            { title: 'TEMP', value: armor.temp },
+                        ]}
+                        stat={{ title: 'AC', value: total }}
+                    />
+                    <Separator />
+                    <ArmorRow
+                        mods={[
+                            { title: 'Bonus', value: shield.bonus },
+                            { title: 'TEMP', value: shield.temp },
+                            { title: 'HARD', value: shield.hardness },
+                            { title: 'BT', value: shield.bt },
+                        ]}
+                        stat={{ title: 'Shield', value: `${shield.hp.current}/${shield.hp.max}` }}
+                    />
+                </View>
             </Card>
         </View>
     );

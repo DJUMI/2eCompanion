@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import Colors from '../../constants/Colors';
 
-const LevelBtn = () => {
+const LevelBtn = ({ level }) => {
     return (
         <TouchableOpacity 
             style={styles.container}
@@ -13,7 +13,7 @@ const LevelBtn = () => {
                 <Text style={styles.text}>Level</Text>
             </View>
             <View style={styles.bottom}>
-                <Text style={styles.text}>3</Text>
+                <Text style={styles.text}>{level}</Text>
             </View>
         </TouchableOpacity>
     );

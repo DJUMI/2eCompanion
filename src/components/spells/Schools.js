@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Colors from '../../constants/Colors';
 
-const Schools = () => {
+const Schools = ({ tradition }) => {
     return (
         <View style={styles.container}>
             <View style={styles.row}>
