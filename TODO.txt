@@ -1,5 +1,7 @@
 add rem units
-
+app
+    load fav character on login
+    go to add character if no characters
 sidebar
     edit page
     switch characters

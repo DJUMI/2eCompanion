@@ -11,7 +11,7 @@ import FeatsScreen from '../screens/FeatsScreen';
 import TestScreen from '../screens/TestScreen';
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Test';
+const INITIAL_ROUTE_NAME = 'Character';
 
 export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerShown: false });
@@ -23,14 +23,6 @@ export default function BottomTabNavigator({ navigation, route }) {
         headerShown: false,
       }}
     >
-      <BottomTab.Screen
-        name="Test"
-        component={TestScreen}
-        options={{
-          title: 'Test',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="user" />,
-        }}
-      />
       <BottomTab.Screen
         name="Character"
         component={CharacterScreen}
@@ -79,23 +71,14 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="align-justify" />,
         }}
       />
+      <BottomTab.Screen
+        name="Test"
+        component={TestScreen}
+        options={{
+          title: 'Test',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="cogs" />,
+        }}
+      />
     </BottomTab.Navigator>
   );
-}
-
-function getHeaderTitle(route) {
-  const routeName = route.state?.routes[route.state.index]?.name ?? INITIAL_ROUTE_NAME;
-
-  switch (routeName) {
-    case 'Character':
-      return 'Character';
-    case 'Feats':
-      return 'Feats';
-    case 'Spells':
-      return 'Spells';
-    case 'Inventory':
-      return 'Inventory';
-    case 'Details':
-      return 'Details';
-  }
-}
+};

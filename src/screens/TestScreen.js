@@ -2,16 +2,18 @@ import React, { useContext, useEffect, useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import firebase from 'firebase';
 
-import { Context } from '../context/CharacterContext';
+import { Context as CharacterContext } from '../context/CharacterContext';
+import { Context as UserContext } from '../context/UserContext';
 import { Btn, Input } from '../components/common';
 
 const TestScreen = () => {
-    const { state, createCharacter, deleteCharacter, fetchCharacter, switchCharacter } = useContext(Context);
+    const { state: { user } } = useContext(UserContext);
+    const { state, createCharacter, deleteCharacter, switchCharacter, fetchCharacters } = useContext(CharacterContext);
     const [character, setCharacter] = useState('');
 
     useEffect(() => {
-        //console.log(state);
-    },[state])
+        //console.log('user is: ', user);
+    },[user])
 
     const renderSelected = () => {
         return (
@@ -45,9 +47,9 @@ const TestScreen = () => {
                 }} 
             />
             <Btn
-                title='Fetch Character'
+                title='Fetch Characters'
                 onPress={() => {
-                    fetchCharacter(character)
+                    fetchCharacters()
                 }} 
             />
             

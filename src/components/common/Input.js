@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import React from 'react';
+import { TextInput, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Colors from '../../constants/Colors';
 
-const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
+const Input = ({ icon, value, onChangeText, placeholder, secureTextEntry }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>{label}</Text>
+            <MaterialCommunityIcons name={icon} size={20} color={Colors.gold} />
             <TextInput
                 secureTextEntry={secureTextEntry}
                 placeholder={placeholder}
+                placeholderTextColor={'gray'}
                 autoCorrect={false}
                 style={styles.input}
                 value={value}
@@ -19,22 +23,20 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => 
 
 export { Input };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
-        height: 40,
+        height: '40rem',
         flexDirection: 'row',
         alignItems: 'center',
-        borderWidth: 1, 
-    },
-    label: {
-        fontSize: 18,
-        paddingLeft: 20,
-        flex: 1,
+        borderBottomWidth: 1,
+        borderColor: Colors.gold,
+
     },
     input: {
-        paddingHorizontal: 5,
-        fontSize: 18,
-        lineHeight: 23,
+        paddingHorizontal: '10rem',
+        fontSize: '18rem',
+        lineHeight: '23rem',
+        color: Colors.gold,
         flex: 2,
     },
 });

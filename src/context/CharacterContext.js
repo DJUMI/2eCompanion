@@ -11,11 +11,13 @@ const characterReducer = (state, action) => {
             return state.filter((character) => character.name !== action.payload);
         case 'add_character':
             return [...state, { name: action.payload }];
-        case 'fetch_character':
+        case 'FETCH_START':
+            return { ...state, fetching: true };
+        case 'FETCH_CHARACTERS':
             const updatedCharacters = [...state.characters, action.payload]
-            return {...state, characters: updatedCharacters};
+            return { ...state, characters: updatedCharacters, fetching: false };
         case 'switch_character':
-            return {...state, current: action.payload};
+            return { ...state, current: action.payload };
         default:
             return state;
     }
@@ -29,8 +31,6 @@ const createCharacter = dispatch => {
             .then(() => console.log('Document successfully written!'))
             .catch(e => console.e('error writing document: ', e))
     }
-
-
 };
 
 const deleteCharacter = dispatch => {
@@ -39,20 +39,19 @@ const deleteCharacter = dispatch => {
     };
 };
 
-const fetchCharacter = dispatch => {
-    return (name) => {
+const fetchCharacters = dispatch => {
+    return () => {
+        //dispatch({ type: 'FETCH_START' });
         const { currentUser } = firebase.auth();
         const db = firebase.firestore();
-        db.collection('users').doc(currentUser.uid).collection('characters').doc(name).get()
-            .then((doc) => {
-                if (doc.exists) {
-                    dispatch({ type: 'fetch_character', payload: doc.data() });
-                } else {
-                    console.log("No such document!");
-                }
+        db.collection('users').doc(currentUser.uid).collection('characters').get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    dispatch({ type: 'FETCH_CHARACTERS', payload: doc.data() });
+                });
             }).catch(function (error) {
-                console.log("Error getting document:", error);
-            });
+                    console.log("Error getting document:", error);
+                });
     };
 };
 
@@ -64,6 +63,6 @@ const switchCharacter = dispatch => {
 
 export const { Context, Provider } = createDataContext(
     characterReducer,
-    { createCharacter, deleteCharacter, fetchCharacter, switchCharacter },
-    { current: 0, characters: [] }
+    { createCharacter, deleteCharacter, fetchCharacters, switchCharacter },
+    { current: 0, characters: [], fetching: false }
 );

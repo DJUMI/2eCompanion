@@ -7,12 +7,12 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import firebase from 'firebase';
 
 import ApiKeys from './src/constants/ApiKeys';
-import { Provider as CharacterProvider } from './src/context/CharacterContext'
+import { Provider as CharacterProvider } from './src/context/CharacterContext';
+import { Provider as UserProvider } from './src/context/UserContext';
 import useCachedResources from './src/hooks/useCachedResources';
+import AuthNavigator from './src/navigation/AuthNavigator';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 import LinkingConfiguration from './src/navigation/LinkingConfiguration';
-
-import LoginForm from './src/components/auth/LoginForm';
 import { Spinner } from './src/components/common';
 
 const windowDimensions = Dimensions.get('window')
@@ -44,15 +44,27 @@ export default function App(props) {
       case true:
         return (
           <CharacterProvider>
-            <NavigationContainer linking={LinkingConfiguration}>
-              <Stack.Navigator>
-                <Stack.Screen name="Root" component={BottomTabNavigator} />
-              </Stack.Navigator>
-            </NavigationContainer>
+            <UserProvider>
+              <NavigationContainer linking={LinkingConfiguration}>
+                <Stack.Navigator>
+                  <Stack.Screen name="Root" component={BottomTabNavigator} />
+                </Stack.Navigator>
+              </NavigationContainer>
+            </UserProvider>
           </CharacterProvider>
         );
       case false:
-        return <LoginForm />
+        return (
+          <CharacterProvider>
+            <UserProvider>
+              <NavigationContainer>
+                <Stack.Navigator>
+                  <Stack.Screen name="Root" component={AuthNavigator} />
+                </Stack.Navigator>
+              </NavigationContainer>
+            </UserProvider>
+          </CharacterProvider>
+        );
       default:
         return (
           <View style={styles.contentContainer}>
