@@ -1,15 +1,17 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import DetailsContent from '../../components/details/DetailsContent';
 import { EditHeader } from '../../components/common';
 
 const EditDetailsScreen = () => {
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <EditHeader />
-            <DetailsContent />
-        </ScrollView>
+            <ScrollView>
+                <DetailsContent />
+            </ScrollView>
+        </View>
     );
 };
 

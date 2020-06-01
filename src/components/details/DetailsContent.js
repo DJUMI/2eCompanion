@@ -11,18 +11,23 @@ import { Context } from '../../context/CharacterContext';
 const DetailsContent = () => {
     const { state } = useContext(Context);
     const data = state.characters[state.current].details;
-        
+
     return (
         <View style={styles.container}>
             <View style={styles.row}>
                 <View style={styles.imageContainer}>
-                    <Image
-                        source={require('../../../assets/images/Besh.png')}
-                        style={styles.image}
-                    /> 
+                    {data.image === '' ?
+                        <Image
+                            source={require('../../../assets/images/default-profile.png')}
+                            style={styles.image}
+                        /> : <Image
+                            source={{ uri: data.image }}
+                            style={styles.image}
+                            resizeMode='contain'
+                        />}
                 </View>
                 <View style={styles.levelContainer}>
-                    <LevelBtn level={data.level}/>
+                    <LevelBtn level={data.level} />
                 </View>
             </View>
             <DetailCard title='Name' value={data.name} />

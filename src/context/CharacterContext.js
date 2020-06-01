@@ -41,7 +41,6 @@ const deleteCharacter = dispatch => {
 
 const fetchCharacters = dispatch => {
     return () => {
-        //dispatch({ type: 'FETCH_START' });
         const { currentUser } = firebase.auth();
         const db = firebase.firestore();
         db.collection('users').doc(currentUser.uid).collection('characters').get()

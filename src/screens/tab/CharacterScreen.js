@@ -7,25 +7,33 @@ import { Context } from '../../context/CharacterContext';
 import { MAX_HEADER_HEIGHT, MIN_HEADER_HEIGHT } from '../../constants/Dimensions';
 import { Header, Loading } from '../../components/common';
 
-const renderContent = () => {
+const renderContent = (image_url, name) => {
   return (
     <HeaderImageScrollView
+      scrollViewBackgroundColor='tan'
       maxHeight={MAX_HEADER_HEIGHT}
       minHeight={MIN_HEADER_HEIGHT}
       maxOverlayOpacity={0.3}
       foregroundExtrapolate={null}
       renderHeader={() => (
         <View style={{ flex: 1 }}>
-          <Image source={require('../../../assets/images/Besh.png')} style={styles.image} />
+          {image_url === '' ?
+            <Image
+              source={require('../../../assets/images/default-profile.png')}
+              style={styles.image}
+            /> : <Image
+              source={{ uri: image_url }}
+              style={styles.image}
+            />}
         </View>
       )}
       renderFixedForeground={() => (
         <View style={styles.title}>
-          <Text style={styles.titleText}>Besh</Text>
+          <Text style={styles.titleText}>{name}</Text>
         </View>
       )}
     >
-      <View style={{ backgroundColor: 'tan' }} >
+      <View  >
         <TriggeringView>
           <CharacterContent />
         </TriggeringView>
@@ -36,6 +44,12 @@ const renderContent = () => {
 
 const CharacterScreen = ({ navigation }) => {
   const { state, fetchCharacters } = useContext(Context);
+  var name = '';
+  var image = '';
+  if (state.characters.length) {
+    image = state.characters[state.current].details.image;
+    name = state.characters[state.current].details.name;
+  }
 
   const renderLoading = () => {
     fetchCharacters();
@@ -45,11 +59,11 @@ const CharacterScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <Header navigation={navigation}/>
+      <Header navigation={navigation} />
       {state.characters.length ?
-        renderContent() :
+        renderContent(image, name) :
         renderLoading()
-    }
+      }
     </View>
   );
 }
@@ -59,7 +73,6 @@ export default CharacterScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'tan'
   },
   image: {
     height: MAX_HEADER_HEIGHT,

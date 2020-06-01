@@ -1,15 +1,18 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import InventoryContent from '../../components/inventory/InventoryContent';
 import { EditHeader } from '../../components/common';
 
 const EditInventoryScreen = () => {
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <EditHeader />
-            <InventoryContent />
-        </ScrollView>
+            <ScrollView>
+                <InventoryContent />
+            </ScrollView>
+        </View>
+
     );
 };
 

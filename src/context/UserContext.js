@@ -11,6 +11,8 @@ const userReducer = (state, action) => {
             return { ...state, email: '', error: '', password: '', user: action.payload, loading: false };
         case 'SIGN_IN_FAIL':
             return { ...state, error: action.payload, loading: false };
+        case 'SIGN_OUT':
+            return { ...state, error: '', email: '', password: '', user: '', loading: false };
         case 'EMAIL_CHANGED':
             return { ...state, email: action.payload };
         case 'PASSWORD_CHANGED':
@@ -60,9 +62,21 @@ const signUp = dispatch => {
     }
 }
 
+const signOut = dispatch => {
+    return () => {
+        firebase.auth().signOut()
+            .then(() => {
+                dispatch({ type: 'SIGN_OUT' });
+            })
+            .catch(error => {
+                dispatch({ type: 'SIGN_IN_FAIL', payload: error });
+            });
+    };
+};
+
 
 export const { Context, Provider } = createDataContext(
     userReducer,
-    { signIn, signUp, emailChanged, passwordChanged },
+    { signIn, signUp, signOut, emailChanged, passwordChanged },
     { email: '', password: '', user: '', error: '', loading: false }
 );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
@@ -8,15 +8,15 @@ import Colors from '../../constants/Colors';
 const renderClosed = (title) => {
     return (
         <View style={styles.closedContainer}>
-            <View style={styles.iconContainer}></View>
+            {/* <View style={styles.iconContainer}></View> */}
             <Text style={styles.titleText}>{title}</Text>
-            <View style={styles.iconContainer}>
-                <FontAwesome5
-                    name='caret-down'
+            {/* <View style={styles.iconContainer}>
+                <Feather
+                    name='chevron-down'
                     color='white'
                     size={20}
                 />
-            </View>
+            </View> */}
         </View>
     );
 };

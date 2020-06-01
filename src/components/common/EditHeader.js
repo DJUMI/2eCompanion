@@ -1,18 +1,28 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 import Colors from '../../constants/Colors';
 
 const EditHeader = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.iconLeftContainer}>
+            <TouchableOpacity 
+                style={styles.iconLeftContainer}
+                onPress={() => navigation.navigate('Tabs')}
+            >
                 <Feather name="x" size={30} color="white" />
             </TouchableOpacity>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>EDIT MODE</Text>
             </View>
-            <TouchableOpacity style={styles.iconRightContainer}>
+            <TouchableOpacity 
+                style={styles.iconRightContainer}
+                onPress={() => navigation.navigate('Tabs')}
+            >
                 <Feather name="check" size={30} color="white" />
             </TouchableOpacity>
         </View>

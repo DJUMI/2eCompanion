@@ -1,15 +1,18 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import SkillsContent from '../../components/skills/SkillsContent';
 import { EditHeader } from '../../components/common';
 
 const EditSkillsScreen = () => {
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <EditHeader />
-            <SkillsContent />
-        </ScrollView>
+            <ScrollView >
+                <SkillsContent />
+            </ScrollView>
+        </View>
+
     );
 };
 

@@ -11,7 +11,7 @@ import FeatsScreen from '../screens/tab/FeatsScreen';
 import TestScreen from '../screens/tab/TestScreen';
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Character';
+const INITIAL_ROUTE_NAME = 'Test';
 
 export default function BottomTabNavigator({ navigation, route }) {
   return (

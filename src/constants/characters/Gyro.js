@@ -1,7 +1,7 @@
 export default {
     details: {
         name: 'Gyro',
-        image: '',
+        image: 'https://firebasestorage.googleapis.com/v0/b/ecompanion-fda17.appspot.com/o/Gyro.png?alt=media&token=40559a5b-bdfd-41c7-b788-69b24b69a9c9',
         level: 3,
         ancestry: 'Halfling',
         heritage: 'Nomadic',

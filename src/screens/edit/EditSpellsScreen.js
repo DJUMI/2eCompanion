@@ -1,15 +1,17 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import SpellsContent from '../../components/spells/SpellsContent';
 import { EditHeader } from '../../components/common';
 
 const EditSpellsScreen = () => {
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <EditHeader />
-            <SpellsContent />
-        </ScrollView>
+            <ScrollView>
+                <SpellsContent />
+            </ScrollView>
+        </View>
     );
 };
 

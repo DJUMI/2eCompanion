@@ -1,7 +1,7 @@
 export default {
     details: {
         name: 'Besh',
-        image: '',
+        image: 'https://firebasestorage.googleapis.com/v0/b/ecompanion-fda17.appspot.com/o/Besh.png?alt=media&token=ffc6fe0d-f9d6-42ac-908c-32d53faed346',
         level: 3,
         ancestry: 'Gnome',
         heritage: 'Wellspring',

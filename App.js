@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -59,7 +60,7 @@ export default function App(props) {
             <UserProvider>
               <NavigationContainer>
                 <Stack.Navigator>
-                  <Stack.Screen name="Root" component={AuthNavigator} />
+                  <Stack.Screen name="Auth" component={AuthNavigator} />
                 </Stack.Navigator>
               </NavigationContainer>
             </UserProvider>
