@@ -13,6 +13,7 @@ import { Provider as UserProvider } from './src/context/UserContext';
 import useCachedResources from './src/hooks/useCachedResources';
 import AuthNavigator from './src/navigation/AuthNavigator';
 import DrawerNavigator from './src/navigation/DrawerNavigator';
+import ModalNavigator from './src/navigation/ModalNavigator';
 import LinkingConfiguration from './src/navigation/LinkingConfiguration';
 import { Spinner } from './src/components/common';
 
@@ -47,9 +48,7 @@ export default function App(props) {
           <CharacterProvider>
             <UserProvider>
               <NavigationContainer linking={LinkingConfiguration}>
-                <Stack.Navigator>
-                  <Stack.Screen name="Root" component={DrawerNavigator} />
-                </Stack.Navigator>
+                <ModalNavigator />
               </NavigationContainer>
             </UserProvider>
           </CharacterProvider>

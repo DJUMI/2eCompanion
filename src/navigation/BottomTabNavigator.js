@@ -15,7 +15,7 @@ const INITIAL_ROUTE_NAME = 'Test';
 
 export default function BottomTabNavigator({ navigation, route }) {
   return (
-    <BottomTab.Navigator 
+    <BottomTab.Navigator
       initialRouteName={INITIAL_ROUTE_NAME}
     >
       <BottomTab.Screen

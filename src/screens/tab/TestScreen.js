@@ -42,10 +42,8 @@ const TestScreen = ({ navigation }) => {
                 onChangeText={character => setCharacter(character)}
             />
             <Btn
-                title='Switch Character'
-                onPress={() => {
-                    switchCharacter(character)
-                }} 
+                title='Roll'
+                onPress={() => navigation.navigate("Roll")} 
             />
             <Btn
                 title='Fetch Characters'

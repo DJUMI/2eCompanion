@@ -5,6 +5,7 @@ import { Keyboard } from 'react-native';
 import DrawerScreen from '../screens/drawer/DrawerScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 import EditTabNavigator from './EditTabNavigator';
+import RollScreen from '../screens/modal/RollScreen';
 
 const Drawer = createDrawerNavigator();
 

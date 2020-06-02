@@ -6,6 +6,7 @@ export * from './EditHeader';
 export * from './Header';
 export * from './Input';
 export * from './Loading';
+export * from './Modal';
 export * from './ModCard';
 export * from './ModRow';
 export * from './Padder';

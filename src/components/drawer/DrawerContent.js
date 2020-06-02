@@ -4,9 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import DrawerAccordion from './DrawerAccordion';
-import CharacterSwitch from './CharacterSwitch';
 import Colors from '../../constants/Colors';
-import Reference from './Reference';
 import { Context } from '../../context/UserContext';
 
 const DrawerContent = ({ navigation }) => {
@@ -16,7 +14,7 @@ const DrawerContent = ({ navigation }) => {
         <KeyboardAvoidingView style={styles.container}>
             <TouchableOpacity
                 style={styles.itemContainer}
-                onPress={() => console.log('roll')}
+                onPress={() => navigation.navigate('Roll')}
             >
                 <FontAwesome5
                     name="dice-d20"
@@ -38,8 +36,6 @@ const DrawerContent = ({ navigation }) => {
                 />
                 <Text style={styles.text}>Edit Character</Text>
             </TouchableOpacity>
-            {/* <CharacterSwitch navigation={navigation}/>
-            <Reference /> */}
             <DrawerAccordion navigation={navigation} />
             <TouchableOpacity
                 style={styles.itemContainer}
