@@ -51,13 +51,16 @@ const renderAccordionHeader = ({ name, action }) => {
 const FeatCard = ({ name, feats }) => {
     return (
         <View style={styles.container}>
-            <Card title={name}>
-                <Accordion
-                    data={feats}
-                    renderContent={renderAccordionContent}
-                    renderHeader={renderAccordionHeader}
-                />
-            </Card>
+            {feats.length ?
+                <Card title={name}>
+                    <Accordion
+                        data={feats}
+                        renderContent={renderAccordionContent}
+                        renderHeader={renderAccordionHeader}
+                    />
+                </Card> :
+                <Card title={name} empty />
+            }
         </View>
     );
 };

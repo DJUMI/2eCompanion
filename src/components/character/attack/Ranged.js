@@ -8,17 +8,20 @@ import Weapon from './Weapon';
 const Ranged = ({ data }) => {
     return (
         <View style={styles.container}>
-            <Card title='Ranged Strikes'>
-                <FlatList
-                    data={data}
-                    keyExtractor={(item, index) => index.toString()}
-                    renderItem={({ item }) => {
-                        return <Weapon item={item} />
-                    }}
-                    ItemSeparatorComponent={Separator}
-                    contentContainerStyle={styles.contentContainer}
-                />
-            </Card>
+            {data.length ?
+                <Card title='Ranged Strikes'>
+                    <FlatList
+                        data={data}
+                        keyExtractor={(item, index) => index.toString()}
+                        renderItem={({ item }) => {
+                            return <Weapon item={item} />
+                        }}
+                        ItemSeparatorComponent={Separator}
+                        contentContainerStyle={styles.contentContainer}
+                    />
+                </Card> :
+                <Card title='Ranged Strikes' empty='light' />
+            }
         </View>
     );
 };

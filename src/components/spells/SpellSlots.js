@@ -37,8 +37,8 @@ const renderItem = (slot, i) => {
 const SpellSlots = ({ data }) => {
     return (
         <View style={styles.container}>
-            <Card title='Spell Slots'>
-                {data.length ?
+            {data.length ?
+                <Card title='Spell Slots'>
                     <View style={styles.contentContainer}>
                         <View style={styles.row}>
                             <FlatList
@@ -58,10 +58,10 @@ const SpellSlots = ({ data }) => {
                                 contentContainerStyle={styles.list}
                             />
                         </View>
-                    </View> :
-                    null
-                }
-            </Card>
+                    </View>
+                </Card> :
+                <Card title='Spell Slots' empty />
+            }
         </View>
     );
 };

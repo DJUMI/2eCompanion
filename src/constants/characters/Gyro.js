@@ -80,9 +80,7 @@ export default {
             title: '',
             value: 0,
         },
-        slots: [
-            {current: 0, max: 0}
-        ],
+        slots: [],
         innate: [],
         focus: {
             points: {current: 0, max: 0},

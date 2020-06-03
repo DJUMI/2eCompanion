@@ -32,18 +32,18 @@ const renderItem = ({ item }) => {
 const Spells = ({ data }) => {
     return (
         <View style={styles.container}>
-            <Card title='Spells'>
-                <View>
-                    {data.length ?
+            {data.length ?
+                <Card title='Spells'>
+                    <View>
                         <FlatList
                             data={data}
                             keyExtractor={(item, index) => index.toString()}
                             renderItem={item => renderItem(item)}
-                        /> :
-                        null
-                    }
-                </View>
-            </Card>
+                        />
+                    </View>
+                </Card> :
+                <Card title='Spells' empty/>
+            }
         </View>
     );
 };

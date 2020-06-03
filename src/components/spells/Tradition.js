@@ -11,7 +11,7 @@ const Tradition = ({ data: { tradition, casterType }}) => {
             <Card title='Tradition'>
                 <View style={styles.contentContainer}>
                     <Schools school={tradition}/>
-                    <Text style={styles.text}>{casterType}</Text>
+                    {casterType ? <Text style={styles.text}>{casterType}</Text> : null}
                 </View>
             </Card>
         </View>

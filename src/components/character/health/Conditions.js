@@ -23,16 +23,17 @@ const renderAccordionHeader = ({ title, level }) => {
 
 const Conditions = ({ conditions }) => {
     return (
-        <Card title='Conditions'>
-            {conditions.length ?
+        conditions.length ?
+            <Card title='Conditions'>
+
                 <Accordion
                     data={conditions}
                     renderContent={renderAccordionContent}
                     renderHeader={renderAccordionHeader}
-                /> :
-                null
-            }
-        </Card>
+                />
+            </Card > :
+            <Card title='Conditions' empty />
+
     );
 };
 

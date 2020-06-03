@@ -21,16 +21,16 @@ const renderAccordionHeader = ({ title, level }) => {
 const Innate = ({ data }) => {
     return (
         <View style={styles.container}>
-            <Card title='Innate Spells'>
-                {data.length ?
+            {data.length ?
+                <Card title='Innate Spells'>
                     <Accordion
                         data={data}
                         renderContent={renderAccordionContent}
                         renderHeader={renderAccordionHeader}
-                    /> :
-                    null
-                }
-            </Card>
+                    />
+                </Card> :
+                <Card title='Innate Spells' empty/>
+            }
         </View>
     );
 };

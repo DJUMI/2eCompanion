@@ -32,19 +32,19 @@ const renderContentHeader = () => {
 const Cantrip = ({ data }) => {
     return (
         <View style={styles.container}>
-            <Card title='Cantrips'>
-                <View>
-                    {renderContentHeader()}
-                    {data.length ?
+            {data.length ?
+                <Card title='Cantrips'>
+                    <View>
+                        {renderContentHeader()}
                         <Accordion
                             data={data}
                             renderContent={renderAccordionContent}
                             renderHeader={renderAccordionHeader}
-                        /> :
-                        null
-                    }
-                </View>
-            </Card>
+                        />
+                    </View>
+                </Card> :
+                <Card title='Cantrips' empty/>
+            }
         </View>
     );
 };

@@ -4,13 +4,18 @@ app
     go to add character if no characters
 sidebar
     edit page
-    switch characters
+    switch characters render add character button
     add/delete characters
     sign out
 dice roll modal
-    pop up a modal whenver someone rolls
     animate dice
     add sound effects
+roll menu
+    automatically add plus if no operator between digit or parentheses and dice
+    clear calc when first item after roll is sent
+    implement add save roll
+    implement reroll
+    swipe to delete saved roll
 log in form
     style better
 character

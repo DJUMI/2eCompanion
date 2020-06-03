@@ -3,6 +3,7 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import { Separator } from '../common';
 import Colors from '../../constants/Colors';
 
 const renderClosed = (title) => {
@@ -21,7 +22,7 @@ const renderClosed = (title) => {
     );
 };
 
-const renderExpanded = (title) => {
+const renderExpanded = (title, empty) => {
     return (
         <View style={styles.expandedContainer}>
             <Text style={styles.titleText}>{title}</Text>
@@ -29,20 +30,34 @@ const renderExpanded = (title) => {
     );
 };
 
-const Card = ({ title, children }) => {
+const renderEmpty = (empty) => {
+
+
+    return (
+        empty === 'light' ?
+            <View style={styles.emptyLight}>
+                <Separator />
+            </View> :
+            <View style={styles.emptyDark}>
+                <Separator />
+            </View>
+    );
+}
+
+const Card = ({ title, children, empty }) => {
     const [isExpanded, setIsExpanded] = useState(true);
 
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => setIsExpanded(!isExpanded)}>
                 {isExpanded ?
-                    renderExpanded(title) :
+                    renderExpanded(title, empty) :
                     renderClosed(title)
                 }
             </TouchableOpacity>
             <View style={styles.itemContainer}>
                 {isExpanded ?
-                    children :
+                    empty ? renderEmpty(empty) : children :
                     null
                 }
             </View>
@@ -92,5 +107,15 @@ const styles = EStyleSheet.create({
         alignItems: 'flex-end',
         justifyContent: 'center',
         paddingRight: 10,
+    },
+    emptyLight: {
+        padding: 10,
+        paddingHorizontal: 50,
+        backgroundColor: Colors.lightBrown,
+    },
+    emptyDark: {
+        padding: 10,
+        paddingHorizontal: 50,
+        backgroundColor: Colors.mediumBrown,
     }
 });

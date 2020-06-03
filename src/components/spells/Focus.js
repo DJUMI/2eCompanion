@@ -39,19 +39,19 @@ const renderContentHeader = ({ current, max }) => {
 const Focus = ({ data }) => {
     return (
         <View style={styles.container}>
-            <Card title='Focus Spells'>
-                <View>
-                    {renderContentHeader(data.points)}
-                    {data.spells.length ?
+            {data.spells.length ?
+                <Card title='Focus Spells'>
+                    <View>
+                        {renderContentHeader(data.points)}
                         <Accordion
                             data={data.spells}
                             renderContent={renderAccordionContent}
                             renderHeader={renderAccordionHeader}
-                        /> :
-                        null
-                    }
-                </View>
-            </Card>
+                        />
+                    </View>
+                </Card> : 
+                <Card title='Focus Spells' empty/>
+            }
         </View>
     );
 };
