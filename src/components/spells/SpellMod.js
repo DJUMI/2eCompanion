@@ -12,7 +12,7 @@ const SpellMod = ({ data: { key, prof } }) => {
                         <ModCard title={key.title || 'KEY'} value={key.value} />
                         <ModCard title='PROF' value={`${prof.title}${prof.value}`} />
                         <Text style={styles.text}>=</Text>
-                        <CircleBtn title='Spell Attack' value={key.value + prof.value} />
+                        <CircleBtn title='Spell Attack' mod={key.value + prof.value} />
                     </View>
                 </Card>
             </View>

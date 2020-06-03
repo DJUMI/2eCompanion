@@ -1,16 +1,19 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { useNavigation } from '@react-navigation/native';
 
 import Colors from '../../constants/Colors';
 
-const CircleBtn = ({ title, value }) => {
+const CircleBtn = ({ title, prof, mod }) => {
+    const navigation = useNavigation();
+
     return (
         <TouchableOpacity
             style={styles.btn}
-            onPress={() => console.log(`Roll ${title}`)}
+            onPress={() => navigation.navigate('Roll', { title, mod })}
         >
-            <Text style={styles.value}>{value}</Text>
+            <Text style={styles.value}>{prof}{mod}</Text>
         </TouchableOpacity>
     );
 };

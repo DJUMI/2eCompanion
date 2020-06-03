@@ -17,7 +17,7 @@ const Weapon = ({ item: { dmg, dmgType, item, mod, name, notes, prof, temp, trai
                     { title: 'ITEM', value: item },
                     { title: 'TEMP', value: temp },
                 ]}
-                stat={{ title: `${name} Attack`, value: total }}
+                stat={{ title: `${name} Attack`, mod: total }}
             />
             <View style={styles.row}>
                 <WeaponInfo title='Weapon' value={name} />

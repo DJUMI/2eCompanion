@@ -12,11 +12,12 @@ const Saves = ({ data }) => {
                     horizontal
                     data={data}
                     keyExtractor={(item, index) => index.toString()}
+                    scrollEnabled='false'
                     renderItem={({ item }) => {
                         return (
                             <View style={styles.itemContainer}>
                                 <Text style={styles.titleText}>{item.title}</Text>
-                                <CircleBtn title={item.title} value={`${item.prof}${item.value}`} />
+                                <CircleBtn title={`${item.title} Saving Throw`} prof={item.prof} mod={item.value} />
                             </View>
                         );
                     }}

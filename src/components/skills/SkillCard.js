@@ -17,7 +17,7 @@ const SkillCard = ({ skill: { title, mod, prof, item, temp, total } }) => {
                                 { title: 'ITEM', value: item },
                                 { title: 'TEMP', value: temp }
                             ]}
-                            stat={{ title: title, value: total }}
+                            stat={{ title: `${title} Check`, mod: total }}
                         />
                     </View>
                     <ActionsList />

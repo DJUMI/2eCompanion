@@ -14,6 +14,7 @@ const ArmorRow = ({mods, stat}) => {
                 renderItem={({ item }) => {
                     return <ModCard title={item.title} value={item.value} />
                 }}
+                scrollEnabled='false'
                 contentContainerStyle={styles.modContainer}
             />
             <Text style={styles.text}>=</Text>

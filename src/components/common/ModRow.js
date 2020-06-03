@@ -15,12 +15,14 @@ const ModRow = ({ mods, stat }) => {
                 renderItem={({ item }) => {
                     return <ModCard title={item.title} value={item.value} />
                 }}
+                scrollEnabled='false'
                 contentContainerStyle={styles.modContainer}
             />
             <Text style={styles.text}>=</Text>
             <CircleBtn
                 title={stat.title}
-                value={stat.value}
+                prof={stat.prof}
+                mod={stat.mod}
             />
         </View>
     );

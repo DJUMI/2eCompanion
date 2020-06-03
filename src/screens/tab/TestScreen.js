@@ -43,7 +43,7 @@ const TestScreen = ({ navigation }) => {
             />
             <Btn
                 title='Roll'
-                onPress={() => navigation.navigate("Roll")} 
+                onPress={() => navigation.navigate("Roll", { title: 'menu' })} 
             />
             <Btn
                 title='Fetch Characters'

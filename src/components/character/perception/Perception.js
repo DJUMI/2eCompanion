@@ -19,7 +19,7 @@ const Perception = ({ data }) => {
                             { title: 'ITEM', value: data.item },
                             { title: 'TEMP', value: data.temp },
                         ]}
-                         stat={{ title: 'Perception', value: `${data.prof.title}${total}` }} 
+                         stat={{ title: 'Perception Check', prof: data.prof.title, mod: total }} 
                     />
                     <View style={styles.row}>
                         <TouchableOpacity style={styles.btn}>

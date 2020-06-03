@@ -14,7 +14,7 @@ const DrawerContent = ({ navigation }) => {
         <KeyboardAvoidingView style={styles.container}>
             <TouchableOpacity
                 style={styles.itemContainer}
-                onPress={() => navigation.navigate('Roll')}
+                onPress={() => navigation.navigate('Roll', { menu: true })}
             >
                 <FontAwesome5
                     name="dice-d20"

@@ -10,9 +10,9 @@ import firebase from 'firebase';
 import ApiKeys from './src/constants/ApiKeys';
 import { Provider as CharacterProvider } from './src/context/CharacterContext';
 import { Provider as UserProvider } from './src/context/UserContext';
+import { Provider as RollProvider } from './src/context/RollContext';
 import useCachedResources from './src/hooks/useCachedResources';
 import AuthNavigator from './src/navigation/AuthNavigator';
-import DrawerNavigator from './src/navigation/DrawerNavigator';
 import ModalNavigator from './src/navigation/ModalNavigator';
 import LinkingConfiguration from './src/navigation/LinkingConfiguration';
 import { Spinner } from './src/components/common';
@@ -47,9 +47,11 @@ export default function App(props) {
         return (
           <CharacterProvider>
             <UserProvider>
-              <NavigationContainer linking={LinkingConfiguration}>
-                <ModalNavigator />
-              </NavigationContainer>
+              <RollProvider>
+                <NavigationContainer linking={LinkingConfiguration}>
+                  <ModalNavigator />
+                </NavigationContainer>
+              </RollProvider>
             </UserProvider>
           </CharacterProvider>
         );

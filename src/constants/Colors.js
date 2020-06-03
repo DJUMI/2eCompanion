@@ -2,6 +2,7 @@ const tintColor = '#2f95dc';
 
 export default {
 
+  lightBlue: '#45F0DF',
   blue: '#002766',
   darkBrown: '#5b1110',
   lightBrown: '#98503e',
