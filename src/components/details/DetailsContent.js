@@ -1,16 +1,78 @@
-import React, { useContext } from 'react';
-import { Image, Text, View } from 'react-native';
+import React, { useContext, useState } from 'react';
+import { KeyboardAvoidingView, Image, Platform, Text, TextInput, View, FlatList, TouchableOpacity } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
 import DetailCard from './DetailCard';
 import LevelBtn from './LevelBtn';
 import { Context } from '../../context/CharacterContext';
+import { MaterialIcons } from '@expo/vector-icons';
+
+const renderNote = ({ item }) => (
+    <View style={styles.noteContainer}>
+        <Text style={styles.noteText}>{item}</Text>
+    </View>
+);
+
 
 
 const DetailsContent = () => {
-    const { state } = useContext(Context);
+    const { state, editCharacter } = useContext(Context);
+    const [addingNote, setAddingNote] = useState(false);
+    const [note, setNote] = useState('');
     const data = state.characters[state.current].details;
+
+    const renderAddNote = () => (
+        <View style={styles.noteFooter}>
+            {addingNote ?
+                <View>
+                    <TextInput
+                        style={styles.input}
+                        value={note}
+                        onChangeText={(text) => setNote(text)}
+                    />
+                    <View style={styles.editContainer}>
+                        <TouchableOpacity
+                            style={styles.editBtnContainer}
+                            onPress={() => {
+                                setNote('');
+                                setAddingNote(false);
+                            }}
+                        >
+                            <MaterialIcons
+                                name='close'
+                                size={40}
+                                color='red'
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.editBtnContainer}
+                            onPress={() => {
+                                editCharacter(note, data, data.notes);
+                                setAddingNote(false);
+                            }}
+                        >
+                            <MaterialIcons
+                                name='check'
+                                size={40}
+                                color='green'
+                            />
+                        </TouchableOpacity>
+                    </View>
+                </View> :
+                <TouchableOpacity
+                    style={styles.btnContainer}
+                    onPress={() => setAddingNote(true)}
+                >
+                    <MaterialIcons
+                        name='note-add'
+                        size={40}
+                        color={Colors.blue}
+                    />
+                </TouchableOpacity>
+            }
+        </View>
+    );
 
     return (
         <View style={styles.container}>
@@ -76,9 +138,13 @@ const DetailsContent = () => {
             <View style={styles.header}>
                 <Text style={styles.headerText}>Campaign Notes</Text>
             </View>
-
             <View style={styles.notesContainer}>
-                <Text style={styles.noteText}>{data.notes}</Text>
+                <FlatList
+                    data={data.notes}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={renderNote}
+                    ListFooterComponent={renderAddNote}
+                />
             </View>
         </View>
     );
@@ -121,12 +187,36 @@ const styles = EStyleSheet.create({
         color: 'white',
         fontSize: 18,
     },
-    notesContainer: {
+    noteContainer: {
         backgroundColor: 'white',
         borderWidth: 1,
         borderColor: Colors.darkBrown,
         borderRadius: 5,
         padding: 5,
-        minHeight: 200,
-    }
+        marginBottom: 10,
+    },
+    noteFooter: {
+    },
+    btnContainer: {
+        padding: 5,
+        paddingRight: 15,
+        alignSelf: 'flex-end',
+    },
+    input: {
+        padding: 5,
+        backgroundColor: 'white',
+        borderWidth: 1,
+        borderColor: Colors.lightBlue,
+        borderRadius: 5,
+    },
+    editContainer: {
+        padding: 5,
+        flexDirection: 'row',
+        alignSelf: 'flex-end',
+        height: 300,
+    },
+    editBtnContainer: {
+        padding: 5,
+        paddingRight: 15,
+    },
 });
