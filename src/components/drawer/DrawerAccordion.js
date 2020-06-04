@@ -24,33 +24,45 @@ const DrawerAccordion = ({ navigation }) => {
                     navigation.closeDrawer();
                 }}
             >
-                <View style={styles.selectedContainer}>
-                    {/* {index == state.current ?
-                        <View style={styles.selected} /> :
-                        null
-                    } */}
-                </View>
-
-                <View style={styles.imageContainer}>
-                    {item.details.image === '' ?
-                        <Image
-                            source={require('../../../assets/images/default-profile.png')}
-                            style={styles.image}
-                        /> : <Image
-                            source={{ uri: item.details.image }}
-                            style={styles.image}
-                            resizeMode='contain'
-                        />}
-                </View>
+                {item.details.image === '' ?
+                    <Image
+                        source={require('../../../assets/images/default-profile.png')}
+                        style={styles.image}
+                    /> : <Image
+                        source={{ uri: item.details.image }}
+                        style={styles.image}
+                        resizeMode='contain'
+                    />}
                 <View style={styles.textContainer}>
                     <Text style={styles.nameText}>{item.details.name}</Text>
                     <Text style={styles.itemText}>
                         {item.details.ancestry} {item.details.class}
                     </Text>
                 </View>
-            </TouchableOpacity>
+            </TouchableOpacity >
         );
     };
+
+    // render a button to add a new character at the bottom of the character list
+    const renderSwitchFooter = () => (
+        <View style={styles.footerContainer}>
+            <View style={styles.footerBorder}>
+                <TouchableOpacity
+                    style={styles.footer}
+                    onPress={() => console.log('add new character')}
+                >
+                    <FontAwesome5
+                        name='plus'
+                        size={34}
+                        color={Colors.gold}
+                    />
+                    <Text style={styles.footerText}>Add new character</Text>
+
+                </TouchableOpacity>
+            </View>
+
+        </View>
+    );
 
     const renderSwitchOpen = () => {
         return (
@@ -73,6 +85,7 @@ const DrawerAccordion = ({ navigation }) => {
                     renderItem={renderItem}
                     style={styles.list}
                     ItemSeparatorComponent={renderSeparator}
+                    ListFooterComponent={renderSwitchFooter}
                 />
             </View>
         );
@@ -118,7 +131,7 @@ const DrawerAccordion = ({ navigation }) => {
                         value={search}
                         onChangeText={text => setSearch(text)}
                     />
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         style={styles.iconContainer}
                         onPress={handleSearch}
                         style={styles.btn}
@@ -157,15 +170,15 @@ const DrawerAccordion = ({ navigation }) => {
         const url = `https://2e.aonprd.com/Search.aspx?query=${search}`;
         // Checking if the link is supported for links with custom URL scheme.
         const supported = await Linking.canOpenURL(url);
-    
+
         if (supported) {
-          // Opening the link with some app, if the URL scheme is "http" the web link should be opened
-          // by some browser in the mobile
-          await Linking.openURL(url);
+            // Opening the link with some app, if the URL scheme is "http" the web link should be opened
+            // by some browser in the mobile
+            await Linking.openURL(url);
         } else {
-          Alert.alert(`Don't know how to open this URL: ${url}`);
+            Alert.alert(`Don't know how to open this URL: ${url}`);
         }
-      }, [search]);
+    }, [search]);
 
     if (selected == 0) {
         return (
@@ -228,13 +241,8 @@ const styles = EStyleSheet.create({
     },
     itemContainer: {
         flexDirection: 'row',
-    },
-    selectedContainer: {
-        flex: 1,
-    },
-    imageContainer: {
-        flex: 3,
         paddingVertical: 15,
+        paddingLeft: 20,
     },
     image: {
         height: 75,
@@ -243,8 +251,7 @@ const styles = EStyleSheet.create({
         borderRadius: 2,
     },
     textContainer: {
-        flex: 6,
-        paddingVertical: 15,
+        paddingLeft: 15,
     },
     nameText: {
         color: Colors.gold,
@@ -281,5 +288,23 @@ const styles = EStyleSheet.create({
     },
     btnText: {
         color: 'white',
-    }
+    },
+    footerContainer: {
+        paddingHorizontal: 8,
+    },
+    footerBorder: {
+        borderTopWidth: 1,
+        borderColor: Colors.gold,
+    },
+    footer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 15,
+        paddingLeft: 25,
+    },
+    footerText: {
+        color: Colors.gold,
+        fontSize: 18,
+        paddingLeft: 15,
+    },
 });

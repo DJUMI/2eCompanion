@@ -4,7 +4,6 @@ app
     go to add character if no characters
 sidebar
     edit page
-    switch characters render add character button
     add/delete characters
     sign out
 dice roll modal
