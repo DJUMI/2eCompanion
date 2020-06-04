@@ -159,5 +159,14 @@ export const { Context, Provider } = createDataContext(
         clearCustomRoll,
         rollCustom 
     },
-    { rolls: [{ results: [] }], customRollText: [], customRollTotal: '', recentRolls: [], savedRolls: [{title: 'Dagger attack with sneak attack', roll: '1d20 + 1d6 + 6'}, {title: 'Ranged damage', roll: '2d8 + 1d6 + 5'}] }
+    { 
+        rolls: [{ results: [] }], 
+        customRollText: [], 
+        customRollTotal: '', 
+        recentRolls: [], 
+        savedRolls: [
+            { title: 'Dagger attack with sneak attack', roll: '1d20 + 1d6 + 6' }, 
+            { title: 'Ranged damage', roll: '2d8 + 1d6 + 5' }
+        ] 
+    }
 );

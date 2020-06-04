@@ -5,7 +5,6 @@ app
 sidebar
     edit page
     add/delete characters
-    sign out
 dice roll modal
     animate dice
     add sound effects
@@ -18,10 +17,8 @@ roll menu
 log in form
     style better
 character
-    add correct image
     animate hp circle
     replace shield button with shield shape
-    replace initiative button
     replace weapon button with weapon shapes
     change weapon info?
     add class dc?

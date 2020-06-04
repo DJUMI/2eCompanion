@@ -7,8 +7,8 @@ import { Context } from '../../context/RollContext';
 
 import Colors from '../../constants/Colors';
 
-const SaveRoll = ({ navigation, bonus, params }) => {
-    const { title, mod } = params;
+const SaveRoll = ({ navigation, params }) => {
+    const { title, mod, bonus } = params;
     const { state, roll } = useContext(Context);
     const arrSum = arr => arr.reduce((a,b) => a + b, 0)
     var rollTotal = arrSum(state.rolls.slice(-1)[0].results);

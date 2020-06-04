@@ -11,7 +11,7 @@ const CircleBtn = ({ title, prof, mod }) => {
     return (
         <TouchableOpacity
             style={styles.btn}
-            onPress={() => navigation.navigate('Roll', { title, mod })}
+            onPress={() => navigation.navigate('Roll', { title, mod, bonus: 0 })}
         >
             <Text style={styles.value}>{prof}{mod}</Text>
         </TouchableOpacity>

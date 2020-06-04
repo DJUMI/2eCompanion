@@ -10,7 +10,7 @@ const RollScreen = ({ route, navigation }) => {
         <Modal navigation={navigation}>
             {route.params.menu ?
                 <RollMenu navigation={navigation} bonus={0} /> :
-                <SaveRoll navigation={navigation} bonus={0} params={route.params} />}
+                <SaveRoll navigation={navigation} params={route.params} />}
         </Modal>
     );
 };
