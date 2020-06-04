@@ -37,6 +37,6 @@ const styles = EStyleSheet.create({
         alignItems: 'center',
     },
     xpText: {
-        fontSize: '16rem'
+        fontSize: '16rem',
     }
 });

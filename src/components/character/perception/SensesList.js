@@ -12,6 +12,7 @@ const SensesList = ({ data }) => (
         <FlatList
             data={data}
             keyExtractor={(item, index) => index.toString()}
+            scrollEnabled={false}
             renderItem={({ item }) => {
                 return (
                     <View style={styles.itemContainer}>
@@ -41,6 +42,7 @@ const styles = EStyleSheet.create({
         marginTop: '5rem',
         borderBottomWidth: '1rem',
         borderBottomColor: Colors.darkBrown,
+        alignItems: 'center',
 
     },
     text: {

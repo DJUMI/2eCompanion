@@ -421,6 +421,16 @@ export default {
             { title: 'WIS', value: 4 },
             { title: 'CHA', value: 2 }
         ],
+        classDC: {
+            mod: { title: 'WIS', value: 4 },
+            prof: { title: 'T', value: 5 },
+            item: 0,
+            temp: 0
+        },
+        movement: {
+            speed: 30,
+            types: [],
+        },
         armor: {
             mod: { title: 'DEX', value: 1 },
             prof: { title: 'T', value: 5 },

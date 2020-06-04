@@ -1,6 +1,7 @@
 app
     load fav character on login
     go to add character if no characters
+    find out why some cards have space between content and header
 sidebar
     edit page
     add/delete characters
@@ -21,8 +22,6 @@ character
     replace shield button with shield shape
     replace weapon button with weapon shapes
     change weapon info?
-    add class dc?
-    add move speed
 skills
     *add actions
 spells
