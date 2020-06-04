@@ -22,8 +22,6 @@ character
     replace weapon button with weapon shapes
     change weapon info?
     add class dc?
-    *add ability scores
-    *add weapon proficieny
     add xp
     add move speed
 skills

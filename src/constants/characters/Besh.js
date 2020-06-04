@@ -482,9 +482,10 @@ export default {
         ],
         ranged: [],
         weaponProf: {
-            simple: 'T',
-            martial: '',    
-            unarmed: 'T'
+            simple: 'Trained',
+            martial: 'Untrained',    
+            unarmed: 'Trained',
+            other: []
         }
     }
 }

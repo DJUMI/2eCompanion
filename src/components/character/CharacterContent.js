@@ -9,6 +9,7 @@ import Saves from './saves/Saves';
 import Perception from './perception/Perception';
 import Melee from './attack/Melee';
 import Ranged from './attack/Ranged';
+import WeaponProf from './attack/WeaponProf';
 import { Context } from '../../context/CharacterContext';
 
 const CharacterContent = () => {
@@ -34,8 +35,9 @@ const CharacterContent = () => {
             <Armor data={{ armor, shield }} />
             <Saves data={saves} />
             <Perception data={perception} />
-            <Melee data={melee}/>
-            <Ranged data={ranged}/>
+            <WeaponProf data={weaponProf} />
+            <Melee data={melee} />
+            <Ranged data={ranged} />
         </View>
     );
 };

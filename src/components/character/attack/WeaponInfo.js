@@ -34,12 +34,14 @@ const styles = EStyleSheet.create({
     },
     titleText: {
         color: 'white',
+        fontSize: '14rem',
     },
     valueContainer: {
         borderColor: Colors.darkBrown,
         borderWidth: 1,
         backgroundColor: 'white',
         padding: 5,
+        alignItems: 'center',
     },
     valueText: {
         fontSize: '14rem',

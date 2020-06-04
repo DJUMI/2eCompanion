@@ -327,10 +327,12 @@ export default {
             },
         ],
         weaponProf: {
-            simple: 'E',
-            martial: 'E',    
-            other: { title: 'Advanced', value: 'T' },
-            unarmed: 'E'
+            simple: 'Expert',
+            martial: 'Expert',    
+            other: [
+                { title: 'Advanced', value: 'Trained' },
+            ],
+            unarmed: 'Expert'
         } 
     }
 }
