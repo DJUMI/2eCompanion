@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+import AbilityScores from './ability/AbilityScores';
 import Health from './health/Health';
 import Armor from './armor/Armor';
 import Saves from './saves/Saves';
@@ -29,6 +30,7 @@ const CharacterContent = () => {
     return (
         <View style={styles.container} >
             <Health data={{ hp, dying, wounded, conditions }} />
+            <AbilityScores data={abilityScores} />
             <Armor data={{ armor, shield }} />
             <Saves data={saves} />
             <Perception data={perception} />

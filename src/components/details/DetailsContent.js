@@ -94,7 +94,7 @@ const DetailsContent = () => {
             </View>
             <DetailCard title='Name' value={data.name} />
 
-            <DetailCard title='Ancestry and Heritage' value={data.ancestry} />
+            <DetailCard title='Ancestry and Heritage' value={`${data.heritage} ${data.ancestry}`} />
 
             <View style={styles.row}>
                 <DetailCard title='Class' value={data.class} />

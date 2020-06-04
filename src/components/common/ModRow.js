@@ -18,12 +18,17 @@ const ModRow = ({ mods, stat }) => {
                 scrollEnabled='false'
                 contentContainerStyle={styles.modContainer}
             />
-            <Text style={styles.text}>=</Text>
-            <CircleBtn
-                title={stat.title}
-                prof={stat.prof}
-                mod={stat.mod}
-            />
+            {stat ?
+                <View style={styles.btnContainer}>
+                    <Text style={styles.text}>=</Text>
+                    <CircleBtn
+                        title={stat.title}
+                        prof={stat.prof}
+                        mod={stat.mod}
+                    />
+                </View> :
+                null
+            }
         </View>
     );
 };
@@ -39,7 +44,10 @@ const styles = EStyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         flex: 1,
-        paddingRight: 10,
+    },
+    btnContainer: {
+        flexDirection: 'row',
+        paddingLeft: 10,
     },
     text: {
         color: 'white',

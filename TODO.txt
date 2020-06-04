@@ -22,22 +22,25 @@ character
     replace weapon button with weapon shapes
     change weapon info?
     add class dc?
+    *add ability scores
+    *add weapon proficieny
+    add xp
+    add move speed
 skills
-    add actions
+    *add actions
 spells
     default spell dc?
-    replace refocus button and implement
-    implement spell slot buttons
+    *replace refocus button and implement
+    *implement spell slot buttons
 inventory
-    add descriptions for gyro
+    *add descriptions for gyro
     replace bulk circle to backpack icon
-    add header to accordion lists
-    organize accordion better
-    implement add item button
-    implement sell, discard, add, buy
+    *add header to accordion lists
+    *organize accordion better
+    *implement add item button
+    *implement sell, discard, add, buy
     animate money slots when buy/sell buttons pressed
 details
-    fix campaign notes
 common components
     replace touchable opacities
     animate card opening/closing

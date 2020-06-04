@@ -31,8 +31,6 @@ const renderExpanded = (title, empty) => {
 };
 
 const renderEmpty = (empty) => {
-
-
     return (
         empty === 'light' ?
             <View style={styles.emptyLight}>
