@@ -1,30 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
 
-const StatCircle = ({title, value}) => {
-    return (
-        <View style={styles.container}>
-            <View style={styles.top}>
-                <Text style={styles.text}>{title}</Text>
-            </View>
-            <View style={styles.bottom}>
-                <Text style={styles.text}>{value}</Text>
-            </View>
+const StatCircle = ({ title, value }) => (
+    <View style={styles.container}>
+        <View style={styles.top}>
+            <Text style={styles.text}>{title}</Text>
         </View>
-    );
-};
+        <View style={styles.bottom}>
+            <Text style={styles.text}>{value}</Text>
+        </View>
+    </View>
+);
 
 export { StatCircle };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
-        height: 80,
-        width: 80,
+        height: '80rem',
+        width: '80rem',
         backgroundColor: Colors.darkBrown,
-        borderRadius: 40,
-        borderWidth: 3,
+        borderRadius: '40rem',
+        borderWidth: '3rem',
         borderColor: Colors.darkBrown,
         alignItems: 'center',
         overflow: 'hidden',
@@ -35,13 +34,13 @@ const styles = StyleSheet.create({
     },
     bottom: {
         backgroundColor: Colors.mediumBrown,
-        width: 80,
-        height: 37,
+        width: '80rem',
+        height: '37rem',
         justifyContent: 'center',
         alignItems: 'center',
     },
     text: {
         color: 'white',
-        fontSize: 20,
+        fontSize: '20rem',
     }
 });

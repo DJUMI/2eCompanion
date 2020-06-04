@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
+import { Text, TouchableOpacity, View, FlatList } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
 import { Separator } from './Separator';
+
+const renderSeparator = () => (
+    <View style={styles.separatorContainer}>
+        <Separator />
+    </View>
+);
 
 const Accordion = ({ title, data, renderContent, renderHeader }) => {
     const [selected, setSelected] = useState(undefined);
@@ -13,33 +20,23 @@ const Accordion = ({ title, data, renderContent, renderHeader }) => {
             setSelected(i)
     };
 
-    const renderItem = ({ item, index }) => {
-        return (
-            <View>
-                <View style={styles.headerContainer}>
-                    <TouchableOpacity onPress={() => onPress(index + 1)}>
-                        {renderHeader(item)}
-                    </TouchableOpacity>
+    const renderItem = ({ item, index }) => (
+        <>
+            <View style={styles.headerContainer}>
+                <TouchableOpacity onPress={() => onPress(index + 1)}>
+                    {renderHeader(item)}
+                </TouchableOpacity>
 
-                </View>
-                {selected === index + 1 ?
-                    renderContent(item) :
-                    null
-                }
             </View>
-        );
-    };
-
-    const renderSeparator = () => {
-        return (
-            <View style={styles.separatorContainer}>
-                <Separator />
-            </View>
-        );
-    };
+            {selected === index + 1 ?
+                renderContent(item) :
+                null
+            }
+        </>
+    );
 
     return (
-        <View>
+        <>
             {title ?
                 <View style={styles.titleContainer}>
                     <Text style={styles.titleText}>{title}</Text>
@@ -54,22 +51,22 @@ const Accordion = ({ title, data, renderContent, renderHeader }) => {
                 renderItem={(item, index) => renderItem(item, index)}
                 ItemSeparatorComponent={renderSeparator}
             />
-        </View>
+        </>
     );
 };
 
 export { Accordion };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     titleContainer: {
         alignItems: 'center',
-        paddingHorizontal: 10,
-        paddingVertical: 5,
+        paddingHorizontal: '10rem',
+        paddingVertical: '5rem',
         backgroundColor: Colors.darkBrown,
     },
     titleText: {
         color: 'white',
-        fontSize: 20,
+        fontSize: '20rem',
     },
     headerContainer: {
         backgroundColor: Colors.mediumBrown,

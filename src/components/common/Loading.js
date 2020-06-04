@@ -4,13 +4,11 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
 
-const Loading = () => {
-    return (
-        <View style={styles.container}>
-            <Text style={styles.text}>...</Text>
-        </View>
-    );
-};
+const Loading = () => (
+    <View style={styles.container}>
+        <Text style={styles.text}>...</Text>
+    </View>
+);
 
 export { Loading };
 
@@ -21,7 +19,7 @@ const styles = EStyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    text:{
+    text: {
         color: Colors.gold,
         fontSize: '24rem',
         fontWeight: 'bold',

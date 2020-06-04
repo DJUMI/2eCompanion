@@ -77,19 +77,19 @@ const styles = EStyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
-        borderRadius: 15,
+        borderRadius: '15rem',
     },
     closeBtn: {
         alignItems: 'flex-end',
-        padding: 10
+        padding: '10rem'
     },
     titleContainer: {
         alignItems: 'center',
-        padding: 10,
+        padding: '10rem',
     },
     titleText: {
         color: Colors.lightBlue,
-        fontSize: 24,
+        fontSize: '24rem',
     },
     iconContainer: {
         alignItems: 'center',
@@ -97,14 +97,14 @@ const styles = EStyleSheet.create({
         flex: 3,
     },
     shadow: {
-        borderBottomWidth: 1,
+        borderBottomWidth: '1rem',
         borderColor: Colors.lightBlue,
-        padding: 20,
+        padding: '20rem',
         elevation: 5,
         shadowColor: Colors.lightBlue,
         shadowOffset: {
-            width: -5,
-            height: 5,
+            width: -'5rem',
+            height: '5rem',
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
@@ -122,20 +122,20 @@ const styles = EStyleSheet.create({
     },
     operatorContainer: {
         justifyContent: 'flex-end',
-        paddingBottom: 58
+        paddingBottom: '58rem'
     },
     operator: {
-        fontSize: 20,
+        fontSize: '20rem',
         fontWeight: 'bold',
         color: Colors.lightBlue
     },
     valueContainer: {
         flex: 1,
         justifyContent: 'flex-end',
-        paddingBottom: 50
+        paddingBottom: '50rem'
     },
     value: {
-        fontSize: 30,
+        fontSize: '30rem',
         fontWeight: 'bold',
         color: Colors.lightBlue
     },

@@ -4,22 +4,20 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
 
-const Input = ({ icon, value, onChangeText, placeholder, secureTextEntry }) => {
-    return (
-        <View style={styles.container}>
-            <MaterialCommunityIcons name={icon} size={20} color={Colors.gold} />
-            <TextInput
-                secureTextEntry={secureTextEntry}
-                placeholder={placeholder}
-                placeholderTextColor={'gray'}
-                autoCorrect={false}
-                style={styles.input}
-                value={value}
-                onChangeText={onChangeText}
-            />
-        </View>
-    );
-};
+const Input = ({ icon, value, onChangeText, placeholder, secureTextEntry }) => (
+    <View style={styles.container}>
+        <MaterialCommunityIcons name={icon} size={20} color={Colors.gold} />
+        <TextInput
+            secureTextEntry={secureTextEntry}
+            placeholder={placeholder}
+            placeholderTextColor={'gray'}
+            autoCorrect={false}
+            style={styles.input}
+            value={value}
+            onChangeText={onChangeText}
+        />
+    </View>
+);
 
 export { Input };
 

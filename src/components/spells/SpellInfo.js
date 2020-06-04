@@ -1,5 +1,6 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { Padder, Separator } from '../common';
 import Colors from '../../constants/Colors';
@@ -18,8 +19,7 @@ const SpellInfo = ({
         castDescription,
         heightened
     }
-}) => {
-    return (
+}) => (
         <View style={styles.accordionContainer}>
             <View style={styles.traitsContainer}>
                 <FlatList
@@ -27,13 +27,11 @@ const SpellInfo = ({
                     data={traits}
                     keyExtractor={(item, index) => index.toString()}
                     listKey={Math.random()}
-                    renderItem={({ item }) => {
-                        return (
-                            <View style={styles.trait}>
-                                <Text style={styles.traitText}>{item}</Text>
-                            </View>
-                        );
-                    }}
+                    renderItem={({ item }) => (
+                        <View style={styles.trait}>
+                            <Text style={styles.traitText}>{item}</Text>
+                        </View>
+                    )}
                 />
             </View>
 
@@ -85,14 +83,12 @@ const SpellInfo = ({
                 data={castDescription}
                 keyExtractor={(item, index) => index.toString()}
                 listKey={Math.random()}
-                renderItem={({ item }) => {
-                    return (
-                        <Text style={styles.descriptionText}>
-                            <Text style={styles.titleText}>{item.title}</Text>
-                            {item.info}
-                        </Text>
-                    );
-                }}
+                renderItem={({ item }) => (
+                    <Text style={styles.descriptionText}>
+                        <Text style={styles.titleText}>{item.title}</Text>
+                        {item.info}
+                    </Text>
+                )}
             />
 
             {heightened.length ?
@@ -103,14 +99,12 @@ const SpellInfo = ({
                         data={heightened}
                         keyExtractor={(item, index) => index.toString()}
                         listKey={Math.random()}
-                        renderItem={({ item }) => {
-                            return (
-                                <Text style={styles.descriptionText}>
-                                    <Text style={styles.titleText}>{item.title}</Text>
-                                    {item.info}
-                                </Text>
-                            );
-                        }}
+                        renderItem={({ item }) => (
+                            <Text style={styles.descriptionText}>
+                                <Text style={styles.titleText}>{item.title}</Text>
+                                {item.info}
+                            </Text>
+                        )}
                     />
                 </View> :
                 null
@@ -124,24 +118,23 @@ const SpellInfo = ({
             </TouchableOpacity>
         </View>
     );
-};
 
 export default SpellInfo;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     accordionContainer: {
-        padding: 5,
+        padding: '5rem',
     },
     traitsContainer: {
         flexDirection: 'row',
-        paddingBottom: 3,
+        paddingBottom: '3rem',
     },
     trait: {
         backgroundColor: Colors.crimson,
-        borderWidth: 2,
+        borderWidth: '2rem',
         borderColor: Colors.gold,
-        padding: 3,
-        marginRight: 5,
+        padding: '3rem',
+        marginRight: '5rem',
     },
     traitText: {
         color: 'white',
@@ -151,7 +144,7 @@ const styles = StyleSheet.create({
     },
     contentText: {
         color: 'white',
-        paddingRight: 5,
+        paddingRight: '5rem',
     },
     titleText: {
         color: 'white',
@@ -159,20 +152,20 @@ const styles = StyleSheet.create({
     },
     descriptionText: {
         color: 'white',
-        paddingTop: 3,
+        paddingTop: '3rem',
     },
     castBtn: {
         backgroundColor: Colors.blue,
         alignSelf: 'center',
-        padding: 5,
-        borderWidth: 1,
+        padding: '5rem',
+        borderWidth: '1rem',
         borderColor: 'white',
-        borderRadius: 5,
-        marginBottom: 5,
-        marginTop: 10,
+        borderRadius: '5rem',
+        marginBottom: '5rem',
+        marginTop: '10rem',
     },
     castBtnText: {
         color: 'white',
-        fontSize: 20,
+        fontSize: '20rem',
     },
 });

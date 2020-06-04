@@ -1,40 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { Card, ModRow } from '../../common';
 
-const renderItem = ({ item }) => (
-    <View>
-        <Text>{item.title} {item.value}</Text>
+const AbilityScores = ({ data }) => (
+    <View style={styles.container}>
+        <Card title='Ability Scores'>
+            <View style={styles.contentContainer}>
+                <ModRow mods={data} />
+            </View>
+        </Card>
     </View>
 );
 
-const AbilityScores = ({ data }) => {
-    return (
-        <View style={styles.container}>
-            <Card title='Ability Scores'>
-                {/* <FlatList
-                    data={data}
-                    keyExtractor={(item, index) => index.toString()}
-                    renderItem={renderItem}
-                /> */}
-                <View style={styles.contentContainer}>
-                    <ModRow mods={data} />
-                </View>
-            </Card>
-        </View>
-    );
-};
-
 export default AbilityScores;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
-        paddingHorizontal: 10,
-        marginBottom: 10,
+        paddingHorizontal: '10rem',
+        marginBottom: '10rem',
     },
     contentContainer: {
-        paddingHorizontal: 10,
-        paddingVertical: 15,
+        paddingHorizontal: '10rem',
+        paddingVertical: '15rem',
     }
 });

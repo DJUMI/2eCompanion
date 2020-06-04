@@ -57,7 +57,7 @@ export default DrawerContent;
 
 const styles = EStyleSheet.create({
     container: {
-        borderTopWidth: 1,
+        borderTopWidth: '1rem',
         borderColor: Colors.gold,
     },
     text: {
@@ -67,7 +67,7 @@ const styles = EStyleSheet.create({
     },
     itemContainer: {
         flexDirection: 'row',
-        borderBottomWidth: 1,
+        borderBottomWidth: '1rem',
         borderColor: Colors.gold,
         padding: '15rem',
         paddingVertical: '20rem',

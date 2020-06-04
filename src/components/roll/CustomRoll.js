@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -46,22 +46,22 @@ const styles = EStyleSheet.create({
     },
     headerContainer: {
         flex: 1,
-        paddingTop: 20,
-        marginHorizontal: 10,
-        marginTop: 10,
-        padding: 5,
+        paddingTop: '20rem',
+        marginHorizontal: '10rem',
+        marginTop: '10rem',
+        padding: '5rem',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        borderBottomWidth: 1,
+        borderBottomWidth: '1rem',
         borderColor: Colors.lightBlue,
     },
     headerText: {
         alignSelf: 'center',
         color: Colors.lightBlue,
-        fontSize: 20,
+        fontSize: '20rem',
     },
     contentContainer: {
-        flex: 15,
+        flex: '15rem',
         flexDirection: 'row',
     },
     numberDiceContainer: {

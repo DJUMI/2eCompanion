@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { useNavigation } from '@react-navigation/native';
@@ -6,11 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 import { Card, ModRow } from '../../common';
 import Colors from '../../../constants/Colors';
 import SensesList from './SensesList';
-import { Context } from '../../../context/RollContext';
 
 const Perception = ({ data }) => {
     const navigation = useNavigation();
-    const { roll } = useContext(Context);
     const total = data.mod.value + data.prof.value + data.item + data.temp;
 
     return (
@@ -45,30 +43,30 @@ export default Perception;
 
 const styles = EStyleSheet.create({
     container: {
-        marginTop: 10,
-        paddingHorizontal: 10,
+        marginTop: '10rem',
+        paddingHorizontal: '10rem',
     },
     itemContainer: {
-        padding: 5,
-        paddingBottom: 10,
+        padding: '5rem',
+        paddingBottom: '10rem',
     },
     row: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: 5,
+        marginBottom: '5rem',
     },
     btn: {
         flex: 2,
         backgroundColor: Colors.blue,
-        marginRight: 10,
-        padding: 10,
+        marginRight: '10rem',
+        padding: '10rem',
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 1,
+        borderWidth: '1rem',
         borderColor: 'white',
     },
     btnText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: '18rem',
     }
 });

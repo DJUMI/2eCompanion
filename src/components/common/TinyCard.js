@@ -1,25 +1,20 @@
 import React, { useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
 
-const renderClosed = (title) => {
-    return (
-        <View style={styles.closedContainer}>
-            <Text style={styles.titleText}>{title}</Text>
-        </View>
-    );
-};
+const renderClosed = (title) => (
+    <View style={styles.closedContainer}>
+        <Text style={styles.titleText}>{title}</Text>
+    </View>
+);
 
-const renderExpanded = (title) => {
-    return (
-        <View style={styles.expandedContainer}>
-            <Text style={styles.titleText}>{title}</Text>
-        </View>
-    );
-};
+const renderExpanded = (title) => (
+    <View style={styles.expandedContainer}>
+        <Text style={styles.titleText}>{title}</Text>
+    </View>
+);
 
 const TinyCard = ({ title, children }) => {
     const [isExpanded, setIsExpanded] = useState(true);
@@ -27,16 +22,10 @@ const TinyCard = ({ title, children }) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => setIsExpanded(!isExpanded)}>
-                {isExpanded ?
-                    renderExpanded(title) :
-                    renderClosed(title)
-                }
+                {isExpanded ? renderExpanded(title) : renderClosed(title)}
             </TouchableOpacity>
             <View style={styles.itemContainer}>
-                {isExpanded ?
-                    children :
-                    null
-                }
+                {isExpanded ? children : null}
             </View>
         </View>
     );
@@ -51,7 +40,7 @@ const styles = EStyleSheet.create({
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 2,
+            height: '2rem',
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
@@ -60,30 +49,30 @@ const styles = EStyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: Colors.blue,
-        borderRadius: 5,
+        borderRadius: '5rem',
     },
     expandedContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: Colors.blue,
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5,
+        borderTopLeftRadius: '5rem',
+        borderTopRightRadius: '5rem',
     },
     titleText: {
         color: 'white',
-        fontSize: 16,
-        padding: 5,
+        fontSize: '16rem',
+        padding: '5rem',
     },
     itemContainer: {
         backgroundColor: Colors.mediumBrown,
-        borderBottomLeftRadius: 5,
-        borderBottomRightRadius: 5,
+        borderBottomLeftRadius: '5rem',
+        borderBottomRightRadius: '5rem',
         overflow: 'hidden',
     },
     iconContainer: {
         flex: 1,
         alignItems: 'flex-end',
         justifyContent: 'center',
-        paddingRight: 10,
+        paddingRight: '10rem',
     }
 });

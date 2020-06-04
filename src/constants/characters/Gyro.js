@@ -222,6 +222,7 @@ export default {
     ],
     character: {
         hp: {current: 28, max: 42},
+        xp: 150,
         conditions: [],
         dying: 0,
         wounded: 0,

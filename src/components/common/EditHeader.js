@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -31,17 +32,17 @@ const EditHeader = () => {
 
 export { EditHeader };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         backgroundColor: Colors.crimson,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingTop: 30,
-        paddingBottom: 10,
+        paddingTop: '30rem',
+        paddingBottom: '10rem',
     },
     iconLeftContainer: {
         flex: 1,
-        paddingLeft: 20,
+        paddingLeft: '20rem',
     },
     textContainer: {
         flex: 2,
@@ -49,11 +50,11 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white',
-        fontSize: 24,
+        fontSize: '24rem',
     },
     iconRightContainer: {
         flex: 1,
         alignItems: 'flex-end',
-        paddingRight: 20,
+        paddingRight: '20rem',
     }
 });

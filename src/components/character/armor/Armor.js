@@ -41,9 +41,9 @@ export default Armor;
 
 const styles = EStyleSheet.create({
     container: {
-        paddingHorizontal: 10,
+        paddingHorizontal: '10rem',
     },
     contentContainer: {
-        paddingHorizontal: 5,
+        paddingHorizontal: '5rem',
     }
 });

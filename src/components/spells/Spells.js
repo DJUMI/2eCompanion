@@ -1,25 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { Text, View, FlatList } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+
 
 import { Accordion, Card } from '../common';
-import Colors from '../../constants/Colors';
 import SpellInfo from './SpellInfo';
 
-const renderAccordionContent = (item) => {
-    return <SpellInfo data={item} />;
-};
+const renderAccordionContent = (item) => (
+    <SpellInfo data={item} />
+);
 
-const renderAccordionHeader = ({ name, casts }) => {
-    return (
+const renderAccordionHeader = ({ name, casts }) => (
         <View style={styles.headerContainer}>
             <Text style={styles.headerText}>{name}</Text>
             <Text style={styles.headerText}>Casts {casts}</Text>
         </View>
     );
-};
 
-const renderItem = ({ item }) => {
-    return (
+const renderItem = ({ item }) => (
         <Accordion
             title={`Level ${item.level}`}
             data={item.spells}
@@ -27,10 +25,8 @@ const renderItem = ({ item }) => {
             renderHeader={renderAccordionHeader}
         />
     );
-}
 
-const Spells = ({ data }) => {
-    return (
+const Spells = ({ data }) => (
         <View style={styles.container}>
             {data.length ?
                 <Card title='Spells'>
@@ -46,24 +42,23 @@ const Spells = ({ data }) => {
             }
         </View>
     );
-};
 
 export default Spells;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
-        paddingBottom: 10,
+        paddingBottom: '10rem',
     },
     accordionContainer: {
-        padding: 5,
+        padding: '5rem',
     },
     headerContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 5,
+        padding: '5rem',
     },
     headerText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: '18rem',
     },
 });

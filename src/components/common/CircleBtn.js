@@ -24,16 +24,16 @@ const styles = EStyleSheet.create({
     btn: {
         backgroundColor: Colors.mediumBrown,
         borderColor: Colors.darkBrown,
-        borderWidth: 3,
-        height: 80,
-        width: 80,
-        borderRadius: 40,
+        borderWidth: '3rem',
+        height: '80rem',
+        width: '80rem',
+        borderRadius: '40rem',
         justifyContent: 'center',
         alignItems: 'center',
     },
     value: {
         color: 'white',
-        fontSize: 18,
+        fontSize: '18rem',
         fontWeight: 'bold',
     },
 });

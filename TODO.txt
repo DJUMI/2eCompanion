@@ -1,4 +1,3 @@
-add rem units
 app
     load fav character on login
     go to add character if no characters
@@ -18,11 +17,11 @@ log in form
     style better
 character
     animate hp circle
+    change hp circle to green when poisoned
     replace shield button with shield shape
     replace weapon button with weapon shapes
     change weapon info?
     add class dc?
-    add xp
     add move speed
 skills
     *add actions

@@ -4,33 +4,31 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../../constants/Colors';
 
-const WeaponInfo = ({ title, value }) => {
-    return (
-        <View style={styles.container}>
-            <View style={styles.titleContainer}>
-                <Text style={styles.titleText}>{title}</Text>
-            </View>
-            <View style={styles.valueContainer}>
-                <Text style={styles.valueText}>{value}</Text>
-            </View>
+const WeaponInfo = ({ title, value }) => (
+    <View style={styles.container}>
+        <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>{title}</Text>
         </View>
-    );
-};
+        <View style={styles.valueContainer}>
+            <Text style={styles.valueText}>{value}</Text>
+        </View>
+    </View>
+);
 
 export default WeaponInfo;
 
 const styles = EStyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 5,
+        paddingHorizontal: '5rem',
     },
     titleContainer: {
         backgroundColor: Colors.darkBrown,
-        alignSelf:'center',
-        paddingHorizontal: 5,
-        paddingTop: 5,
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5,
+        alignSelf: 'center',
+        paddingHorizontal: '5rem',
+        paddingTop: '5rem',
+        borderTopLeftRadius: '5rem',
+        borderTopRightRadius: '5rem',
     },
     titleText: {
         color: 'white',
@@ -38,9 +36,9 @@ const styles = EStyleSheet.create({
     },
     valueContainer: {
         borderColor: Colors.darkBrown,
-        borderWidth: 1,
+        borderWidth: '1rem',
         backgroundColor: 'white',
-        padding: 5,
+        padding: '5rem',
         alignItems: 'center',
     },
     valueText: {

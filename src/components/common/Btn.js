@@ -1,29 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
 
-const Btn = ({ title, onPress }) => {
-    return (
-        <TouchableOpacity style={styles.btn} onPress={onPress}>
-            <Text style={styles.btnText}>{title}</Text>
-        </TouchableOpacity>
-    );
-};
+const Btn = ({ title, onPress }) => (
+    <TouchableOpacity style={styles.btn} onPress={onPress}>
+        <Text style={styles.btnText}>{title}</Text>
+    </TouchableOpacity>
+);
 
 export { Btn };
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     btn: {
         flex: 1,
         backgroundColor: Colors.blue,
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 1,
+        borderWidth: '1rem',
         borderColor: 'white',
     },
     btnText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: '18rem',
     }
 });

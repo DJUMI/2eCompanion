@@ -1,28 +1,27 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { Card, StatCircle } from '../common';
 
-const Bulk = ({ data }) => {
-    return (
-        <View style={styles.container}>
-            <Card title='Bulk'>
-                <View style={styles.contentContainer}>
-                    <StatCircle title={data.current} value={data.max} />
-                </View>
-            </Card>
-        </View>
-    );
-};
+const Bulk = ({ data }) => (
+    <View style={styles.container}>
+        <Card title='Bulk'>
+            <View style={styles.contentContainer}>
+                <StatCircle title={data.current} value={data.max} />
+            </View>
+        </Card>
+    </View>
+);
 
 export default Bulk;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
-        marginRight: 10,
+        marginRight: '10rem',
     },
     contentContainer: {
-        padding: 10,
+        padding: '10rem',
         alignItems: 'center',
     },
 });

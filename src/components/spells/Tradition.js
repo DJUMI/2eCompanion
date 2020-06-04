@@ -1,42 +1,41 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { Card } from '../common';
 import Schools from './Schools';
 import Colors from '../../constants/Colors';
 
-const Tradition = ({ data: { tradition, casterType }}) => {
-    return (
-        <View style={styles.container}>
-            <Card title='Tradition'>
-                <View style={styles.contentContainer}>
-                    <Schools school={tradition}/>
-                    {casterType ? <Text style={styles.text}>{casterType}</Text> : null}
-                </View>
-            </Card>
-        </View>
-    );
-};
+const Tradition = ({ data: { tradition, casterType } }) => (
+    <View style={styles.container}>
+        <Card title='Tradition'>
+            <View style={styles.contentContainer}>
+                <Schools school={tradition} />
+                {casterType ? <Text style={styles.text}>{casterType}</Text> : null}
+            </View>
+        </Card>
+    </View>
+);
 
 export default Tradition;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         flex: 3,
-        marginRight: 5,
-        paddingBottom: 10,
+        marginRight: '5rem',
+        paddingBottom: '10rem',
     },
     contentContainer: {
-        padding: 5,
+        padding: '5rem',
     },
     text: {
         color: 'white',
         backgroundColor: Colors.blue,
         alignSelf: 'center',
-        marginTop: 5,
-        paddingVertical: 5,
-        paddingHorizontal: 20,
+        marginTop: '5rem',
+        paddingVertical: '5rem',
+        paddingHorizontal: '20rem',
         borderColor: 'white',
-        borderWidth: 1,
+        borderWidth: '1rem',
     },
 });

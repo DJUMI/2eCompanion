@@ -1,56 +1,48 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { Accordion, Card } from '../../common';
 
-const renderAccordionContent = ({ description }) => {
-    return (
-        <View style={styles.contentContainer}>
-            <Text style={styles.contentText}>{description}</Text>
-        </View>
+const renderAccordionContent = ({ description }) => (
+    <View style={styles.contentContainer}>
+        <Text style={styles.contentText}>{description}</Text>
+    </View>
+);
 
-    );
-};
+const renderAccordionHeader = ({ title, level }) => (
+    <View style={styles.headerContainer}>
+        <Text style={styles.headerText}>{title}</Text>
+        <Text style={styles.headerText}>{level}</Text>
+    </View>
+);
 
-const renderAccordionHeader = ({ title, level }) => {
-    return (
-        <View style={styles.headerContainer}>
-            <Text style={styles.headerText}>{title}</Text>
-            <Text style={styles.headerText}>{level}</Text>
-        </View>
-    );
-};
-
-const Conditions = ({ conditions }) => {
-    return (
-        conditions.length ?
-            <Card title='Conditions'>
-
-                <Accordion
-                    data={conditions}
-                    renderContent={renderAccordionContent}
-                    renderHeader={renderAccordionHeader}
-                />
-            </Card > :
-            <Card title='Conditions' empty />
-
-    );
-};
+const Conditions = ({ conditions }) => (
+    conditions.length ?
+        <Card title='Conditions'>
+            <Accordion
+                data={conditions}
+                renderContent={renderAccordionContent}
+                renderHeader={renderAccordionHeader}
+            />
+        </Card > :
+        <Card title='Conditions' empty />
+);
 
 export default Conditions;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 5,
+        padding: '5rem',
     },
     headerText: {
         color: 'white',
-        fontSize: 16,
+        fontSize: '16rem',
     },
     contentContainer: {
-        padding: 5
+        padding: '5rem'
     },
     contentText: {
         color: 'white',

@@ -32,11 +32,11 @@ export default Weapon;
 
 const styles = EStyleSheet.create({
     container: {
-        paddingTop: 10,
+        paddingTop: '10rem',
     },
     row: {
         flexDirection: 'row',
-        paddingBottom: 10,
-        paddingTop: 5,
+        paddingBottom: '10rem',
+        paddingTop: '5rem',
     },
 });

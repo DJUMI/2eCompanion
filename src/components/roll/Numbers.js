@@ -1,11 +1,12 @@
-import React, { useContext, useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
+import React, { useContext } from 'react';
+import { Text, View, TouchableOpacity } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
 import { Context } from '../../context/RollContext';
 
 const Numbers = () => {
-    const { state, addDigit, addOpenParen, addClosedParen } = useContext(Context);
+    const { addDigit, addOpenParen, addClosedParen } = useContext(Context);
 
     const onDigitPress = (number) => {
         addDigit(number);
@@ -69,12 +70,12 @@ const Numbers = () => {
 
 export default Numbers;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         flex: 1,
-        paddingBottom: 10,
+        paddingBottom: '10rem',
         borderColor: Colors.lightBlue,
-        borderTopWidth: 1,
+        borderTopWidth: '1rem',
     },
     row: {
         flex: 1,
@@ -83,40 +84,40 @@ const styles = StyleSheet.create({
     itemContainer: {
         flex: 1,
         borderColor: Colors.lightBlue,
-        borderBottomWidth: 1,
-        borderRightWidth: 1,
+        borderBottomWidth: '1rem',
+        borderRightWidth: '1rem',
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 5,
-        marginTop: 5,
+        marginLeft: '5rem',
+        marginTop: '5rem',
     },
     lastItemContainer: {
         flex: 1,
         borderColor: Colors.lightBlue,
-        borderBottomWidth: 1,
+        borderBottomWidth: '1rem',
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 5,
-        marginTop: 5,
+        marginLeft: '5rem',
+        marginTop: '5rem',
     },
     bottomContainer: {
         flex: 1,
         borderColor: Colors.lightBlue,
-        borderRightWidth: 1,
+        borderRightWidth: '1rem',
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 5,
-        marginTop: 5,
+        marginLeft: '5rem',
+        marginTop: '5rem',
     },
     lastBottomContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 5,
-        marginTop: 5,
+        marginLeft: '5rem',
+        marginTop: '5rem',
     },
     itemText: {
         color: Colors.lightBlue,
-        fontSize: 20,
+        fontSize: '20rem',
     }
 });

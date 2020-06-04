@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
 
-const Schools = ({ tradition }) => {
-    return (
+const Schools = ({ tradition }) => (
         <View style={styles.container}>
             <View style={styles.row}>
                 <View style={styles.schoolContainer}>
@@ -24,11 +24,10 @@ const Schools = ({ tradition }) => {
             </View>
         </View>
     );
-};
 
 export default Schools;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         backgroundColor: 'tan',
     },
@@ -37,9 +36,9 @@ const styles = StyleSheet.create({
     },
     schoolContainer: {
         flex: 1,
-        padding: 5,
+        padding: '5rem',
         borderColor: Colors.darkBrown,
-        borderWidth: 1,
+        borderWidth: '1rem',
     },
     schoolText: {
         color: Colors.crimson,

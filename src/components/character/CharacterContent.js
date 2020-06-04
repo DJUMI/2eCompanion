@@ -26,18 +26,19 @@ const CharacterContent = () => {
         saves,
         shield,
         weaponProf,
-        wounded
+        wounded,
+        xp
     } = state.characters[state.current].character;
     return (
         <View style={styles.container} >
-            <Health data={{ hp, dying, wounded, conditions }} />
+            <Health data={{ hp, xp, dying, wounded, conditions }} />
             <AbilityScores data={abilityScores} />
             <Armor data={{ armor, shield }} />
             <Saves data={saves} />
             <Perception data={perception} />
-            <WeaponProf data={weaponProf} />
             <Melee data={melee} />
             <Ranged data={ranged} />
+            <WeaponProf data={weaponProf} />
         </View>
     );
 };
@@ -46,6 +47,6 @@ export default CharacterContent;
 
 const styles = EStyleSheet.create({
     container: {
-        marginBottom: 20,
+        marginBottom: '20rem',
     },
 });

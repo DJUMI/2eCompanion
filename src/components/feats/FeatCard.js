@@ -1,82 +1,77 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { Text, View, FlatList } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { Accordion, Card } from '../common';
 import Colors from '../../constants/Colors';
 
-const renderAccordionContent = ({ type, level, traits, trigger, description }) => {
-    return (
-        <View style={styles.contentContainer}>
-            <View style={styles.topContainer}>
-                <View style={styles.row}>
-                    <Text style={styles.type}>{type}</Text>
-                    <Text style={styles.level}>{level}</Text>
-                </View>
-                <View style={styles.traitsContainer}>
-                    <FlatList
-                        horizontal
-                        data={traits}
-                        keyExtractor={(item, index) => index.toString()}
-                        renderItem={({ item }) => {
-                            return (
-                                <View style={styles.trait}>
-                                    <Text style={styles.traitText}>{item}</Text>
-                                </View>
-                            );
-                        }}
-                    />
-                </View>
-                {trigger ?
-                    <Text style={styles.triggerText}>
-                        <Text style={styles.triggerTitle}>Trigger </Text>
-                        {trigger}
-                    </Text> :
-                    null
-                }
+const renderAccordionContent = ({ type, level, traits, trigger, description }) => (
+    <View style={styles.contentContainer}>
+        <View style={styles.topContainer}>
+            <View style={styles.row}>
+                <Text style={styles.type}>{type}</Text>
+                <Text style={styles.level}>{level}</Text>
             </View>
-            <Text style={styles.descriptionText}>{description}</Text>
-        </View>
-    );
-};
-
-const renderAccordionHeader = ({ name, action }) => {
-    return (
-        <View style={styles.headerContainer}>
-            <Text style={styles.headerText}>{name}</Text>
-            <Text style={styles.headerText}>{action}</Text>
-        </View>
-    );
-};
-
-const FeatCard = ({ name, feats }) => {
-    return (
-        <View style={styles.container}>
-            {feats.length ?
-                <Card title={name}>
-                    <Accordion
-                        data={feats}
-                        renderContent={renderAccordionContent}
-                        renderHeader={renderAccordionHeader}
-                    />
-                </Card> :
-                <Card title={name} empty />
+            <View style={styles.traitsContainer}>
+                <FlatList
+                    horizontal
+                    data={traits}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => {
+                        return (
+                            <View style={styles.trait}>
+                                <Text style={styles.traitText}>{item}</Text>
+                            </View>
+                        );
+                    }}
+                />
+            </View>
+            {trigger ?
+                <Text style={styles.triggerText}>
+                    <Text style={styles.triggerTitle}>Trigger </Text>
+                    {trigger}
+                </Text> :
+                null
             }
         </View>
-    );
-};
+        <Text style={styles.descriptionText}>{description}</Text>
+    </View>
+);
+
+const renderAccordionHeader = ({ name, action }) => (
+    <View style={styles.headerContainer}>
+        <Text style={styles.headerText}>{name}</Text>
+        <Text style={styles.headerText}>{action}</Text>
+    </View>
+);
+
+const FeatCard = ({ name, feats }) => (
+    <View style={styles.container}>
+        {feats.length ?
+            <Card title={name}>
+                <Accordion
+                    data={feats}
+                    renderContent={renderAccordionContent}
+                    renderHeader={renderAccordionHeader}
+                />
+            </Card> :
+            <Card title={name} empty />
+        }
+    </View>
+);
 
 export default FeatCard;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
-        marginTop: 10,
-        paddingHorizontal: 10,
+        marginTop: '10rem',
+        paddingHorizontal: '10rem',
     },
     contentContainer: {
-        padding: 5,
+        padding: '5rem',
     },
     topContainer: {
-        borderBottomWidth: 1,
+        borderBottomWidth: '1rem',
         borderBottomColor: Colors.darkBrown,
     },
     row: {
@@ -84,29 +79,29 @@ const styles = StyleSheet.create({
     },
     type: {
         color: 'white',
-        paddingBottom: 3,
-        paddingRight: 5,
+        paddingBottom: '3rem',
+        paddingRight: '5rem',
     }, level: {
         color: 'white',
-        paddingBottom: 3,
+        paddingBottom: '3rem',
     },
     traitsContainer: {
         flexDirection: 'row',
-        paddingBottom: 3,
+        paddingBottom: '3rem',
     },
     trait: {
         backgroundColor: Colors.crimson,
-        borderWidth: 2,
+        borderWidth: '2rem',
         borderColor: Colors.gold,
-        padding: 3,
-        marginRight: 5,
+        padding: '3rem',
+        marginRight: '5rem',
     },
     traitText: {
         color: 'white',
     },
     triggerText: {
         color: 'white',
-        paddingBottom: 3,
+        paddingBottom: '3rem',
     },
     triggerTitle: {
         color: 'white',
@@ -114,15 +109,15 @@ const styles = StyleSheet.create({
     },
     descriptionText: {
         color: 'white',
-        paddingTop: 3,
+        paddingTop: '3rem',
     },
     headerContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 5,
+        padding: '5rem',
     },
     headerText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: '18rem',
     },
 });

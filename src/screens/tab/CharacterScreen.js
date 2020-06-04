@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { Dimensions, Image, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StatusBar, Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 
 import CharacterContent from '../../components/character/CharacterContent';
@@ -7,40 +8,38 @@ import { Context } from '../../context/CharacterContext';
 import { MAX_HEADER_HEIGHT, MIN_HEADER_HEIGHT } from '../../constants/Dimensions';
 import { Header, Loading } from '../../components/common';
 
-const renderContent = (image_url, name) => {
-  return (
-    <HeaderImageScrollView
-      scrollViewBackgroundColor='tan'
-      maxHeight={MAX_HEADER_HEIGHT}
-      minHeight={MIN_HEADER_HEIGHT}
-      maxOverlayOpacity={0.3}
-      foregroundExtrapolate={null}
-      renderHeader={() => (
-        <View style={{ flex: 1 }}>
-          {image_url === '' ?
-            <Image
-              source={require('../../../assets/images/default-profile.png')}
-              style={styles.image}
-            /> : <Image
-              source={{ uri: image_url }}
-              style={styles.image}
-            />}
-        </View>
-      )}
-      renderFixedForeground={() => (
-        <View style={styles.title}>
-          <Text style={styles.titleText}>{name}</Text>
-        </View>
-      )}
-    >
-      <View  >
-        <TriggeringView>
-          <CharacterContent />
-        </TriggeringView>
+const renderContent = (image_url, name) => (
+  <HeaderImageScrollView
+    scrollViewBackgroundColor='tan'
+    maxHeight={MAX_HEADER_HEIGHT}
+    minHeight={MIN_HEADER_HEIGHT}
+    maxOverlayOpacity={0.3}
+    foregroundExtrapolate={null}
+    renderHeader={() => (
+      <View style={{ flex: 1 }}>
+        {image_url === '' ?
+          <Image
+            source={require('../../../assets/images/default-profile.png')}
+            style={styles.image}
+          /> : <Image
+            source={{ uri: image_url }}
+            style={styles.image}
+          />}
       </View>
-    </HeaderImageScrollView>
-  );
-};
+    )}
+    renderFixedForeground={() => (
+      <View style={styles.title}>
+        <Text style={styles.titleText}>{name}</Text>
+      </View>
+    )}
+  >
+    <View  >
+      <TriggeringView>
+        <CharacterContent />
+      </TriggeringView>
+    </View>
+  </HeaderImageScrollView>
+);
 
 const CharacterScreen = ({ navigation }) => {
   const { state, fetchCharacters } = useContext(Context);
@@ -70,7 +69,7 @@ const CharacterScreen = ({ navigation }) => {
 
 export default CharacterScreen;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
   },
@@ -84,12 +83,12 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    paddingTop: 20,
+    paddingTop: '20rem',
   },
   titleText: {
     backgroundColor: 'transparent',
     color: 'white',
-    fontSize: 24,
+    fontSize: '24rem',
   },
 });
 

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Cantrip from './Cantrip';
 import Focus from './Focus';
@@ -42,9 +43,9 @@ const SpellsContent = () => {
 
 export default SpellsContent;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
-        padding: 10,
+        padding: '10rem',
     },
     row: {
         flexDirection: 'row',

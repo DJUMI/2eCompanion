@@ -6,42 +6,40 @@ import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
 import { Context } from '../../context/CharacterContext';
 
-const renderSeparator = () => {
-    return <View style={styles.separator} />
-};
+const renderSeparator = () => (
+    <View style={styles.separator} />
+);
 
 const DrawerAccordion = ({ navigation }) => {
     const [selected, setSelected] = useState(undefined);
     const [search, setSearch] = useState('');
     const { state, switchCharacter } = useContext(Context);
 
-    const renderItem = ({ item, index }) => {
-        return (
-            <TouchableOpacity
-                style={styles.itemContainer}
-                onPress={() => {
-                    switchCharacter(index);
-                    navigation.closeDrawer();
-                }}
-            >
-                {item.details.image === '' ?
-                    <Image
-                        source={require('../../../assets/images/default-profile.png')}
-                        style={styles.image}
-                    /> : <Image
-                        source={{ uri: item.details.image }}
-                        style={styles.image}
-                        resizeMode='contain'
-                    />}
-                <View style={styles.textContainer}>
-                    <Text style={styles.nameText}>{item.details.name}</Text>
-                    <Text style={styles.itemText}>
-                        {item.details.ancestry} {item.details.class}
-                    </Text>
-                </View>
-            </TouchableOpacity >
-        );
-    };
+    const renderItem = ({ item, index }) => (
+        <TouchableOpacity
+            style={styles.itemContainer}
+            onPress={() => {
+                switchCharacter(index);
+                navigation.closeDrawer();
+            }}
+        >
+            {item.details.image === '' ?
+                <Image
+                    source={require('../../../assets/images/default-profile.png')}
+                    style={styles.image}
+                /> : <Image
+                    source={{ uri: item.details.image }}
+                    style={styles.image}
+                    resizeMode='contain'
+                />}
+            <View style={styles.textContainer}>
+                <Text style={styles.nameText}>{item.details.name}</Text>
+                <Text style={styles.itemText}>
+                    {item.details.ancestry} {item.details.class}
+                </Text>
+            </View>
+        </TouchableOpacity >
+    );
 
     // render a button to add a new character at the bottom of the character list
     const renderSwitchFooter = () => (
@@ -60,41 +58,13 @@ const DrawerAccordion = ({ navigation }) => {
 
                 </TouchableOpacity>
             </View>
-
         </View>
     );
 
-    const renderSwitchOpen = () => {
-        return (
-            <View>
-                <TouchableOpacity
-                    style={styles.openContainer}
-                    onPress={() => onPress(0)}
-                >
-                    <MaterialCommunityIcons
-                        name="account-switch"
-                        size={24}
-                        color={Colors.gold}
-                        style={styles.icon}
-                    />
-                    <Text style={styles.text}>Switch Character</Text>
-                </TouchableOpacity>
-                <FlatList
-                    data={state.characters}
-                    keyExtractor={(item, index) => index.toString()}
-                    renderItem={renderItem}
-                    style={styles.list}
-                    ItemSeparatorComponent={renderSeparator}
-                    ListFooterComponent={renderSwitchFooter}
-                />
-            </View>
-        );
-    };
-
-    const renderSwitchClosed = () => {
-        return (
+    const renderSwitchOpen = () => (
+        <>
             <TouchableOpacity
-                style={styles.closedContainer}
+                style={styles.openContainer}
                 onPress={() => onPress(0)}
             >
                 <MaterialCommunityIcons
@@ -105,48 +75,36 @@ const DrawerAccordion = ({ navigation }) => {
                 />
                 <Text style={styles.text}>Switch Character</Text>
             </TouchableOpacity>
-        );
-    };
+            <FlatList
+                data={state.characters}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={renderItem}
+                style={styles.list}
+                ItemSeparatorComponent={renderSeparator}
+                ListFooterComponent={renderSwitchFooter}
+            />
+        </>
+    );
 
-    const renderSearchOpen = () => {
-        return (
-            <View>
-                <TouchableOpacity
-                    style={styles.openContainer}
-                    onPress={() => onPress(1)}
-                >
-                    <FontAwesome5
-                        name="book-open"
-                        size={24}
-                        color={Colors.gold}
-                        style={styles.icon}
-                    />
-                    <Text style={styles.text}>Reference</Text>
-                </TouchableOpacity>
-                <View style={styles.searchContainer}>
-                    <TextInput
-                        placeholder='Search'
-                        placeholderTextColor={'gray'}
-                        style={styles.input}
-                        value={search}
-                        onChangeText={text => setSearch(text)}
-                    />
-                    <TouchableOpacity
-                        style={styles.iconContainer}
-                        onPress={handleSearch}
-                        style={styles.btn}
-                    >
-                        <Text style={styles.btnText}>Search</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        );
-    };
+    const renderSwitchClosed = () => (
+        <TouchableOpacity
+            style={styles.closedContainer}
+            onPress={() => onPress(0)}
+        >
+            <MaterialCommunityIcons
+                name="account-switch"
+                size={24}
+                color={Colors.gold}
+                style={styles.icon}
+            />
+            <Text style={styles.text}>Switch Character</Text>
+        </TouchableOpacity>
+    );
 
-    const renderSearchClosed = () => {
-        return (
+    const renderSearchOpen = () => (
+        <>
             <TouchableOpacity
-                style={styles.closedContainer}
+                style={styles.openContainer}
                 onPress={() => onPress(1)}
             >
                 <FontAwesome5
@@ -157,8 +115,39 @@ const DrawerAccordion = ({ navigation }) => {
                 />
                 <Text style={styles.text}>Reference</Text>
             </TouchableOpacity>
-        );
-    };
+            <View style={styles.searchContainer}>
+                <TextInput
+                    placeholder='Search'
+                    placeholderTextColor={'gray'}
+                    style={styles.input}
+                    value={search}
+                    onChangeText={text => setSearch(text)}
+                />
+                <TouchableOpacity
+                    style={styles.iconContainer}
+                    onPress={handleSearch}
+                    style={styles.btn}
+                >
+                    <Text style={styles.btnText}>Search</Text>
+                </TouchableOpacity>
+            </View>
+        </>
+    );
+
+    const renderSearchClosed = () => (
+        <TouchableOpacity
+            style={styles.closedContainer}
+            onPress={() => onPress(1)}
+        >
+            <FontAwesome5
+                name="book-open"
+                size={24}
+                color={Colors.gold}
+                style={styles.icon}
+            />
+            <Text style={styles.text}>Reference</Text>
+        </TouchableOpacity>
+    );
 
     const onPress = i => {
         selected === i ?
@@ -182,25 +171,25 @@ const DrawerAccordion = ({ navigation }) => {
 
     if (selected == 0) {
         return (
-            <View>
+            <>
                 {renderSwitchOpen()}
                 {renderSearchClosed()}
-            </View>
+            </>
         );
     } else if (selected == 1) {
         return (
-            <View>
+            <>
                 {renderSwitchClosed()}
                 {renderSearchOpen()}
-            </View>
+            </>
         );
     }
 
     return (
-        <View>
+        <>
             {renderSwitchClosed()}
             {renderSearchClosed()}
-        </View>
+        </>
     );
 };
 
@@ -232,7 +221,7 @@ const styles = EStyleSheet.create({
     separator: {
         borderBottomWidth: 1,
         borderColor: Colors.gold,
-        marginHorizontal: 8,
+        marginHorizontal: '8rem',
     },
     list: {
         backgroundColor: Colors.crimson,
@@ -241,26 +230,26 @@ const styles = EStyleSheet.create({
     },
     itemContainer: {
         flexDirection: 'row',
-        paddingVertical: 15,
-        paddingLeft: 20,
+        paddingVertical: '15rem',
+        paddingLeft: '20rem',
     },
     image: {
-        height: 75,
-        width: 75,
+        height: '75rem',
+        width: '75rem',
         backgroundColor: 'white',
-        borderRadius: 2,
+        borderRadius: '2rem',
     },
     textContainer: {
-        paddingLeft: 15,
+        paddingLeft: '15rem',
     },
     nameText: {
         color: Colors.gold,
-        fontSize: 30,
+        fontSize: '30rem',
         fontWeight: 'bold',
     },
     itemText: {
         color: Colors.gold,
-        fontSize: 18,
+        fontSize: '18rem',
     },
     input: {
         padding: '10rem',
@@ -272,7 +261,7 @@ const styles = EStyleSheet.create({
     },
     searchContainer: {
         flexDirection: 'row',
-        borderBottomWidth: 1,
+        borderBottomWidth: '1rem',
         borderColor: Colors.gold,
         padding: '15rem',
         backgroundColor: Colors.crimson,
@@ -281,7 +270,7 @@ const styles = EStyleSheet.create({
         backgroundColor: Colors.blue,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 1,
+        borderWidth: '1rem',
         borderColor: 'white',
         marginLeft: '10rem',
         paddingHorizontal: '5rem',
@@ -290,21 +279,21 @@ const styles = EStyleSheet.create({
         color: 'white',
     },
     footerContainer: {
-        paddingHorizontal: 8,
+        paddingHorizontal: '8rem',
     },
     footerBorder: {
-        borderTopWidth: 1,
+        borderTopWidth: '1rem',
         borderColor: Colors.gold,
     },
     footer: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingVertical: 15,
-        paddingLeft: 25,
+        paddingVertical: '15rem',
+        paddingLeft: '25rem',
     },
     footerText: {
         color: Colors.gold,
-        fontSize: 18,
-        paddingLeft: 15,
+        fontSize: '18rem',
+        paddingLeft: '15rem',
     },
 });

@@ -52,7 +52,7 @@ export default SavedRolls;
 const styles = EStyleSheet.create({
     container: {
         flex: 1,
-        padding: 10,
+        padding: '10rem',
     },
     listContainer: {
         flex: 1,
@@ -61,37 +61,37 @@ const styles = EStyleSheet.create({
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 1,
+            height: '1rem',
         },
         shadowOpacity: 0.18,
         shadowRadius: 1.00,
         elevation: 1,
         borderColor: Colors.lightBlue,
-        borderWidth: 1,
-        margin: 5,
-        padding: 10,
-        borderRadius: 5,
+        borderWidth: '1rem',
+        margin: '5rem',
+        padding: '10rem',
+        borderRadius: '5rem',
         backgroundColor: 'white',
     },
     itemText: {
         color: Colors.lightBlue,
-        fontSize: 20,
+        fontSize: '20rem',
 
     },
     addContainer: {
         alignItems: 'flex-end',
-        padding: 10,
+        padding: '10rem',
     },
     addBtn: {
         backgroundColor: 'white',
-        padding: 5,
-        borderWidth: 1,
+        padding: '5rem',
+        borderWidth: '1rem',
         borderColor: Colors.lightBlue,
-        borderRadius: 5,
+        borderRadius: '5rem',
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 1,
+            height: '1rem',
         },
         shadowOpacity: 0.18,
         shadowRadius: 1.00,
@@ -99,11 +99,11 @@ const styles = EStyleSheet.create({
     },
     footer: {
         borderColor: Colors.lightBlue,
-        borderTopWidth: 1,
-        padding: 10,
+        borderTopWidth: '1rem',
+        padding: '10rem',
     },
     footerText: {
         color: Colors.lightBlue,
-        fontSize: 20,
+        fontSize: '20rem',
     },
 });

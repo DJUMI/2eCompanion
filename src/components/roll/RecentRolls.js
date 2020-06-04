@@ -37,7 +37,7 @@ export default RecentRolls;
 const styles = EStyleSheet.create({
     container: {
         flex: 1,
-        padding: 10,
+        padding: '10rem',
     },
     listContainer: {
         flex: 1,
@@ -46,30 +46,30 @@ const styles = EStyleSheet.create({
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 1,
+            height: '1rem',
         },
         shadowOpacity: 0.22,
         shadowRadius: 2.22,
         elevation: 3,
         borderColor: Colors.lightBlue,
-        borderWidth: 1,
-        margin: 5,
-        padding: 10,
-        borderRadius: 5,
+        borderWidth: '1rem',
+        margin: '5rem',
+        padding: '10rem',
+        borderRadius: '5rem',
         backgroundColor: 'white',
     },
     itemText: {
         color: Colors.lightBlue,
-        fontSize: 20,
+        fontSize: '20rem',
 
     },
     footer: {
         borderColor: Colors.lightBlue,
-        borderTopWidth: 1,
-        padding: 10,
+        borderTopWidth: '1rem',
+        padding: '10rem',
     },
     footerText: {
         color: Colors.lightBlue,
-        fontSize: 20,
+        fontSize: '20rem',
     },
 });

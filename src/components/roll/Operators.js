@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import Colors from '../../constants/Colors';
@@ -72,17 +73,17 @@ const Operators = () => {
 
 export default Operators;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     operatorContainer: {
         flex: 1,
-        paddingRight: 10,
-        marginBottom: 10,
+        paddingRight: '10rem',
+        marginBottom: '10rem',
         borderColor: Colors.lightBlue,
-        borderLeftWidth: 1,
+        borderLeftWidth: '1rem',
     },
     operator: {
         flex: 1,
-        borderBottomWidth: 1,
+        borderBottomWidth: '1rem',
         borderColor: Colors.lightBlue,
         alignItems: 'center',
         justifyContent: 'center',

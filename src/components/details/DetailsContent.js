@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { KeyboardAvoidingView, Image, Platform, Text, TextInput, View, FlatList, TouchableOpacity } from 'react-native';
+import { Image, Text, TextInput, View, FlatList, TouchableOpacity } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
@@ -13,8 +13,6 @@ const renderNote = ({ item }) => (
         <Text style={styles.noteText}>{item}</Text>
     </View>
 );
-
-
 
 const DetailsContent = () => {
     const { state, editCharacter } = useContext(Context);
@@ -154,16 +152,16 @@ export default DetailsContent;
 
 const styles = EStyleSheet.create({
     container: {
-        padding: 5,
+        padding: '5rem',
     },
     row: {
         flexDirection: 'row',
     },
     imageContainer: {
-        borderWidth: 1,
+        borderWidth: '1rem',
         borderColor: Colors.darkBrown,
-        marginBottom: 5,
-        marginRight: 5,
+        marginBottom: '5rem',
+        marginRight: '5rem',
     },
     image: {
         height: '350rem',
@@ -172,51 +170,51 @@ const styles = EStyleSheet.create({
     levelContainer: {
         flex: 1,
         justifyContent: 'center',
-        padding: 10,
+        padding: '10rem',
     },
     header: {
         backgroundColor: Colors.darkBrown,
-        padding: 5,
+        padding: '5rem',
         alignItems: 'center',
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5,
-        marginBottom: 5,
-        borderRadius: 5,
+        borderTopLeftRadius: '5rem',
+        borderTopRightRadius: '5rem',
+        marginBottom: '5rem',
+        borderRadius: '5rem',
     },
     headerText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: '18rem',
     },
     noteContainer: {
         backgroundColor: 'white',
-        borderWidth: 1,
+        borderWidth: '1rem',
         borderColor: Colors.darkBrown,
-        borderRadius: 5,
-        padding: 5,
-        marginBottom: 10,
+        borderRadius: '5rem',
+        padding: '5rem',
+        marginBottom: '10rem',
     },
     noteFooter: {
     },
     btnContainer: {
-        padding: 5,
-        paddingRight: 15,
+        padding: '5rem',
+        paddingRight: '15rem',
         alignSelf: 'flex-end',
     },
     input: {
-        padding: 5,
+        padding: '5rem',
         backgroundColor: 'white',
-        borderWidth: 1,
+        borderWidth: '1rem',
         borderColor: Colors.lightBlue,
-        borderRadius: 5,
+        borderRadius: '5rem',
     },
     editContainer: {
-        padding: 5,
+        padding: '5rem',
         flexDirection: 'row',
         alignSelf: 'flex-end',
-        height: 300,
+        height: '300rem',
     },
     editBtnContainer: {
-        padding: 5,
-        paddingRight: 15,
+        padding: '5rem',
+        paddingRight: '15rem',
     },
 });

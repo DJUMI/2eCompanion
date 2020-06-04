@@ -406,6 +406,7 @@ export default {
     ],
     character: {
         hp: { current: 35, max: 35 },
+        xp: 150,
         conditions: [
             { title: 'Poisoned', level: 1, description: 'take 1d6 dmg' },
             { title: 'Enfeebled', level: 1, description: 'You’re physically weakened. Enfeebled always includes a value. When you are enfeebled, you take a status penalty equal to the condition value to Strength-based rolls and DCs, including Strength-based melee attack rolls, Strength-based damage rolls, and Athletics checks.' },

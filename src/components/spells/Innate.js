@@ -1,56 +1,52 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { Accordion, Card } from '../common';
-import Colors from '../../constants/Colors';
 import SpellInfo from './SpellInfo';
 
-const renderAccordionContent = (item) => {
-    return <SpellInfo data={item} />;
-};
+const renderAccordionContent = (item) => (
+    <SpellInfo data={item} />
+);
 
-const renderAccordionHeader = ({ title, level }) => {
-    return (
-        <View style={styles.headerContainer}>
-            <Text style={styles.headerText}>{title}</Text>
-            <Text style={styles.headerText}>Level {level}</Text>
-        </View>
-    );
-};
+const renderAccordionHeader = ({ title, level }) => (
+    <View style={styles.headerContainer}>
+        <Text style={styles.headerText}>{title}</Text>
+        <Text style={styles.headerText}>Level {level}</Text>
+    </View>
+);
 
-const Innate = ({ data }) => {
-    return (
-        <View style={styles.container}>
-            {data.length ?
-                <Card title='Innate Spells'>
-                    <Accordion
-                        data={data}
-                        renderContent={renderAccordionContent}
-                        renderHeader={renderAccordionHeader}
-                    />
-                </Card> :
-                <Card title='Innate Spells' empty/>
-            }
-        </View>
-    );
-};
+const Innate = ({ data }) => (
+    <View style={styles.container}>
+        {data.length ?
+            <Card title='Innate Spells'>
+                <Accordion
+                    data={data}
+                    renderContent={renderAccordionContent}
+                    renderHeader={renderAccordionHeader}
+                />
+            </Card> :
+            <Card title='Innate Spells' empty />
+        }
+    </View>
+);
 
 export default Innate;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
-        paddingBottom: 10,
+        paddingBottom: '10rem',
     },
     accordionContainer: {
-        padding: 5,
+        padding: '5rem',
     },
     headerContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 5,
+        padding: '5rem',
     },
     headerText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: '18rem',
     },
 });

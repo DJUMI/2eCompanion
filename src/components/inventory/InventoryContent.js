@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Bulk from './Bulk';
 import Money from './Money';
@@ -27,12 +28,12 @@ const InventoryContent = () => {
 
 export default InventoryContent;
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
-        padding: 5,
+        padding: '5rem',
     },
     row: {
         flexDirection: 'row',
-        paddingBottom: 10,
+        paddingBottom: '10rem',
     }
 });
