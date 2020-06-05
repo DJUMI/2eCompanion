@@ -4,26 +4,27 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Colors from '../../constants/Colors';
 
-const Btn = ({ title, onPress }) => (
-    <TouchableOpacity style={styles.btn} onPress={onPress}>
-        <Text style={styles.btnText}>{title}</Text>
+const RoundBtn = ({ title, onPress, fontSize }) => (
+    <TouchableOpacity style={styles.contentBtn} onPress={onPress}>
+        <Text style={styles.btnText} style={{ color: 'white', fontWeight: 'bold', fontSize }}>{title}</Text>
     </TouchableOpacity>
 );
 
-export { Btn };
+export { RoundBtn };
 
 const styles = EStyleSheet.create({
-    btn: {
+    contentBtn: {
         flex: 1,
         backgroundColor: Colors.blue,
-        justifyContent: 'center',
-        alignItems: 'center',
         borderWidth: '1rem',
         borderColor: 'white',
         borderRadius: '5rem',
+        padding: '10rem',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     btnText: {
         color: 'white',
-        fontSize: '18rem',
-    }
+        fontWeight: 'bold',
+    },
 });

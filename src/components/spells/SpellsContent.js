@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import Cantrip from './Cantrip';
-import Focus from './Focus';
+import Focus from './focus/Focus';
 import Innate from './Innate';
 import Spells from './Spells';
 import SpellMod from './SpellMod';
@@ -33,7 +33,7 @@ const SpellsContent = () => {
                 <SpellMod data={{ key, prof }}/>
             </View>
             <SpellSlots data={slots}/>
-            <Innate data={innate}/>
+            <Innate data={innate} />
             <Focus data={focus}/>
             <Cantrip data={cantrips}/>
             <Spells data={spells}/>

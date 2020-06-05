@@ -42,27 +42,15 @@ const renderContent = (image_url, name) => (
 );
 
 const CharacterScreen = ({ navigation }) => {
-  const { state, fetchCharacters } = useContext(Context);
-  var name = '';
-  var image = '';
-  if (state.characters.length) {
-    image = state.characters[state.current].details.image;
-    name = state.characters[state.current].details.name;
-  }
-
-  const renderLoading = () => {
-    fetchCharacters();
-    return <Loading />;
-  };
+  const { state } = useContext(Context);
+  const name = state.characters[state.current].details.name;
+  const image = state.characters[state.current].details.image;
 
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <Header navigation={navigation} />
-      {state.characters.length ?
-        renderContent(image, name) :
-        renderLoading()
-      }
+        {renderContent(image, name)} 
     </View>
   );
 }

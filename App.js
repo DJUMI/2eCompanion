@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { useEffect } from 'react';
 import { Dimensions, Platform, StatusBar, StyleSheet, YellowBox, View } from 'react-native';
@@ -11,16 +10,14 @@ import ApiKeys from './src/constants/ApiKeys';
 import { Provider as CharacterProvider } from './src/context/CharacterContext';
 import { Provider as UserProvider } from './src/context/UserContext';
 import { Provider as RollProvider } from './src/context/RollContext';
+import { Provider as SpellsProvider } from './src/context/SpellsContext';
 import useCachedResources from './src/hooks/useCachedResources';
+import RootNavigator from './src/navigation/RootNavigator';
 import AuthNavigator from './src/navigation/AuthNavigator';
-import ModalNavigator from './src/navigation/ModalNavigator';
 import LinkingConfiguration from './src/navigation/LinkingConfiguration';
-import { Spinner } from './src/components/common';
 
 const windowDimensions = Dimensions.get('window')
 EStyleSheet.build({ $rem: windowDimensions.width / 380 });
-
-const Stack = createStackNavigator();
 
 export default function App(props) {
   const isLoadingComplete = useCachedResources();
@@ -35,9 +32,11 @@ export default function App(props) {
       firebase.initializeApp(ApiKeys.FirebaseConfig);
     }
     firebase.auth().onAuthStateChanged((user) => {
-      user ?
-        setLoggedIn(true) :
+      if (user) {
+        setLoggedIn(true);
+      } else {
         setLoggedIn(false);
+      }
     });
   }, []);
 
@@ -47,11 +46,13 @@ export default function App(props) {
         return (
           <CharacterProvider>
             <UserProvider>
-              <RollProvider>
-                <NavigationContainer linking={LinkingConfiguration}>
-                  <ModalNavigator />
-                </NavigationContainer>
-              </RollProvider>
+              <SpellsProvider>
+                <RollProvider>
+                  <NavigationContainer linking={LinkingConfiguration}>
+                    <RootNavigator />
+                  </NavigationContainer>
+                </RollProvider>
+              </SpellsProvider>
             </UserProvider>
           </CharacterProvider>
         );
@@ -60,19 +61,13 @@ export default function App(props) {
           <CharacterProvider>
             <UserProvider>
               <NavigationContainer>
-                <Stack.Navigator>
-                  <Stack.Screen name="Auth" component={AuthNavigator} />
-                </Stack.Navigator>
+                <AuthNavigator />
               </NavigationContainer>
             </UserProvider>
           </CharacterProvider>
         );
       default:
-        return (
-          <View style={styles.contentContainer}>
-            <Spinner />
-          </View>
-        );
+        return null;
     }
   };
 
@@ -92,7 +87,6 @@ export default function App(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'tan',
   },
   contentContainer: {
     flex: 1,

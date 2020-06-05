@@ -10,10 +10,9 @@ const characterReducer = (state, action) => {
         case 'DELETE_CHARACTER':
             return state.filter((character) => character.name !== action.payload);
         case 'FETCH_START':
-            return { ...state, fetching: true };
+            return { ...state, fetched: false };
         case 'FETCH_CHARACTERS':
-            const updatedCharacters = [...state.characters, action.payload]
-            return { ...state, characters: updatedCharacters, fetching: false };
+            return { ...state, characters: action.payload, fetched: true };
         case 'SWITCH_CHARACTERS':
             return { ...state, current: action.payload };
         default:
@@ -58,13 +57,16 @@ const deleteCharacter = dispatch => {
 
 const fetchCharacters = dispatch => {
     return () => {
+        dispatch({ type: 'FETCH_START' });
         const { currentUser } = firebase.auth();
         const db = firebase.firestore();
+        const fetched = [];
         db.collection('users').doc(currentUser.uid).collection('characters').get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    dispatch({ type: 'FETCH_CHARACTERS', payload: doc.data() });
-                });
+                    fetched.push(doc.data());                    
+                })
+                dispatch({ type: 'FETCH_CHARACTERS', payload: fetched });
             }).catch(function (error) {
                     console.log("Error getting document:", error);
                 });
@@ -80,5 +82,5 @@ const switchCharacter = dispatch => {
 export const { Context, Provider } = createDataContext(
     characterReducer,
     { createCharacter, deleteCharacter, fetchCharacters, switchCharacter, editCharacter },
-    { current: 0, characters: [], fetching: false }
+    { current: 0, characters: [], fetched: false }
 );

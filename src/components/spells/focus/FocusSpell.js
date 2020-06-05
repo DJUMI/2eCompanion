@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import { Padder, Separator } from '../common';
-import Colors from '../../constants/Colors';
+import { Padder, RoundBtn, Separator } from '../../common';
+import Colors from '../../../constants/Colors';
+import { Context as SpellsContext } from '../../../context/SpellsContext';
 
-const SpellInfo = ({
+const FocusSpell = ({
     data: {
         title,
         action,
@@ -18,8 +19,16 @@ const SpellInfo = ({
         description,
         castDescription,
         heightened
-    }, castFunction
-}) => (
+    }
+}) => {
+    const {
+        state: {
+            focus: {
+                points: { current, max }
+            }
+        }, castFocus, refocus } = useContext(SpellsContext);
+
+    return (
         <View style={styles.accordionContainer}>
             <View style={styles.traitsContainer}>
                 <FlatList
@@ -109,17 +118,17 @@ const SpellInfo = ({
                 </View> :
                 null
             }
-
-            <TouchableOpacity
-                style={styles.castBtn}
-                onPress={() => castFunction()}
-            >
-                <Text style={styles.castBtnText}>CAST</Text>
-            </TouchableOpacity>
+            <View style={styles.btnContainer}>
+                {current ?
+                    <RoundBtn title='CAST' onPress={() => castFocus()} /> :
+                    <RoundBtn title='REFOCUS' onPress={() => refocus(current, max)} />
+                }
+            </View>
         </View>
     );
+}
 
-export default SpellInfo;
+export default FocusSpell;
 
 const styles = EStyleSheet.create({
     accordionContainer: {
@@ -153,6 +162,11 @@ const styles = EStyleSheet.create({
     descriptionText: {
         color: 'white',
         paddingTop: '3rem',
+    },
+    btnContainer: {
+        paddingTop: '10rem',
+        paddingBottom: '5rem',
+        paddingHorizontal: '125rem',
     },
     castBtn: {
         backgroundColor: Colors.blue,

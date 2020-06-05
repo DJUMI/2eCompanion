@@ -1,28 +1,29 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
-import SignInScreen from '../screens/auth/SignInScreen';
-import SignUpScreen from '../screens/auth/SignUpScreen';
+import ModalNavigator from './ModalNavigator';
+import InitialScreen from '../screens/InitialScreen';
 
 const Stack = createStackNavigator();
-const INITIAL_ROUTE_NAME = 'SignIn';
+const INITIAL_ROUTE_NAME = 'Initial';
 
-export default function AuthNavigator({ navigation, route }) {
+export default function RootNavigator({ navigation, route }) {
 
   return (
     <Stack.Navigator 
       initialRouteName={INITIAL_ROUTE_NAME}
       screenOptions={{
+        animationEnabled: false,
         headerShown: false,
       }}
     >
       <Stack.Screen
-        name="SignIn"
-        component={SignInScreen}
+        name="Initial"
+        component={InitialScreen}
       />
       <Stack.Screen
-        name="SignUp"
-        component={SignUpScreen}
+        name="App"
+        component={ModalNavigator}
       />
     </Stack.Navigator>
   );

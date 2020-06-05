@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { useNavigation } from '@react-navigation/native';
 
-import { Card, ModRow } from '../../common';
+import { Card, ModRow, RoundBtn } from '../../common';
 import Colors from '../../../constants/Colors';
 import SensesList from './SensesList';
 
@@ -64,6 +64,7 @@ const styles = EStyleSheet.create({
         alignItems: 'center',
         borderWidth: '1rem',
         borderColor: 'white',
+        borderRadius: '5rem',
     },
     btnText: {
         color: 'white',

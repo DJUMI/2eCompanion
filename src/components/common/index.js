@@ -10,6 +10,7 @@ export * from './Modal';
 export * from './ModCard';
 export * from './ModRow';
 export * from './Padder';
+export * from './RoundBtn';
 export * from './Separator';
 export * from './Spinner';
 export * from './StatCircle';
