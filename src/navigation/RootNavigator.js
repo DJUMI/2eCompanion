@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
+import AuthNavigator from './AuthNavigator';
 import ModalNavigator from './ModalNavigator';
 import InitialScreen from '../screens/InitialScreen';
 
@@ -24,6 +25,10 @@ export default function RootNavigator({ navigation, route }) {
       <Stack.Screen
         name="App"
         component={ModalNavigator}
+      />
+      <Stack.Screen
+        name="Auth"
+        component={AuthNavigator}
       />
     </Stack.Navigator>
   );

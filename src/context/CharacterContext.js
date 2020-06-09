@@ -43,7 +43,7 @@ const createCharacter = dispatch => {
     return () => {
         const { currentUser } = firebase.auth();
         const db = firebase.firestore();
-        db.collection('users').doc(currentUser.uid).collection('characters').doc(Besh.details.name).set(Besh)
+        db.collection('users').doc(currentUser.uid).collection('characters').doc(Gyro.details.name).set(Gyro)
             .then(() => console.log('Document successfully written!'))
             .catch(e => console.e('error writing document: ', e))
     }

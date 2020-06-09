@@ -5,6 +5,8 @@ import createDataContext from './createDataContext';
 
 const spellsReducer = (state, action) => {
     switch (action.type) {
+        case 'SET_STATE':
+            return { ...state, spells: action.payload };
         case 'DELETE_SPELL':
             return state.filter((character) => character.name !== action.payload);
         case 'ADD_SPELL':
@@ -19,15 +21,12 @@ const spellsReducer = (state, action) => {
             return state;
     }
 };
-
-const createCharacter = dispatch => {
-    return () => {
-        const { currentUser } = firebase.auth();
-        const db = firebase.firestore();
-        db.collection('users').doc(currentUser.uid).collection('characters').doc(Besh.details.name).set(Besh)
-            .then(() => console.log('Document successfully written!'))
-            .catch(e => console.e('error writing document: ', e))
-    }
+//initial state
+const setSpellState = dispatch => {
+    return (state) => {
+        console.log('hi')
+        dispatch({ type: 'SET_STATE', payload: state })
+    };
 };
 
 //edit character actions
@@ -65,31 +64,8 @@ const increaseSlot = dispatch => {
     }
 }
 
-
-
-const fetchCharacters = dispatch => {
-    return () => {
-        const { currentUser } = firebase.auth();
-        const db = firebase.firestore();
-        db.collection('users').doc(currentUser.uid).collection('characters').get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    dispatch({ type: 'FETCH_CHARACTERS', payload: doc.data() });
-                });
-            }).catch(function (error) {
-                    console.log("Error getting document:", error);
-                });
-    };
-};
-
-const switchCharacter = dispatch => {
-    return (index) => {
-        dispatch({ type: 'SWITCH_CHARACTERS', payload: index });
-    };
-};
-
 export const { Context, Provider } = createDataContext(
     spellsReducer,
-    { castFocus, deleteSpell, refocus },
+    { setSpellState, deleteSpell, castFocus, refocus, decreaseSlot, increaseSlot },
     { spells: {}, focus: { points: { current: 2, max: 2 } } }
 );

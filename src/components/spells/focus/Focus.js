@@ -15,7 +15,8 @@ const renderAccordionHeader = ({ title, level }) => (
 );
 
 const Focus = ({ data }) => {
-    const { state, refocus } = useContext(Context);
+    const { hat, state, refocus } = useContext(Context);
+    console.log(hat);
 
     const renderAccordionContent = (item) => (
         <FocusSpell data={item} />

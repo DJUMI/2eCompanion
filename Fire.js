@@ -1,23 +1,16 @@
-import * as firebase from 'firebase';
+import * as firebase from "firebase/app";
+import "firebase/analytics";
+import "firebase/auth";
+import "firebase/firestore";
+
 import ApiKeys from './src/constants/ApiKeys';
 
-class Fire {
-    init() {
-        if (!firebase.apps.length) {
-            firebase.initializeApp(ApiKeys.FirebaseConfig);
-        }
-
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-
-            } else {
-                firebase
-                    .auth()
-                    .signInAnonymously()
-                    .catch(error => {});
-            }
-        });
-    }
+if (!firebase.apps.length) {
+    firebase.initializeApp(ApiKeys.FirebaseConfig);
 }
 
-export default Fire;
+firebase.analytics();
+
+export const db = firebase.firestore();
+
+export default firebase;

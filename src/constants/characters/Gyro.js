@@ -227,12 +227,12 @@ export default {
         dying: 0,
         wounded: 0,
         abilityScores: [
-            { title: 'STR', value: 1 },
-            { title: 'DEX', value: 4 },
-            { title: 'CON', value: 2 },
-            { title: 'INT', value: 0 },
-            { title: 'WIS', value: 1 },
-            { title: 'CHA', value: 1 }
+            { title: 'STR', value: 12 },
+            { title: 'DEX', value: 18 },
+            { title: 'CON', value: 14 },
+            { title: 'INT', value: 10 },
+            { title: 'WIS', value: 12 },
+            { title: 'CHA', value: 12 }
         ],
         classDC: {
             mod: { title: 'DEX', value: 4 },
