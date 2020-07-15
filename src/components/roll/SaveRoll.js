@@ -97,13 +97,11 @@ const styles = EStyleSheet.create({
         flex: 3,
     },
     shadow: {
-        borderBottomWidth: '1rem',
-        borderColor: Colors.lightBlue,
         padding: '20rem',
         elevation: 5,
         shadowColor: Colors.lightBlue,
         shadowOffset: {
-            width: -'5rem',
+            width: '5rem',
             height: '5rem',
         },
         shadowOpacity: 0.25,
