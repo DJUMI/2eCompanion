@@ -5,6 +5,7 @@ import createDataContext from './createDataContext';
 import Besh from '../constants/characters/Besh';
 import Gyro from '../constants/characters/Gyro';
 import Moggy from '../constants/characters/Moggy';
+import Chauncey from '../constants/characters/Chauncey';
 
 const characterReducer = (state, action) => {
     switch (action.type) {
@@ -44,7 +45,7 @@ const createCharacter = dispatch => {
     return () => {
         const { currentUser } = firebase.auth();
         const db = firebase.firestore();
-        db.collection('users').doc(currentUser.uid).collection('characters').doc(Moggy.details.name).set(Moggy)
+        db.collection('users').doc(currentUser.uid).collection('characters').doc(Chauncey.details.name).set(Chauncey)
             .then(() => console.log('Document successfully written!'))
             .catch(e => console.e('error writing document: ', e))
     }
