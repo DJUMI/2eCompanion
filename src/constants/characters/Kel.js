@@ -1,98 +1,79 @@
 export default {
     details: {
-        name: 'Kel',
-        image: 'https://firebasestorage.googleapis.com/v0/b/ecompanion-fda17.appspot.com/o/Besh.png?alt=media&token=ffc6fe0d-f9d6-42ac-908c-32d53faed346',
+        name: 'Kelayos Drake',
+        image: 'https://firebasestorage.googleapis.com/v0/b/ecompanion-fda17.appspot.com/o/kel.png?alt=media&token=1425de6f-0233-4016-bb40-0192bc0a9498',
         level: 3,
-        ancestry: 'Gnome',
-        heritage: 'Wellspring',
-        class: 'Druid',
-        background: 'Battle Medic',
-        size: 'small',
-        alignment: 'CG',
-        deity: 'Desna',
+        ancestry: 'Human',
+        heritage: 'Half-elf',
+        class: 'Bard',
+        background: 'Entertainer',
+        size: 'Medium',
+        alignment: 'CN',
+        deity: 'Calistria',
         ethnicity: '',
         nationality: '',
-        birthplace: '',
-        age: 113,
-        gender: 'female',
-        height: '',
-        weight: '',
+        birthplace: 'Korvosa',
+        age: 27,
+        gender: 'Female',
+        height: '5\'9"',
+        weight: '130 lbs',
         appearance: '',
-        attitude: '',
-        beliefs: '',
-        likes: '',
-        dislikes: '',
+        attitude: 'Know-it-all, compulsive, independent, proud',
+        beliefs: 'superstitious, Maestro Muse - Lyrakien',
+        likes: 'ghost hunting, funny hats, pirates',
+        dislikes: 'babies, the sound of people chewing, undercooked food',
         catchphrases: '',
-        notes: ['I Love you', 'Besh is the best'],
+        notes: [],
     },
     inventory: {
-        bulk: { current: 5, max: 10 },
+        bulk: { current: 3, max: 10 },
         money: {
-            cp: 5,
-            sp: 4,
-            gp: 17,
+            cp: 4,
+            sp: 3,
+            gp: 22,
             pp: 0,
         },
         other: [
-            { 
-                title: 'Adventurer\'s Pack', 
-                bulk: '1', 
-                qty: 1, 
-                description: 'This item is the starter kit for an adventurer, containing the essential items for exploration and survival. The Bulk value is for the entire pack together, but see the descriptions of individual items as necessary. The pack contains the following items: backpack (containing the other goods), bedroll, two belt pouches, 10 pieces of chalk, flint and steel, 50 feet of rope, 2 weeks’ rations, soap, 5 torches, and a waterskin.' 
-            },
+            { title: 'Waterskin', bulk: 0.1, qty: 1 },
+            { title: 'Torch', bulk: 0.1, qty: 2 },
+            { title: '50 ft Rope', bulk: 0.1, qty: 1 },
+            { title: 'Chalk', bulk: 0.1, qty: 1 },
+            { title: 'Flint & Steel', bulk: 0.1, qty: 1 },
         ],
         readied: [
-            { 
-                title: 'Holly and Mistletoe',
-                bulk: 0,
+            {
+                title: 'Trumpet - Maestro\'s Instrument',
+                bulk: 1,
                 qty: 1,
-                description: 'Plants of supernatural significance provide a primal focus for primal spellcasters, such as druids, when using certain abilities and casting some spells. A bundle of holly and mistletoe must be held in one hand to use it. Other primal foci exist for druids focused on other aspects of nature.' 
+                description: 'A maestro’s instrument can be crafted in the form of any variety of handheld musical instrument. A maestro’s instrument grants you a +1 item bonus to Performance checks while playing music with the instrument. Activate [two-actions] Interact; Frequency once per day; Effect You can play the instrument to produce the effects of a charm spell. Type lesser; Level 3; Price 60 gp'
             },
-            { 
+            {
                 title: 'Healer\'s Tools',
                 bulk: 1,
                 qty: 1,
-                description: 'This kit of bandages, herbs, and suturing tools is necessary for Medicine checks to Administer First Aid, Treat Disease, Treat Poison, or Treat Wounds. Expanded healer’s tools provide a +1 item bonus to such checks. When you carry the tools from place to place, you keep many of the components handy on your person, in pockets or bandoliers.' 
+                description: 'This kit of bandages, herbs, and suturing tools is necessary for Medicine checks to Administer First Aid, Treat Disease, Treat Poison, or Treat Wounds. Expanded healer’s tools provide a +1 item bonus to such checks. When you carry the tools from place to place, you keep many of the components handy on your person, in pockets or bandoliers.'
             },
+            { title: 'Sling Bullets', bulk: 0.1, qty: 10 },
         ],
         worn: [
-            { 
-                title: 'Backpack', 
-                bulk: 0, 
-                description: 'A backpack holds up to 4 Bulk of items. If you’re carrying or stowing the pack rather than wearing it on your back, its bulk is light instead of negligible. The first 2 Bulk of items in your backpack don’t count against your Bulk limits.' 
-            },
-            { 
-                title: 'Bandolier', 
-                bulk: 0, 
-                description: 'A bandolier holds up to eight items of light Bulk within easy reach and is usually used for alchemical items or potions. If you are carrying or stowing a bandolier rather than wearing it around your chest, it has light Bulk instead of negligible. A bandolier can be dedicated to a full set of tools, such as healer’s tools, allowing you to draw the tools as part of the action that requires them.' 
-            },
-            { 
-                title: 'Leather Armor', 
-                bulk: 1, 
-                description: 'A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.' 
-            },
-            { 
-                title: 'Belt Pouch', 
-                bulk: 0, 
-                description: 'A belt pouch holds up to four items of light Bulk.' 
-            },
-            { 
-                title: 'Belt Pouch', 
-                bulk: 0, 
-                description: 'A belt pouch holds up to four items of light Bulk.' 
-            },
-            { 
-                title: 'Wooden Shield', 
-                bulk: 1, 
-                description: 'Though they come in a variety of shapes and sizes, the protection offered by wooden shields comes from the stoutness of their materials. While wooden shields are less expensive than steel shields, they break more easily' 
-            },
+            { title: 'Padded Armor', bulk: 0.1 },
+            { title: 'Backpack', bulk: -2 },
+            { title: 'Bandolier', bulk: 0 },
+            { title: 'Bandolier', bulk: 0 },
+            { title: 'Belt Pouch', bulk: 0 },
+            { title: 'Sheath', bulk: 0 },
+            { title: 'Sheath', bulk: 0 },
+            { title: 'Sheath', bulk: 0 },
+            { title: 'Whip', bulk: 1 },
+            { title: 'Rapier', bulk: 1 },
+            { title: 'Sling', bulk: 0.1 },
         ]
     },
     spells: {
-        tradition: 'Primal',
-        casterType: 'Prepared',
+        tradition: 'Occult',
+        casterType: 'Spontaneous',
         key: {
-            title: 'WIS',
+            title: 'CHA',
             value: 4,
         },
         prof: {
@@ -105,77 +86,112 @@ export default {
         ],
         innate: [
             {
-                title: 'Forbidding Ward',
+                title: 'Electric Arc',
                 level: '1',
                 action: '2-Actions',
-                traits: ['ABJURATION', 'CANTRIP'],
+                traits: ['ELECTRICITY', 'CANTRIP'],
                 cast: ['Somatic', 'Verbal'],
                 range: { title: 'Range', info: '30 feet' },
-                target: { title: 'Targets', info: '1 ally and 1 enemy' },
-                save: null,
-                duration: { title: 'Duration', info: 'sustained up to 1 minute' },
-                description: 'You ward an ally against the attacks and hostile spells from the target enemy. The target ally gains a +1 status bonus to Armor Class and saving throws against the target enemy’s attacks, spells, and other effects.',
-                castDescription: [],
-                heightened: [{ title: 'Heightened (6th) ', info: 'The status bonus increases to +2' }]
+                target: { title: 'Targets', info: '1 or 2 creatures' },
+                save: { title: 'Saving Throw', info: 'basic Reflex' },
+                duration: null,
+                description: 'An arc of lightning leaps from one target to another. You deal electricity damage equal to 1d4 plus your spellcasting ability modifier.',
+                castDescription: [
+                    { title: 'Critical Success ', info: 'No damage' },
+                    { title: 'Success ', info: 'Half-damage rounded down' },
+                    { title: 'Failure ', info: 'Full damage' },
+                    { title: 'Critical Failure ', info: 'Double damage' }
+                ],
+                heightened: [{ title: 'Heightened (+1) ', info: 'The damage increases by 1d4' }]
             },
         ],
         focus: {
             points: { current: 2, max: 2 },
             spells: [
                 {
-                    title: 'Goodberry',
+                    title: 'Lingering Composition',
                     level: '1',
-                    action: '2-Actions',
+                    action: 'Free Action',
                     casts: '2',
-                    traits: ['UNCOMMON', 'DRUID', 'HEALING', 'NECROMANCY'],
-                    cast: ['Somatic', 'Verbal'],
-                    range: { title: 'Range', info: 'touch' },
-                    target: { title: 'Targets', info: '1 ripe berry' },
+                    traits: ['UNCOMMON', 'BARD'],
+                    cast: ['Verbal'],
+                    range: { title: 'Range', info: '' },
+                    target: null,
                     save: null,
-                    duration: { title: 'Duration', info: '10 minutes' },
-                    description: 'You imbue the target berry with the bounty of nature, turning it into a goodberry that can heal and sustain far beyond its normal capacity. A creature can eat the goodberry with an Interact action to regain 1d6+4 Hit Points. A berry not consumed during the duration withers away. Every six goodberries consumed gives as much nourishment as one square meal for a typical human.',
+                    duration: null,
+                    description: 'You add a flourish to your composition to extend its benefits. If your next action is to cast a cantrip composition with aduration of 1 round, attempt a Performance check. The DC is usually a standard-difficulty DC of a level equal to the highest‑level target of your composition, but the GM can assign a different DC based on the circumstances. The effect depends on the result of your check.',
+                    castDescription: [
+                        { title: 'Critical Success ', info: 'The composition lasts 4 rounds.' },
+                        { title: 'Success ', info: 'The composition lasts 3 rounds.' },
+                        { title: 'Failure ', info: 'The composition lasts 1 round, but you don’t spend the Focus Point for casting this spell.' },
+                    ],
+                    heightened: []
+                },
+                {
+                    title: 'Counter Performance',
+                    level: '1',
+                    action: 'Free Action',
+                    casts: '2',
+                    traits: ['UNCOMMON', 'BARD', 'COMPOSITION', 'FORTUNE', 'MENTAL'],
+                    cast: ['Somatic', 'Verbal'],
+                    range: { title: 'Area', info: '60 ft Emanation' },
+                    target: null,
+                    save: null,
+                    duration: null,
+                    description: 'Your performance protects you and your allies. Roll a Performance check for a type you know: an auditory performance if the trigger was auditory, or a visual one for a visual trigger. You and allies in the area can use the better result between your Performance check and the saving throw.',
                     castDescription: [],
-                    heightened: [{ title: 'Heightened (+1) ', info: 'You can target an additional berry. A creature can consume any number of goodberries from the same casting with a single Interact action.' }]
+                    heightened: []
                 },
             ]
         },
         cantrips: [
             {
-                title: 'Acid Splash',
+                title: 'Inspire Courage',
                 level: '1',
-                action: '2-Actions',
-                attack: { dmg: { die: { type: 'Acid', value: 6 }, additional: { type: 'Splash Acid', value: 1 } }},
-                traits: ['ACID', 'ATTACK', 'CANTRIP', 'EVOCATION'],
-                cast: ['Somatic', 'Verbal'],
-                range: { title: 'Range', info: '30 feet' },
-                target: { title: 'Targets', info: '1 creature or object' },
-                save: null,
-                duration: null,
-                description: 'You splash a glob of acid that splatters creatures and objects alike. Make a spell attack. If you hit, you deal 1d6 acid damage plus 1 splash acid damage. On a critical success, the target also takes 1 persistent acid damage.',
-                castDescription: [],
-                heightened: [
-                    { title: 'Heightened (3rd) ', info: 'The initial damage increases to 1d6 + your spellcasting ability modifier, and the persistent damage increases to 2.' },
-                    { title: 'Heightened (5th) ', info: 'The initial damage increases to 2d6 + your spellcasting ability modifier, and the persistent damage increases to 3, and the splash damage increases to 2.' },
-                    { title: 'Heightened (7th) ', info: 'The initial damage increases to 3d6 + your spellcasting ability modifier, and the persistent damage increases to 4, and the splash damage increases to 3.' },
-                    { title: 'Heightened (9th) ', info: 'The initial damage increases to 4d6 + your spellcasting ability modifier, and the persistent damage increases to 5, and the splash damage increases to 4.' },
-                ]
-            },
-            {
-                title: 'Detect Magic',
-                level: '1',
-                action: '2-Actions',
-                attack: null,
-                traits: ['CANTRIP', 'DETECTION', 'DIVINATION'],
-                cast: ['Somatic', 'Verbal'],
-                range: { title: 'Area', info: '30-foot emanation' },
+                action: '1-Action',
+                traits: ['COMPOSITION', 'UNCOMMON', 'MENTAL', 'EMOTION'],
+                cast: ['Verbal'],
+                range: { title: 'Area', info: '60 ft Emanation' },
                 target: null,
                 save: null,
                 duration: null,
-                description: 'You send out a pulse that registers the presence of magic. You receive no information beyond the presence or absence of magic. You can choose to ignore magic you’re fully aware of, such as the magic items and ongoing spells of you and your allies. You detect illusion magic only if that magic’s effect has a lower level than the level of your detect magic spell. However, items that have an illusion aura but aren’t deceptive in appearance (such as an invisibility potion) typically are detected normally.',
+                description: 'You inspire your allies with words or tunes of encouragement. You and all allies in the area gain a +1 status bonus to attack rolls, damage rolls, and saves against fear effects.',
+                castDescription: [],
+                heightened: []
+            },
+            {
+                title: 'Daze',
+                level: '1',
+                action: '2-Actions',
+                traits: [],
+                cast: ['Somatic', 'Verbal'],
+                range: { title: 'Range', info: '60 feet' },
+                target: { title: 'Targets', info: '1 creature' },
+                save: { title: 'Saving Throw', info: 'basic Will' },
+                duration: { title: 'Duration', info: '1 round' },
+                description: 'You cloud the target’s mind and daze it with a mental jolt. The jolt deals mental damage equal to your spellcasting ability modifier; the target must attempt a basic Will save. If the target critically fails the save, it is also stunned 1.',
+                castDescription: [
+                    { title: 'Failure ', info: 'The jolt deals mental damage equal to your spellcasting ability modifier.' },
+                    { title: 'Critical Failure', info: 'If the target critically fails the save, it is also stunned 1.' }
+                ],
+                heightened: [
+                    { title: 'Heightened (+2) ', info: 'The damage increases by 1d6' }
+                ]
+            },
+            {
+                title: 'Forbidding Ward',
+                level: '1',
+                action: '2-Actions',
+                traits: ['CANTRIP'],
+                cast: ['Somatic', 'Verbal'],
+                range: { title: 'Range', info: '30 ft' },
+                target: { title: 'Targets', info: '1 ally and 1 enemy' },
+                save: null,
+                duration: { title: 'Duration', info: 'Sustained up to 1 minute' },
+                description: 'You ward an ally against the attacks and hostile spells from the target enemy. The target ally gains a +1 status bonus to Armor Class and saving throws against the target enemy\'s attacks, spells, and other effects.',
                 castDescription: [],
                 heightened: [
-                    { title: 'Heightened (3rd) ', info: 'You learn the school of magic for the highestlevel effect within range that the spell detects. If multiple effects are equally strong, the GM determines which you learn.' },
-                    { title: 'Heightened (4th) ', info: 'As 3rd level, but you also pinpoint the source of the highest-level magic. Like for an imprecise sense, you don’t learn the exact location, but can narrow down the source to within a 5-foot cube (or the nearest if larger than that).' }
+                    { title: 'Heightened (6th) ', info: 'The stat bonus increases to +2' },
                 ]
             },
             {
@@ -194,41 +210,38 @@ export default {
                 heightened: []
             },
             {
-                title: 'Stabilize',
+                title: 'Telekinetic Projectile',
                 level: '1',
                 action: '2-Actions',
-                attack: null,
-                traits: ['CANTRIP', 'HEALING', 'NECROMANCY', 'POSITIVE'],
-                cast: ['Somatic', 'Verbal'],
-                range: { title: 'Range', info: '30 feet' },
-                target: { title: 'Targets', info: '1 dying creature' },
-                save: null,
-                duration: null,
-                description: 'Positive energy shuts death’s door. The target loses the dying condition, though it remains unconscious at 0 Hit Points.',
-                castDescription: [],
-                heightened: []
-            },
-            {
-                title: 'Tanglefoot',
-                level: '1',
-                action: '2-Actions',
-                attack: { dmg: null },
-                traits: ['CANTRIP', 'CONJURATION', 'PLANT'],
+                attack: { dmg: { die: { type: '', value: 6 } } },
+                traits: ['ATTACK', 'CANTRIP', 'EVOCATION'],
                 cast: ['Somatic', 'Verbal'],
                 range: { title: 'Range', info: '30 feet' },
                 target: { title: 'Targets', info: '1 creature' },
                 save: null,
                 duration: null,
-                description: 'A vine covered in sticky sap appears from thin air, flicking from your hand and lashing itself to the target. Attempt a spell attack against the target.',
+                description: 'You hurl a loose, unattended object that is within range and that has 1 Bulk or less at the target. Make a spell attack against the target. If you hit, you deal bludgeoning, piercing, or slashing damage—as appropriate for the object you hurled—equal to 1d6 plus your spellcasting ability modifier. No specific traits or magic properties of the hurled item affect the attack or the damage.',
                 castDescription: [
-                    { title: 'Critical Success ', info: 'The target gains the immobilized condition and takes a –10-foot circumstance penalty to its Speeds for 1 round. It can attempt to Escape against your spell DC to remove the penalty and the immobilized condition.' },
-                    { title: 'Critical Success ', info: 'The target takes a –10-foot circumstance penalty to its Speeds for 1 round. It can attempt to Escape against your spell DC to remove the penalty.' },
-                    { title: 'Failure ', info: 'The target is unaffected' }
+                    { title: 'Critical Success ', info: 'You deal double damage' },
+                    { title: 'Success ', info: 'You deal full damage.' },
                 ],
                 heightened: [
-                    { title: 'Heightened (2nd) ', info: 'The effects lasts for 2 rounds.' },
-                    { title: 'Heightened (4th) ', info: 'The effects lasts for 1 minute.' }
+                    { title: 'Heightened (+1) ', info: 'The damage increases by 1d6' }
                 ]
+            },
+            {
+                title: 'Prestidigitation',
+                level: '1',
+                action: '2-Actions',
+                traits: ['CANTRIP', 'EVOCATION'],
+                cast: ['Somatic', 'Verbal'],
+                range: { title: 'Range', info: '10 feet' },
+                target: { title: 'Targets', info: '1 object' },
+                save: null,
+                duration: { title: 'Duration', info: 'Sustained' },
+                description: 'The simplest magic does your bidding. You can perform simple magical effects for as long as you Sustain the Spell. Each time you Sustain the Spell, you can choose one of four options. Cook: Cool, warm, or flavor 1 pound of nonliving material. Lift: Slowly lift an unattended object of light Bulk or less 1 foot off the ground. Make: Create a temporary object of negligible Bulk, made of congealed magical substance. The object looks crude and artificial and is extremely fragile—it can\'t be used as a tool, weapon, or spell component. Tidy: Color, clean, or soil an object of light Bulk or less. You can affect an object of 1 Bulk with 10 rounds of concentration, and a larger object a 1 minute per Bulk. Prestidigitation can\'t deal damage or cause adverse conditions. Any actual change to an object (beyond what is noted above) persists only as long as you Sustain the Spell.',
+                castDescription: [],
+                heightened: []
             },
         ],
         spells: [
@@ -236,83 +249,137 @@ export default {
                 level: '2',
                 spells: [
                     {
-                        name: 'Burning Hands',
-                        level: '1',
+                        name: 'Invisibility',
+                        level: '2',
                         action: '2-Actions',
-                        attack: { dmg: { die: { type: 'Fire', value: 6, amount: 2 } } },
-                        casts: '1',
-                        traits: ['EVOCATION', 'FIRE'],
-                        cast: ['Somatic', 'Verbal'],
-                        range: { title: 'Area', info: '15-foot cone' },
-                        target: null,
-                        save: { title: 'Saving Throw', info: 'basic Reflex' },
-                        duration: null,
-                        description: 'Gouts of flame rush from your hands. You deal 2d6 fire damage to creatures in the area.',
+                        casts: '',
+                        traits: ['HEALING', 'MENTAL'],
+                        cast: ['Material', 'Somatic'],
+                        range: { title: 'Range', info: 'Touch' },
+                        target: { title: 'Targets', info: '1 creature' },
+                        save: null,
+                        duration: { title: 'Duration', info: '10 minutes' },
+                        description: 'Target becomes invisible. This makes the target undetected to all creatures, though the creatures acan attempt to find the target, making it hidden to them instead (page466).  If the target uses a hostile action , the spell ends after that hostile action is completed.',
                         castDescription: [],
-                        heightened: [{ title: 'Heightened (+1) ', info: 'The damage increases by 2d6.' }]
+                        heightened: [{ title: 'Heightened (4th) ', info: 'The spell lasts 1 minute, but it doesn\'t end if the target uses a hostile action.' }]
                     },
                     {
-                        name: 'Heal',
-                        level: '1',
+                        name: 'Sound Burst',
+                        level: '2',
                         action: '2-Actions',
-                        casts: '1',
-                        traits: ['HEALING', 'NECROMANCY', 'POSITIVE'],
-                        cast: [],
-                        range: { title: 'Range', info: 'varies' },
-                        target: { title: 'Targets', info: '1 willing living creature or 1 undead creature' },
-                        save: null,
+                        casts: '',
+                        traits: ['EVOCATION','SONIC'],
+                        cast: ['Somatic', 'Verbal'],
+                        range: { title: 'Range', info: '30 ft' },
+                        target: { title: 'Targets', info: '10-foot burst' },
+                        save: { title: 'Saving Throw', info: 'basic Fortitude' },
                         duration: null,
-                        description: 'You channel positive energy to heal the living or damage the undead. If the target is a willing living creature, you restore 1d8 Hit Points. If the target is undead, you deal that amount of positive damage to it, and it gets a basic Fortitude save. The number of actions you spend when Casting this Spell determines its targets, range, area, and other parameters.',
+                        description: 'A cacophonous noise blasts out, dealing 2d10 sonic damage. Each creature must attempt a Fortitude save.',
                         castDescription: [
-                            { title: '1-Action (somatic) ', info: 'The spell has a range of touch.' },
-                            { title: '2-Action (verbal, somatic) ', info: 'The spell has a range of 30 feet. If you’re healing a living creature, increase the Hit Points restored by 8.' },
-                            { title: '3-Action (material, somatic, verbal) ', info: 'You disperse positive energy in a 30-foot emanation. This targets all living and undead creatures in the burst.' }
+                            { title: 'Critical Success', info: 'The creature is unaffected' },
+                            { title: 'Success', info: 'The creature takes half damage' },
+                            { title: 'Failure', info: 'The creature takes full damage and is deafened for 1 round.' },
+                            { title: 'Critical Failure', info: 'The creature takes double damage and is deafened for 1 minute, and stunned 1.' },
+                   
                         ],
-                        heightened: [
-                            { title: 'Heightened (+1) ', info: 'The amount of healing or damage increases by 1d8, and the extra healing for the 2-action version increases by 8.' }
-                        ]
-                    }
+                        heightened: [{ title: 'Heightened (+1) ', info: 'The damage is increased by 1d10' }]
+                    },
                 ]
             },
             {
                 level: '1',
                 spells: [
                     {
-                        name: 'Burning Hands',
+                        name: 'Soothe',
                         level: '1',
                         action: '2-Actions',
-                        attack: { dmg: { die: { type: 'Fire', value: 6, amount: 2 } } },
-                        casts: '1',
-                        traits: ['EVOCATION', 'FIRE'],
+                        casts: '',
+                        traits: ['HEALING', 'MENTAL'],
                         cast: ['Somatic', 'Verbal'],
-                        range: { title: 'Area', info: '15-foot cone' },
-                        target: null,
-                        save: { title: 'Saving Throw', info: 'basic Reflex' },
-                        duration: null,
-                        description: 'Gouts of flame rush from your hands. You deal 2d6 fire damage to creatures in the area.',
+                        range: { title: 'Range', info: '30 ft' },
+                        target: { title: 'Targets', info: '1 willing living creature' },
+                        save: null,
+                        duration: { title: 'Duration', info: '1 minute' },
+                        description: 'You grace the target\'s mind, boosting its mental defenses and healing its wounds. The target regains 1d10+4 Hit Points when you Cast the Spell and gains a +2 status bonus to saves against mental effects for the duration.',
                         castDescription: [],
-                        heightened: [{ title: 'Heightened (+1) ', info: 'The damage increases by 2d6.' }]
+                        heightened: [{ title: 'Heightened (+1) ', info: 'The amount of healing increases by 1d10+4.' }]
                     },
                     {
-                        name: 'Heal',
+                        name: 'Command',
                         level: '1',
                         action: '2-Actions',
-                        casts: '2',
-                        traits: ['HEALING', 'NECROMANCY', 'POSITIVE'],
+                        casts: '',
+                        traits: ['LINGUISTIC', 'MENTAL'],
                         cast: [],
-                        range: { title: 'Range', info: 'varies' },
-                        target: { title: 'Targets', info: '1 willing living creature or 1 undead creature' },
-                        save: null,
-                        duration: null,
-                        description: 'You channel positive energy to heal the living or damage the undead. If the target is a willing living creature, you restore 1d8 Hit Points. If the target is undead, you deal that amount of positive damage to it, and it gets a basic Fortitude save. The number of actions you spend when Casting this Spell determines its targets, range, area, and other parameters.',
+                        range: { title: 'Range', info: '30 ft' },
+                        target: { title: 'Targets', info: '1 creature' },
+                        save: { title: 'Saving Throw', info: 'basic Will' },
+                        duration: { title: 'Duration', info: 'until the end of the target\'s next turn' },
+                        description: 'You shout a command that\'s hard to ignore. You can command the target to approach you, run away (as if it had the fleeing condition), release what it\'s holding, drop prone, or stand in place. It can\'t Delay or take any reactions until it has obeyed your command. The effects depend on the target\'s Will save.',
                         castDescription: [
-                            { title: '1-Action (somatic) ', info: 'The spell has a range of touch.' },
-                            { title: '2-Action (verbal, somatic) ', info: 'The spell has a range of 30 feet. If you’re healing a living creature, increase the Hit Points restored by 8.' },
-                            { title: '3-Action (material, somatic, verbal) ', info: 'You disperse positive energy in a 30-foot emanation. This targets all living and undead creatures in the burst.' }
+                            { title: 'Success', info: 'The creature is unaffected' },
+                            { title: 'Failure', info: 'For the first action on its next turn, the creature must use a single action to do as you command.' },
+                            { title: 'Critical Failure', info: 'The target must use all its actions on its next turn to obey your command.' },
                         ],
                         heightened: [
-                            { title: 'Heightened (+1) ', info: 'The amount of healing or damage increases by 1d8, and the extra healing for the 2-action version increases by 8.' }
+                            { title: 'Heightened (5th) ', info: 'You can target up to 10 creatures.' }
                         ]
+                    },
+                    {
+                        name: 'Charm',
+                        level: '1',
+                        action: '2-Actions',
+                        casts: '',
+                        traits: ['Incapacitation', 'MENTAL'],
+                        cast: ['Somatic', 'Verbal'],
+                        range: { title: 'Range', info: '30 ft' },
+                        target: { title: 'Targets', info: '1 creature' },
+                        save: { title: 'Saving Throw', info: 'basic Will' },
+                        duration: { title: 'Duration', info: '1 hour' },
+                        description: 'From Trumpet. To the target, your words are honey and your visage seems bathed in a dreamy haze. It must attempt a Will save, with a +4 circumstance bonus if you or your allies recently threatened it or used hostile actions against it. You can Dismiss the spell. If you use hostile actions against the target, the spell ends. When the spell ends, the target doesn\'t necessarily realize it was charmed unless its friendship with you or the actions you convinced it to take clash with its expectations, meaning you could potentially convince the target to continue being your friend via mundane means.',
+                        castDescription: [
+                            { title: 'Critical Success', info: 'The target is unaffected and aware you tried to charm it.' },
+                            { title: 'Success', info: 'The target is unaffected but thinks your spell was something harmless instead of charm, unless it identifies the spell (see Identifying Magic).' },
+                            { title: 'Failure', info: 'The target\'s attitude becomes friendly toward you. If it was friendly, it becomes helpful. It can\'t use hostile actions against you.' },
+                            { title: 'Critical Failure', info: 'The target\'s attitude becomes helpful toward you, and it can\'t use hostile actions against you.' },
+                        ],
+                        heightened: [
+                            { title: 'Heightened (4th) ', info: 'The duration lasts until the next time you make daily preparations.' },
+                            { title: 'Heightened (8th) ', info: 'The duration lasts until the next time you make daily preparations, and you can target up to 10 creatures.' },
+                        ]
+                    },
+                    {
+                        name: 'Illusory Disguise',
+                        level: '1',
+                        action: '2-Actions',
+                        casts: '',
+                        traits: ['ILLUSION', 'VISUAL'],
+                        cast: ['Somatic', 'Verbal'],
+                        range: null,
+                        target: { title: 'Targets', info: 'Self' },
+                        save: null,
+                        duration: { title: 'Duration', info: '1 hour' },
+                        description: 'You create an illusion that causes you to appear as another creature of the same body shape, and with roughly similar height (within 6 inches) and weight (within 50 pounds), as yourself. The disguise is typically good enough to hide your identity, but not to impersonate a specific individual. The spell doesn\'t change your voice, scent, or mannerisms. You can change the appearance of your clothing and worn items, such as making your armor look like a dress. Held items are unaffected, and any worn item you remove returns to its true appearance.',
+                        castDescription: [],
+                        heightened: [
+                            { title: 'Heightened (2nd) ', info: 'The spell also disguises your voice and scent, and it gains the auditory trait.' },
+                            { title: 'Heightened (3rd) ', info: 'You can appear as any creature of the same size, even a specific individual. You must have seen an individual to take on their appearance. The spell also disguises your voice and scent, and it gains the auditory trait.' }
+                        ]
+                    },
+                    {
+                        name: 'Unseen Servant',
+                        level: '1',
+                        action: '3-Actions',
+                        casts: '2',
+                        traits: ['CONJURATION'],
+                        cast: ['Material', 'Somatic', 'Verbal'],
+                        range: { title: 'Range', info: '60 ft' },
+                        target: { title: 'Targets', info: '1 willing living creature or 1 undead creature' },
+                        save: null,
+                        duration: { title: 'Duration', info: 'sustained' },
+                        description: 'You summon an unseen servant, which you can command as part of Sustaining the Spell. It serves you until its Hit Points are reduced to 0, at which point the spell ends, or until you stop Sustaining the Spell. The unseen servant gains the summoned trait.',
+                        castDescription: [],
+                        heightened: []
                     }
                 ]
             },
@@ -322,65 +389,65 @@ export default {
     feats: {
         ancestry: [
             {
-                name: 'Illusion Sense',
+                name: 'Otherworldly Magic - Electric Arc',
                 type: 'Ancestry',
                 level: '1st',
-                traits: ['Gnome'],
+                traits: [],
                 trigger: '',
                 action: '',
-                description: 'Your ancestors spent their days cloaked and cradled in illusions, and as a result, sensing illusion magic is second nature to you. You gain a +1 circumstance bonus to both Perception checks and Will saves against illusions. When you come within 10 feet of an illusion that can be disbelieved, the GM rolls a secret check for you to disbelieve it, even if you didn’t spend an action to Interact with the illusion.'
+                description: 'Choose one cantrip from the arcane spell list (page 307). You can cast this cantrip as an arcane innate spell at will. A cantrip is heightened to a spell level equal to half your level rounded up.'
             },
         ],
         class: [
             {
-                name: 'Shield Block',
+                name: 'Lingering Composition',
                 type: 'Class Feature',
                 level: '',
-                traits: ['General'],
-                trigger: 'While you have your shield raised, you would take damage from a physical attack.',
-                action: 'Reaction',
-                description: 'You snap your shield in place to ward off a blow. Your shield prevents you from taking an amount of damage up to the shield’s Hardness. You and the shield each take any remaining damage, possibly breaking or destroying the shield.'
+                traits: ['BARD'],
+                trigger: '',
+                action: '',
+                description: 'By adding a flourish, you make your compositions last longer. You learn the lingering composition focus spell. Increase the number of Focus Points in your focus pool by 1. Maestro Muse - Lyrakien'
             },
             {
-                name: 'Wild Empathy',
+                name: 'Multifarious Muse - Enigma',
                 type: 'Class Feature',
                 level: '',
-                traits: ['Ranger'],
+                traits: [],
                 trigger: '',
                 action: '',
-                description: 'You have a connection to the creatures of the natural world that allows you to communicate with them on a rudimentary level. You can use Diplomacy to Make an Impression on animals and to make very simple Requests of them. In most cases, wild animals will give you time to make your case.'
+                description: 'Choose a type of muse other than that of yourown. You gain a 1st-level feat that requires that muse, and your muse is now also a muse ofthat type, allowing you to take feats with the other muse as a prerequisite. You don’t gain any of the other effects of the muse you chose.'
             },
             {
-                name: 'Leshy Familiar',
+                name: 'Bardic Lore',
                 type: 'Class',
                 level: '1st',
-                traits: ['Druid'],
+                traits: [],
                 trigger: '',
                 action: '',
-                description: 'You gain a leshy familiar, a Tiny plant that embodies one of the many spirits of nature. Other than taking the form of a plant instead of an animal, this familiar uses all the same rules as other familiars, which are detailed in the core rulebook on page 217.'
+                description: 'Your studies make you informed on every subject. You are trained in Bardic Lore, a special Lore skill that can be used only to Recall Knowledge, but on any topic. If you have legendary proficiency in Occultism, you gain expert proficiency in Bardic Lore, but you can’t increase your proficiency rank in Bardic Lore by any other means.'
             },
-            {
-                name: 'Reach Spell',
-                type: 'Class',
-                level: '1st',
-                traits: ['Concentrate', 'Druid', 'Metamagic'],
-                trigger: '',
-                action: '1-Action',
-                description: 'You can extend the range of your spells. If the next action you use is to Cast a Spell that has a range, increase that spell\'s range by 30 feet. As is standard for increasing spell range, if the spell normally has a range of touch, you extend its range to 30 feet.'
-            }
         ],
         general: [
             {
-                name: 'Fleet',
-                type: '',
-                level: '1st',
+                name: 'Incredible Initiative',
+                type: '1st',
+                level: '',
                 traits: ['General'],
                 trigger: '',
                 action: '',
-                description: 'You move more quickly on foot. Your Speed increases by 5 feet.'
+                description: 'You react more quickly than others can. You gain a +2 circumstance bonus to initiative rolls.'
             },
         ],
         skill: [
+            {
+                name: 'Fascinating Performance',
+                type: 'Performance',
+                level: '1st',
+                traits: [],
+                trigger: '',
+                action: '1-Action',
+                description: 'When you Perform, compare your result to the Will DC of one observer. If you succeed, the target is fascinated by you for 1 round. If the observer is in a situation that demands immediate attention, such as combat, you must critically succeed to fascinate it and the Perform action gains the incapacitation trait. You must choose which creature you’re trying to fascinate before you roll your check, and the target is then temporarily immune for 1 hour. If you’re an expert in Performance, you can fascinate up to four observers; if you’re a master, you can fascinate up to 10 observers; and if you’re legendary, you can fascinate any number of observers at the same time. (from background) Fascinated: You are compelled to focus your attention on something, distracting you from whatever else is going on around you. You take a –2 status penalty to Perception and skill checks, and you can’t use actions with the concentrate trait unless they or their intended consequences are related to the subject of your fascination (as determined by the GM). For instance, you might be able to Seek and Recall Knowledge about the subject, but you likely couldn’t cast a spell targeting a different creature. This condition ends if a creature uses hostile actions against you or any of your allies.'
+            },
             {
                 name: 'Battle Medicine',
                 type: 'Medicine',
@@ -393,115 +460,135 @@ export default {
         ],
     },
     skills: [
-        { title: 'Acrobatics', mod: { title: 'DEX', value: 1 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
-        { title: 'Arcana', mod: { title: 'INT', value: 1 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
+        { title: 'Acrobatics', mod: { title: 'DEX', value: 2 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 1 },
+        { title: 'Arcana', mod: { title: 'INT', value: 0 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
         { title: 'Athletics', mod: { title: 'STR', value: 0 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 5 },
-        { title: 'Crafting', mod: { title: 'INT', value: 1 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
-        { title: 'Deception', mod: { title: 'CHA', value: 2 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 7 },
-        { title: 'Diplomacy', mod: { title: 'CHA', value: 2 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 7 },
-        { title: 'Intimidation', mod: { title: 'CHA', value: 2 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 2 },
-        { title: 'Medicine', mod: { title: 'WIS', value: 4 }, prof: { title: 'E', value: 7 }, item: 0, temp: 0, total: 11 },
-        { title: 'Nature', mod: { title: 'WIS', value: 4 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 9 },
-        { title: 'Occultism', mod: { title: 'INT', value: 1 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 6 },
-        { title: 'Performance', mod: { title: 'CHA', value: 2 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 2 },
-        { title: 'Religion', mod: { title: 'WIS', value: 4 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 4 },
-        { title: 'Society', mod: { title: 'INT', value: 1 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
-        { title: 'Stealth', mod: { title: 'DEX', value: 1 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
-        { title: 'Survival', mod: { title: 'WIS', value: 4 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 4 },
-        { title: 'Thievery', mod: { title: 'DEX', value: 1 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
-        { title: 'Warfare Lore', mod: { title: 'INT', value: 1 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 6 },
+        { title: 'Crafting', mod: { title: 'INT', value: 0 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
+        { title: 'Deception', mod: { title: 'CHA', value: 4 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 7 },
+        { title: 'Diplomacy', mod: { title: 'CHA', value: 4 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 7 },
+        { title: 'Intimidation', mod: { title: 'CHA', value: 4 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 2 },
+        { title: 'Medicine', mod: { title: 'WIS', value: 2 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 11 },
+        { title: 'Nature', mod: { title: 'WIS', value: 2 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 9 },
+        { title: 'Occultism', mod: { title: 'INT', value: 0 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 6 },
+        { title: 'Performance', mod: { title: 'CHA', value: 4 }, prof: { title: 'E', value: 7 }, item: 0, temp: 0, total: 2 },
+        { title: 'Religion', mod: { title: 'WIS', value: 2 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 4 },
+        { title: 'Society', mod: { title: 'INT', value: 0 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
+        { title: 'Stealth', mod: { title: 'DEX', value: 2 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
+        { title: 'Survival', mod: { title: 'WIS', value: 2 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 4 },
+        { title: 'Thievery', mod: { title: 'DEX', value: 2 }, prof: { title: '', value: 0 }, item: 0, temp: 0, total: 1 },
+        { title: 'Theater Lore', mod: { title: 'INT', value: 0 }, prof: { title: 'T', value: 5 }, item: 0, temp: 0, total: 6 },
     ],
     character: {
         hp: { current: 35, max: 35 },
         xp: 150,
-        conditions: [
-            { title: 'Poisoned', level: 1, description: 'take 1d6 dmg' },
-            { title: 'Enfeebled', level: 1, description: 'You’re physically weakened. Enfeebled always includes a value. When you are enfeebled, you take a status penalty equal to the condition value to Strength-based rolls and DCs, including Strength-based melee attack rolls, Strength-based damage rolls, and Athletics checks.' },
-        ],
+        conditions: [],
         dying: 0,
         wounded: 0,
         abilityScores: [
             { title: 'STR', value: 10 },
-            { title: 'DEX', value: 12 },
+            { title: 'DEX', value: 14 },
             { title: 'CON', value: 12 },
-            { title: 'INT', value: 12 },
-            { title: 'WIS', value: 18 },
-            { title: 'CHA', value: 14 }
+            { title: 'INT', value: 10 },
+            { title: 'WIS', value: 14 },
+            { title: 'CHA', value: 18 }
         ],
         classDC: {
-            mod: { title: 'WIS', value: 4 },
+            mod: { title: 'CHA', value: 4 },
             prof: { title: 'T', value: 5 },
             item: 0,
             temp: 0
         },
         movement: {
-            speed: 30,
+            speed: 25,
             types: [],
         },
         armor: {
-            mod: { title: 'DEX', value: 1 },
+            mod: { title: 'DEX', value: 2 },
             prof: { title: 'T', value: 5 },
             item: 1,
             temp: 0
         },
         shield: {
-            bonus: 2,
+            bonus: 0,
             temp: 0,
-            hardness: 3,
-            bt: 6,
-            hp: { current: 12, max: 12 }
+            hardness: 0,
+            bt: 3,
+            hp: { current: 0, max: 6 }
         },
         saves: [
             {
                 title: 'Fortitude',
-                prof: 'E',
-                value: 8
-            },
-            {
-                title: 'Reflex',
                 prof: 'T',
                 value: 6
             },
             {
+                title: 'Reflex',
+                prof: 'E',
+                value: 9
+            },
+            {
                 title: 'Will',
                 prof: 'E',
-                value: 11
+                value: 9
             }
         ],
         perception: {
-            mod: { title: 'WIS', value: 4 },
+            mod: { title: 'WIS', value: 2 },
             prof: { title: 'E', value: 7 },
             item: 0,
             temp: 0,
-            initiativeBonus: 0,
+            initiativeBonus: 2,
             senses: ['Low-light vision']
         },
         melee: [
             {
-                name: 'Staff',
+                name: 'Whip',
                 mod: { title: 'STR', value: 0 },
                 prof: { title: 'T', value: 5 },
                 item: 0,
                 temp: 0,
                 dmg: '1d4',
-                dmgType: ['Bludgeoning'],
-                traits: ['Two-hand d8']
+                dmgType: ['Piercing'],
+                traits: ['Disarm', 'Finesse', 'Nonlethal', 'Reach', 'Trip'],
+                notes: 'You can use this weapon to Trip with the Athletics skill even if you don’t have a free hand. This uses the weapon’s reach (if different from your own) and adds the weapon’s item bonus to attack rolls as an item bonus to the Athletics check. If you critically fail a check to Trip using the weapon, you can drop the weapon to take the effects of a failure instead of a critical failure.'
             },
             {
+                name: 'Rapier',
                 mod: { title: 'STR', value: 0 },
                 prof: { title: 'T', value: 5 },
                 item: 0,
                 temp: 0,
+                dmg: '1d4',
+                dmgType: ['Piercing'],
+                traits: ['Deadly d8', 'Disarm', 'Finesse']
+            },
+            {
                 name: 'Unarmed',
+                mod: { title: 'STR', value: 0 },
+                prof: { title: 'T', value: 5 },
+                item: 0,
+                temp: 0,
                 dmg: '1d4+',
-                dmgType:['Bludgeoning'],
+                dmgType: ['Bludgeoning'],
                 traits: ['Agile', 'Finesse', 'Nonlethal', 'Unarmed']
             }
         ],
-        ranged: [],
+        ranged: [
+            {
+                name: 'Sling',
+                mod: { title: 'DEX', value: 2 },
+                prof: { title: 'T', value: 5 },
+                item: 0,
+                temp: 0,
+                dmg: '1d6',
+                dmgType: ['Bludgeoning'],
+                traits: ['50 ft range', 'Propulsive'],
+                ammo: 10,
+            }
+        ],
         weaponProf: {
             simple: 'Trained',
-            martial: 'Untrained',    
+            martial: 'Untrained',
             unarmed: 'Trained',
             other: []
         }

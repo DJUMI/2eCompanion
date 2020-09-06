@@ -1,6 +1,6 @@
 export default {
     details: {
-        name: 'Chauncey',
+        name: 'Chauncey O\'Houlihan',
         image: 'https://firebasestorage.googleapis.com/v0/b/ecompanion-fda17.appspot.com/o/chauncey.png?alt=media&token=4acd6e73-cfcd-4e07-9adf-84ca4abdd646',
         level: 3,
         ancestry: 'Human',
@@ -260,7 +260,7 @@ export default {
         ],
         ranged: [
             {
-                name: 'Dar',
+                name: 'Dart',
                 mod: { title: 'DEX', value: 1 },
                 prof: { title: 'T', value: 5 },
                 item: 0,

@@ -383,7 +383,7 @@ export default {
                 prof: { title: '', value: 0 },
                 item: 0,
                 temp: 0,
-                dmg: '1d4',
+                dmg: '1d6',
                 dmgType: ['Bludgeoning'],
                 traits: ['50 ft range', 'Propulsive'],
                 ammo: 10,

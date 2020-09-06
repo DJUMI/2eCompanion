@@ -47,6 +47,7 @@ common components
     animate card opening/closing
     animate accordion opening/closing
     create a model for character data
+    change action to int
 edit
     navigate to and from same tab as tabs screen
 features
